@@ -1,6 +1,11 @@
 import Navbar from "@/components/layout/Navbar";
 import HeroSlider from "@/components/home/HeroSlider";
+import ExperienceHero from "@/components/home/ExperienceHero";
+import AiPreviewContent from "@/components/home/AiPreviewContent";
+import ServiceSection from "@/components/home/ServicesSection";
+import PricingSection from "@/components/home/PricingSection";
 import { SlideItem } from "@/types";
+import Footer from "@/components/layout/Footer";
 
 const HERO_SLIDES: SlideItem[] = [
   {
@@ -21,11 +26,18 @@ const HERO_SLIDES: SlideItem[] = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#0e071e] text-white flex flex-col items-center p-2 sm:p-4 md:p-2 font-sans">
+    <div className="min-h-screen bg-[#0e071e] text-white flex flex-col items-center font-sans">
       <Navbar />
-      <main className="w-full flex justify-center mt-2">
+      
+      {/* Container Konten Utama Vertikal (Column) */}
+      <main className="w-full flex flex-col items-center gap-12 sm:gap-16 px-4 sm:px-6 pt-2 pb-20">
         <HeroSlider slides={HERO_SLIDES} />
+        <ExperienceHero />
+        <AiPreviewContent />
+        <ServiceSection />
+        <PricingSection />
       </main>
+      <Footer />
     </div>
   );
 }
