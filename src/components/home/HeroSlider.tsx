@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SlideItem } from "@/types";
@@ -11,6 +11,16 @@ interface HeroSliderProps {
 
 export default function HeroSlider({ slides }: HeroSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (slides.length < 2) return;
+
+    const intervalId = window.setInterval(() => {
+      setCurrentIndex((index) => (index + 1) % slides.length);
+    }, 5000);
+
+    return () => window.clearInterval(intervalId);
+  }, [slides.length]);
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -37,7 +47,8 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
               alt={slide.title}
               fill
               priority={idx === 0}
-              className="object-cover object-center brightness-90"
+              style={{ objectPosition: slide.imagePosition ?? "center" }}
+              className="object-cover brightness-90"
             />
           </div>
         ))}

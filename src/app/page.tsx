@@ -12,16 +12,18 @@ const HERO_SLIDES: SlideItem[] = [
   {
     id: "1",
     tag: "CEKREKS HIGHLIGHT",
-    title: "Branded Exhibition Booths",
-    description: "Kustomisasi Watermark & Frame Perusahaan Secara Cerdas",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1920&q=80",
+    title: "Abadikan Momen Sakral Anda!",
+    description: "Kami abadikan dengan detail, mulai dari pengajian dan siraman, penyambutan, akad nikah, sungkeman, adat sawer, dan resepsi.",
+    imageUrl: "/images/hero/graduation1.jpeg",
+    imagePosition: "center 25%",
   },
   {
     id: "2",
-    tag: "CEKREKS INNOVATION",
-    title: "AI Face Swap Experience",
-    description: "Transformasi Foto Pengunjung Secara Instan Menggunakan AI Generatif",
-    imageUrl: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1920&q=80",
+    tag: "CEKREKS HIGHLIGHT",
+    title: "Abadikan Momen wisuda Anda",
+    description: "Pengambilan foto video peliputan prosesi wisuda, pembuatan buku tahunan, dan photobooth wisuda.",
+    imageUrl: "/images/hero/graduation2.jpeg",
+    imagePosition: "center top",
   },
 ];
 
