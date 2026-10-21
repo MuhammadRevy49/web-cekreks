@@ -27,7 +27,7 @@ const PREVIEW_STEPS = [
 
 export default function AiPreviewSection() {
   return (
-    <section id="galeri" className="w-full max-w-5xl mx-auto px-4 sm:px-6 scroll-mt-24">
+    <section id="galeri" className="w-full max-w-5xl mx-auto px-4 sm:px-6 scroll-mt-6">
       {/* Bingkai Terminal Mac / Window Style */}
       <div className="rounded-3xl border border-purple-800/40 bg-[#12072b]/80 backdrop-blur-md p-3 sm:p-5 shadow-[0_0_50px_rgba(112,26,117,0.25)]">
         

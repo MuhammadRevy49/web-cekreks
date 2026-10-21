@@ -6,6 +6,7 @@ import ServiceSection from "@/components/home/ServicesSection";
 import PricingSection from "@/components/home/PricingSection";
 import { SlideItem } from "@/types";
 import Footer from "@/components/layout/Footer";
+import ContactSection from "@/components/home/ContactSection";
 
 const HERO_SLIDES: SlideItem[] = [
   {
@@ -26,7 +27,7 @@ const HERO_SLIDES: SlideItem[] = [
 
 export default function HomePage() {
   return (
-    <div id="beranda" className="min-h-screen bg-[#0e071e] text-white flex flex-col items-center font-sans scroll-mt-10">
+    <div id="beranda" className="min-h-screen bg-[#0e071e] text-white flex flex-col items-center font-sans scroll-mt-6">
       <Navbar />
       
       {/* Container Konten Utama Vertikal (Column) */}
@@ -36,6 +37,7 @@ export default function HomePage() {
         <AiPreviewContent />
         <ServiceSection />
         <PricingSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>

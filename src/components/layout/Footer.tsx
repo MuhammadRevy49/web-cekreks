@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
 
           {/* Kolom 4: Hubungi Kami & Media Sosial */}
-          <div id="kontak" className="flex flex-col scroll-mt-24">
+          <div id="kontak" className="flex flex-col scroll-mt-6">
             <h4 className="text-sm font-bold text-white tracking-wide mb-4">
               Hubungi Kami
             </h4>
