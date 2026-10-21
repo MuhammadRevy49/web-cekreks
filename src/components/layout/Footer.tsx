@@ -37,10 +37,10 @@ function InstagramIcon({ className }: { className?: string }) {
 }
 
 const QUICK_LINKS = [
-  { name: "Beranda", href: "/" },
-  { name: "Tentang Kami", href: "/tentang" },
-  { name: "Layanan Utama", href: "/layanan" },
-  { name: "Paket & Harga", href: "/harga" },
+  { name: "Beranda", href: "/#beranda" },
+  { name: "Layanan Utama", href: "/#layanan" },
+  { name: "Paket & Harga", href: "/#harga" },
+  { name: "Kontak", href: "/#kontak" },
 ];
 
 const SERVICE_LINKS = [
@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
 
           {/* Kolom 4: Hubungi Kami & Media Sosial */}
-          <div className="flex flex-col">
+          <div id="kontak" className="flex flex-col scroll-mt-24">
             <h4 className="text-sm font-bold text-white tracking-wide mb-4">
               Hubungi Kami
             </h4>

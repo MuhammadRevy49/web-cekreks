@@ -26,7 +26,7 @@ const HERO_SLIDES: SlideItem[] = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#0e071e] text-white flex flex-col items-center font-sans">
+    <div id="beranda" className="min-h-screen bg-[#0e071e] text-white flex flex-col items-center font-sans scroll-mt-10">
       <Navbar />
       
       {/* Container Konten Utama Vertikal (Column) */}

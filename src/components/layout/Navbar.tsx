@@ -7,39 +7,12 @@ import {
     ChevronDown,
     Globe,
     User,
-    Heart,
-    GraduationCap,
-    Presentation,
-    Camera,
     Menu,
     X,
     Check,
 } from "lucide-react";
 import Logo from "@/components/common/Logo";
 import { NAV_ITEMS } from "@/constants/navigation";
-
-const LAYANAN_SUBITEMS = [
-    {
-        name: "Wedding Photography",
-        href: "/layanan/wedding",
-        icon: Heart,
-    },
-    {
-        name: "Graduation",
-        href: "/layanan/graduation",
-        icon: GraduationCap,
-    },
-    {
-        name: "Event dan Seminar",
-        href: "/layanan/event-seminar",
-        icon: Presentation,
-    },
-    {
-        name: "Photobooth",
-        href: "/layanan/photobooth",
-        icon: Camera,
-    },
-];
 
 const LANGUAGES = [
     { code: "id", label: "Bahasa (ID)" },
@@ -48,13 +21,11 @@ const LANGUAGES = [
 
 export default function Navbar() {
     const [activeNav, setActiveNav] = useState("Beranda");
-    const [isLayananOpen, setIsLayananOpen] = useState(false);
     const [isLangOpen, setIsLangOpen] = useState(false);
     const [currentLang, setCurrentLang] = useState("id");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const layananRef = useRef<HTMLDivElement>(null);
     const langRef = useRef<HTMLDivElement>(null);
 
     const [mounted, setMounted] = useState(false);
@@ -76,9 +47,6 @@ export default function Navbar() {
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
             const target = event.target as Node;
-            if (layananRef.current && !layananRef.current.contains(target)) {
-                setIsLayananOpen(false);
-            }
             if (langRef.current && !langRef.current.contains(target)) {
                 setIsLangOpen(false);
             }
@@ -89,11 +57,14 @@ export default function Navbar() {
 
     // Kunci scroll halaman saat menu mobile terbuka
     useEffect(() => {
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
+        if (!isMobileMenuOpen) return;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
     }, [isMobileMenuOpen]);
 
     const selectedLangLabel =
@@ -113,69 +84,6 @@ export default function Navbar() {
                 <nav className="hidden lg:flex items-center gap-1 bg-[#150a2e]/90 backdrop-blur-md border border-purple-900/40 px-3 py-1.5 rounded-full shadow-inner shadow-purple-950/40">
                     {NAV_ITEMS.map((item) => {
                         const isActive = activeNav === item.name;
-
-                        if (item.hasDropdown) {
-                            return (
-                                <div
-                                    key={item.name}
-                                    ref={layananRef}
-                                    className="relative"
-                                    onMouseEnter={() => setIsLayananOpen(true)}
-                                    onMouseLeave={() => setIsLayananOpen(false)}
-                                >
-                                    <button
-                                        type="button"
-                                        onClick={() => {
-                                            setActiveNav(item.name);
-                                            setIsLayananOpen((prev) => !prev);
-                                        }}
-                                        className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${isActive
-                                            ? "bg-gradient-to-r from-[#6929d9] via-[#4f46e5] to-[#0ea5e9] text-white shadow-[0_0_16px_rgba(14,165,233,0.45)]"
-                                            : "text-slate-300 hover:text-white hover:bg-white/5"
-                                            }`}
-                                    >
-                                        <span>{item.name}</span>
-                                        <ChevronDown
-                                            className={`w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 ${isLayananOpen ? "rotate-180" : ""
-                                                } ${isActive ? "text-white" : "text-slate-400"}`}
-                                        />
-                                    </button>
-
-                                    {/* Submenu Dropdown Layanan */}
-                                    <div
-                                        className={`absolute top-full left-0 pt-3 transition-all duration-200 ease-out ${isLayananOpen
-                                            ? "opacity-100 scale-100 pointer-events-auto visible"
-                                            : "opacity-0 scale-95 pointer-events-none invisible"
-                                            }`}
-                                    >
-                                        <div className="w-56 p-3 rounded-2xl bg-[#110726]/95 backdrop-blur-xl border border-purple-800/40 shadow-[0_16px_36px_rgba(0,0,0,0.6)] flex flex-col gap-2.5">
-                                            {LAYANAN_SUBITEMS.map((sub) => {
-                                                const Icon = sub.icon;
-                                                return (
-                                                    <Link
-                                                        key={sub.name}
-                                                        href={sub.href}
-                                                        onClick={() => {
-                                                            setActiveNav(item.name);
-                                                            setIsLayananOpen(false);
-                                                        }}
-                                                        className="group flex items-center gap-3 transition-colors duration-150"
-                                                    >
-                                                        <div className="w-9 h-9 rounded-xl bg-[#241247] border border-purple-700/30 flex items-center justify-center shrink-0 group-hover:border-cyan-400/50 group-hover:bg-[#2c1754] transition">
-                                                            <Icon className="w-4 h-4 text-cyan-400 fill-cyan-400/20" />
-                                                        </div>
-                                                        <span className="text-xs font-semibold text-slate-200 group-hover:text-cyan-300 transition whitespace-nowrap">
-                                                            {sub.name}
-                                                        </span>
-                                                    </Link>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
-                                </div>
-                            );
-                        }
-
                         return (
                             <Link
                                 key={item.name}
@@ -298,7 +206,7 @@ export default function Navbar() {
                                 {/* Daftar Menu Mobile */}
                                 <div className="flex flex-col gap-5 mt-6">
                                     <Link
-                                        href="/"
+                                        href="#beranda"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >
@@ -306,35 +214,12 @@ export default function Navbar() {
                                     </Link>
 
                                     <Link
-                                        href="#tentang"
+                                        href="#layanan"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >
-                                        Tentang
+                                        Layanan
                                     </Link>
-
-                                    {/* Sub Layanan Kami */}
-                                    <div className="flex flex-col">
-                                        <span className="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-3">
-                                            LAYANAN KAMI
-                                        </span>
-                                        <div className="flex flex-col gap-3.5 pl-3 border-l-2 border-purple-700/50">
-                                            {LAYANAN_SUBITEMS.map((sub) => {
-                                                const Icon = sub.icon;
-                                                return (
-                                                    <Link
-                                                        key={sub.name}
-                                                        href={sub.href}
-                                                        onClick={() => setIsMobileMenuOpen(false)}
-                                                        className="flex items-center gap-3 text-sm font-medium text-slate-300 hover:text-cyan-300 transition"
-                                                    >
-                                                        <Icon className="w-4 h-4 text-purple-400" />
-                                                        <span>{sub.name}</span>
-                                                    </Link>
-                                                );
-                                            })}
-                                        </div>
-                                    </div>
 
                                     <Link
                                         href="#harga"
@@ -345,7 +230,15 @@ export default function Navbar() {
                                     </Link>
 
                                     <Link
-                                        href="/galeri"
+                                        href="#kontak"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
+                                    >
+                                        Kontak
+                                    </Link>
+
+                                    <Link
+                                        href="#galeri"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >

@@ -65,7 +65,7 @@ const PRICING_PLANS: PricingPlan[] = [
 
 export default function PricingSection() {
   return (
-    <section id="harga" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col items-center">
+    <section id="harga" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 flex flex-col items-center scroll-mt-10">
       {/* ================= HEADER SECTION ================= */}
       <div className="flex flex-col items-center text-center mb-12">
         <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-purple-400 mb-3">
