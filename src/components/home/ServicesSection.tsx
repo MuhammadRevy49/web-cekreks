@@ -36,7 +36,7 @@ const SERVICES_DATA: ServiceItem[] = [
       "Galeri Online/QR Fleksibel Pengantin",
       "Pencahayaan & Editing Otomatis Realtime",
     ],
-    ctaText: "Pesan Layanan Wedding Photography",
+    ctaText: "Lihat Layanan Wedding Photography",
     ctaHref: "/layanan/wedding",
   },
   {
@@ -53,7 +53,7 @@ const SERVICES_DATA: ServiceItem[] = [
       "Custom Watermark Nama & Gelar Wisudawan",
       "Direct Share ke Media Sosial Instant",
     ],
-    ctaText: "Pesan Layanan Graduation",
+    ctaText: "Lihat Layanan Graduation",
     ctaHref: "/layanan/graduation",
   },
   {
@@ -70,7 +70,7 @@ const SERVICES_DATA: ServiceItem[] = [
       "Live Screen Pemutaran Slideshow",
       "Sistem Antrean QR Tanpa Antrean",
     ],
-    ctaText: "Pesan Layanan Event dan Seminar",
+    ctaText: "Lihat Layanan Event dan Seminar",
     ctaHref: "/layanan/event-seminar",
   },
   {
@@ -87,7 +87,7 @@ const SERVICES_DATA: ServiceItem[] = [
       "Proses Render Cetak < 10 Detik",
       "Dukungan Multi-Kamera & Tablet Desk",
     ],
-    ctaText: "Pesan Layanan Photobooth",
+    ctaText: "Lihat Layanan Photobooth",
     ctaHref: "/layanan/photobooth",
   },
 ];

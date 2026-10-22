@@ -1,0 +1,21 @@
+import WeddingHero from "@/components/wedding/WeddingHero";
+import WeddingScope from "@/components/wedding/WeddingScope";
+import WeddingPricing from "@/components/wedding/WeddingPricing";
+
+export default function WeddingDetailPage() {
+  return (
+    <div className="min-h-screen bg-[#0b0518] text-white selection:bg-cyan-500 selection:text-black">
+      {/* Background Ambient Glow */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-10 left-1/4 w-[500px] h-[350px] bg-cyan-500/10 rounded-full blur-[140px]" />
+        <div className="absolute top-[40%] right-[-5%] w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[150px]" />
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 pt-10 pb-24">
+        <WeddingHero />
+        <WeddingScope />
+        <WeddingPricing />
+      </div>
+    </div>
+  );
+}
