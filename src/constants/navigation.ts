@@ -5,5 +5,4 @@ export const NAV_ITEMS: NavItem[] = [
   { name: "Layanan", href: "/#layanan" },
   { name: "Harga", href: "/#harga" },
   { name: "Kontak", href: "/#kontak" },
-  { name: "Galeri", href: "/#galeri" },
 ];

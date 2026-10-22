@@ -236,14 +236,6 @@ export default function Navbar() {
                                     >
                                         Kontak
                                     </Link>
-
-                                    <Link
-                                        href="#galeri"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                        className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
-                                    >
-                                        Galeri
-                                    </Link>
                                 </div>
                             </div>
 

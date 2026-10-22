@@ -59,33 +59,17 @@ export default function WeddingHero() {
         </div>
       </div>
 
-      {/* Kolom Kanan: Card Visual */}
+      {/* Kolom Kanan: Murni Gambar Full Showcase */}
       <div className="lg:col-span-5">
-        <div className="relative rounded-3xl p-6 bg-gradient-to-b from-[#1b0e3d] to-[#12082b] border border-cyan-400/30 shadow-[0_0_30px_rgba(34,211,238,0.15)] overflow-hidden">
-          
-          {/* Wadah gambar dengan rasio aspek 4/3 */}
-          <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-white/10 group">
-            <Image
-              src="/images/hero/album.jpg"
-              alt="Dokumentasi Wedding Cekreks.id"
-              fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              priority
-            />
-            
-            {/* Gradien overlay tipis di bagian bawah */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#12082b]/80 via-transparent to-transparent pointer-events-none" />
-          </div>
-
-          <div className="mt-5 pt-5 border-t border-white/10 space-y-2">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-cyan-400">
-              Tentang Layanan Wedding
-            </span>
-            <p className="text-xs text-gray-300 leading-relaxed">
-              Dikerjakan oleh tim profesional berpengalaman yang siap memastikan setiap momen sakral dari akad, prosesi adat, hingga resepsi tersimpan abadi tanpa terlewatkan.
-            </p>
-          </div>
+        <div className="relative aspect-square sm:aspect-[4/3] lg:aspect-[4/4] w-full rounded-3xl overflow-hidden border border-cyan-400/30 shadow-[0_0_35px_rgba(34,211,238,0.18)] group">
+          <Image
+            src="/images/hero/album.jpg"
+            alt="Dokumentasi Wedding Cekreks.id"
+            fill
+            sizes="(max-width: 1024px) 100vw, 40vw"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            priority
+          />
         </div>
       </div>
     </section>

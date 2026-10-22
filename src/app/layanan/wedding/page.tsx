@@ -1,6 +1,7 @@
 import WeddingHero from "@/components/wedding/WeddingHero";
 import WeddingScope from "@/components/wedding/WeddingScope";
 import WeddingPricing from "@/components/wedding/WeddingPricing";
+import WeddingGallery from "@/components/wedding/WeddingGallery";
 
 export default function WeddingDetailPage() {
   return (
@@ -14,6 +15,7 @@ export default function WeddingDetailPage() {
       <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 pt-10 pb-24">
         <WeddingHero />
         <WeddingScope />
+        <WeddingGallery />
         <WeddingPricing />
       </div>
     </div>

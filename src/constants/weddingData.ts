@@ -165,3 +165,18 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
     ],
   },
 ];
+
+export const WEDDING_ALBUM = [
+  { id: 1, image: "/images/weddingtestimoni/01.jpg", alt: "Testimoni Wedding 1" },
+  { id: 2, image: "/images/weddingtestimoni/02.jpg", alt: "Testimoni Wedding 2" },
+  { id: 3, image: "/images/weddingtestimoni/03.jpg", alt: "Testimoni Wedding 3" },
+  { id: 4, image: "/images/weddingtestimoni/08.jpg", alt: "Testimoni Wedding 4" },
+  { id: 5, image: "/images/weddingtestimoni/09.jpg", alt: "Testimoni Wedding 5" },
+  { id: 6, image: "/images/weddingtestimoni/12.jpg", alt: "Testimoni Wedding 6" },
+  { id: 7, image: "/images/weddingtestimoni/20.jpg", alt: "Testimoni Wedding 7" },
+  { id: 8, image: "/images/weddingtestimoni/21.jpg", alt: "Testimoni Wedding 8" },
+  { id: 9, image: "/images/weddingtestimoni/23.jpg", alt: "Testimoni Wedding 9" },
+  { id: 10, image: "/images/weddingtestimoni/38.jpg", alt: "Testimoni Wedding 10" },
+  { id: 11, image: "/images/weddingtestimoni/39.jpg", alt: "Testimoni Wedding 11" },
+  { id: 12, image: "/images/weddingtestimoni/40.jpg", alt: "Testimoni Wedding 12" },
+];
