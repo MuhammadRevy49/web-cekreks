@@ -32,8 +32,8 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
 
   return (
     <section className="w-full max-w-7xl relative rounded-3xl overflow-hidden border border-purple-800/40 bg-gradient-to-b from-[#160b33] to-[#0d061c] shadow-[0_0_40px_rgba(112,26,117,0.18)] group">
-      {/* Container Gambar: Menggunakan aspect ratio responsif agar tingginya pas dan tidak memenuhi layar */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] max-h-[520px] min-h-[380px] bg-neutral-900 overflow-hidden">
+      {/* Container Gambar: Menggunakan aspect ratio responsif */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] max-h-[520px] min-h-[400px] bg-neutral-900 overflow-hidden">
         {/* Layer Semua Gambar untuk Transisi Cross-Fade Halus */}
         {slides.map((slide, idx) => (
           <div
@@ -53,8 +53,8 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
           </div>
         ))}
 
-        {/* Dark Gradient Overlay Bawah */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0e071e] via-[#0e071e]/50 to-transparent z-10 pointer-events-none" />
+        {/* Dark Gradient Overlay Bawah yang lebih tinggi agar teks terbaca jelas */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0e071e] via-[#0e071e]/70 to-transparent z-10 pointer-events-none" />
 
         {/* Tombol Panah Navigasi Kiri & Kanan (Muncul saat Hover) */}
         <button
@@ -73,21 +73,21 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
           <ChevronRight className="w-6 h-6 stroke-[2]" />
         </button>
 
-        {/* Konten Kiri Bawah (Berpindah Halus Sesuai Slide Aktif) */}
-        <div className="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 max-w-xl z-20 pointer-events-none">
-          <span className="text-[11px] sm:text-xs font-extrabold tracking-widest uppercase text-cyan-400">
+        {/* Konten Kiri Bawah (Diatur agar aman dari tabrakan dengan dots di mobile) */}
+        <div className="absolute bottom-5 left-4 right-16 sm:bottom-10 sm:left-10 sm:right-auto max-w-xl z-20 pointer-events-none">
+          <span className="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase text-cyan-400 block mb-1">
             {slides[currentIndex].tag}
           </span>
-          <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mt-1 mb-2 drop-shadow-md">
+          <h1 className="text-lg sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug sm:leading-tight mb-1 sm:mb-2 drop-shadow-md">
             {slides[currentIndex].title}
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed line-clamp-2">
+          <p className="text-[11px] sm:text-sm text-slate-300 font-normal leading-relaxed line-clamp-2">
             {slides[currentIndex].description}
           </p>
         </div>
 
         {/* Dots Pagination di Kanan Bawah */}
-        <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 z-20 flex items-center gap-2">
+        <div className="absolute bottom-5 right-4 sm:bottom-10 sm:right-10 z-20 flex items-center gap-2">
           {slides.map((_, idx) => (
             <button
               key={idx}

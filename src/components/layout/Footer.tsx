@@ -160,7 +160,7 @@ export default function Footer() {
         {/* ================= GARIS & COPYRIGHT ================= */}
         <div className="border-t border-purple-900/40 pt-8 flex items-center justify-center text-center">
           <p className="text-xs text-slate-400 font-normal">
-            &copy; 2026 CEKREKS.ID &mdash; All Rights Reserved. Teknologi AI Photobooth Masa Depan.
+            &copy; 2026 CEKREKS.ID &mdash; All Rights Reserved.
           </p>
         </div>
 
