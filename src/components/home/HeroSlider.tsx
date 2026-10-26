@@ -32,8 +32,8 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
 
   return (
     <section className="w-full max-w-7xl relative rounded-3xl overflow-hidden border border-purple-800/40 bg-gradient-to-b from-[#160b33] to-[#0d061c] shadow-[0_0_40px_rgba(112,26,117,0.18)] group">
-      {/* Container Gambar: Menggunakan aspect ratio responsif */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] max-h-[520px] min-h-[400px] bg-neutral-900 overflow-hidden">
+      {/* Container Gambar */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] max-h-[520px] min-h-[420px] bg-neutral-900 overflow-hidden">
         {/* Layer Semua Gambar untuk Transisi Cross-Fade Halus */}
         {slides.map((slide, idx) => (
           <div
@@ -53,10 +53,10 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
           </div>
         ))}
 
-        {/* Dark Gradient Overlay Bawah yang lebih tinggi agar teks terbaca jelas */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0e071e] via-[#0e071e]/70 to-transparent z-10 pointer-events-none" />
+        {/* Dark Gradient Overlay Bawah */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0e071e] via-[#0e071e]/80 to-transparent z-10 pointer-events-none" />
 
-        {/* Tombol Panah Navigasi Kiri & Kanan (Muncul saat Hover) */}
+        {/* Tombol Panah Navigasi Kiri & Kanan */}
         <button
           onClick={prevSlide}
           aria-label="Slide sebelumnya"
@@ -73,15 +73,15 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
           <ChevronRight className="w-6 h-6 stroke-[2]" />
         </button>
 
-        {/* Konten Kiri Bawah (Diatur agar aman dari tabrakan dengan dots di mobile) */}
-        <div className="absolute bottom-5 left-4 right-16 sm:bottom-10 sm:left-10 sm:right-auto max-w-xl z-20 pointer-events-none">
-          <span className="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase text-cyan-400 block mb-1">
+        {/* Konten Kiri Bawah (Diberi right-24 di mobile agar aman dari dots, tanpa line-clamp) */}
+        <div className="absolute bottom-5 left-4 right-24 sm:bottom-10 sm:left-10 sm:right-auto max-w-xl z-20 pointer-events-none flex flex-col justify-end">
+          <span className="text-[10px] sm:text-xs font-extrabold tracking-widest uppercase text-cyan-400 mb-1">
             {slides[currentIndex].tag}
           </span>
-          <h1 className="text-lg sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug sm:leading-tight mb-1 sm:mb-2 drop-shadow-md">
+          <h1 className="text-base sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight leading-snug sm:leading-tight mb-1 sm:mb-2 drop-shadow-md">
             {slides[currentIndex].title}
           </h1>
-          <p className="text-[11px] sm:text-sm text-slate-300 font-normal leading-relaxed line-clamp-2">
+          <p className="text-[11px] sm:text-sm text-slate-300 font-normal leading-relaxed">
             {slides[currentIndex].description}
           </p>
         </div>

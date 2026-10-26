@@ -13,7 +13,7 @@ const HERO_SLIDES: SlideItem[] = [
     id: "1",
     tag: "CEKREKS HIGHLIGHT",
     title: "Abadikan Momen Sakral Anda!",
-    description: "Kami abadikan dengan detail, mulai dari pengajian dan siraman, penyambutan, akad nikah, sungkeman, adat sawer, dan resepsi.",
+    description: "Kami abadikan, mulai dari pengajian & siraman, penyambutan, akad nikah, sungkeman, adat sawer, dan resepsi.",
     imageUrl: "/images/hero/wedding.jpeg",
     imagePosition: "center 25%",
   },
@@ -47,7 +47,7 @@ export default function HomePage() {
   return (
     <div id="beranda" className="min-h-screen bg-[#0e071e] text-white flex flex-col items-center font-sans scroll-mt-18">     
       {/* Container Konten Utama Vertikal (Column) */}
-      <main className="w-full flex flex-col items-center gap-12 sm:gap-16 px-4 sm:px-6 pt-2 pb-20">
+      <main className="w-full flex flex-col items-center gap-6 sm:gap-16 px-4 sm:px-6 pt-2 pb-20">
         <HeroSlider slides={HERO_SLIDES} />
         <ExperienceHero />
         <AiPreviewContent />
