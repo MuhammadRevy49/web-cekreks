@@ -214,6 +214,14 @@ export default function Navbar() {
                                     </Link>
 
                                     <Link
+                                        href="#portofolio"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
+                                    >
+                                        Portofolio
+                                    </Link>
+
+                                    <Link
                                         href="#layanan"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
