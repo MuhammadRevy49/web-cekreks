@@ -16,11 +16,10 @@ export default function ContactSection() {
     e.preventDefault();
     if (!formData.name || !formData.whatsapp || !formData.message) return;
 
-    // Arahkan atau kirim langsung ke WhatsApp
     const encodedMsg = encodeURIComponent(
       `Halo Tim CEKREKS.ID, saya ${formData.name}.\n\n${formData.message}\n\n(No WA: ${formData.whatsapp})`
     );
-    window.open(`https://wa.me/6281234567890?text=${encodedMsg}`, "_blank");
+    window.open(`https://wa.me/6285801105140?text=${encodedMsg}`, "_blank");
 
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 4000);
@@ -32,11 +31,16 @@ export default function ContactSection() {
       className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 py-10 flex flex-col scroll-mt-18"
     >
       {/* Header Section */}
-      <div className="mb-10 sm:mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-2">
+      <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
+          Temukan Solusinya di Sini
+        </span>
+
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
           Hubungi Kami
         </h2>
-        <p className="text-xs sm:text-sm text-slate-300 font-normal">
+
+        <p className="text-md sm:text-md text-slate-300 font-normal leading-relaxed max-w-xl mt-3">
           Tinggalkan pesan, kami siap membantu kebutuhan fotografi Anda.
         </p>
       </div>
@@ -59,7 +63,7 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             {/* Input Nama Lengkap */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-200">
+              <label className="text-xs sm:text-sm font-semibold text-slate-200 text-left">
                 Nama Lengkap
               </label>
               <input
@@ -74,10 +78,10 @@ export default function ContactSection() {
               />
             </div>
 
-            {/* Input No WhatsApps */}
+            {/* Input No WhatsApp */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-200">
-                No WhatsApps<span className="text-pink-500">*</span>
+              <label className="text-xs sm:text-sm font-semibold text-slate-200 text-left">
+                No. WhatsApp <span className="text-pink-500">*</span>
               </label>
               <input
                 type="tel"
@@ -93,8 +97,8 @@ export default function ContactSection() {
 
             {/* Textarea Pesan */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-200">
-                Pesan Anda<span className="text-pink-500">*</span>
+              <label className="text-xs sm:text-sm font-semibold text-slate-200 text-left">
+                Pesan Anda <span className="text-pink-500">*</span>
               </label>
               <textarea
                 rows={4}

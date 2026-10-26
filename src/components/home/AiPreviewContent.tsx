@@ -66,24 +66,24 @@ function Counter({ end, suffix = "" }: CounterProps) {
 
 export default function PortfolioSection() {
   const stats = [
-    { 
-      value: "10", 
-      suffix: "+", 
-      label: "Tahun Pengalaman", 
+    {
+      value: "10",
+      suffix: "+",
+      label: "Tahun Pengalaman",
       desc: "Dalam industri fotografi & dokumentasi",
       icon: <Award className="w-6 h-6 text-purple-400 mb-2" />
     },
-    { 
-      value: "200", 
-      suffix: "+", 
-      label: "Proyek Selesai", 
+    {
+      value: "200",
+      suffix: "+",
+      label: "Proyek Selesai",
       desc: "Event, Booth, & Campaign sukses",
       icon: <Briefcase className="w-6 h-6 text-purple-400 mb-2" />
     },
-    { 
-      value: "45", 
-      suffix: "+", 
-      label: "Mitra & Klien", 
+    {
+      value: "45",
+      suffix: "+",
+      label: "Mitra & Klien",
       desc: "WO, Korporat, hingga Venue",
       icon: <Handshake className="w-6 h-6 text-purple-400 mb-2" />
     },
@@ -127,7 +127,7 @@ export default function PortfolioSection() {
       {/* Header Section */}
       <div className="flex flex-col items-center text-center border-b border-slate-800 pb-8 mb-10 sm:mb-12">
         <span className="text-xs font-semibold uppercase tracking-widest text-purple-400 mb-2">
-          Galeri & Pencapaian
+          Jejak Langkah
         </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
           Portofolio Kami
@@ -137,25 +137,25 @@ export default function PortfolioSection() {
           Berdiri sejak tahun 2014, Cekreks.id dibangun dengan dedikasi tinggi oleh tim profesional yang berpengalaman di industri fotografi, dokumentasi acara, hingga teknologi AI Photobooth modern untuk memberikan hasil kenangan terbaik di setiap momen spesial Anda.
         </p>
       </div>
-
-      {/* Mengapa Harus Kami? (8 Poin Benefit) */}
-      <div className="mb-14 bg-slate-900/30 border border-slate-800/80 rounded-3xl p-6 sm:p-10">
-        <div className="text-center mb-8">
+      {/* Mengapa Harus Kami? (Desain Simpel & Minimalis Tanpa BG) */}
+      <div className="mb-14 px-2 sm:px-4">
+        <div className="text-center mb-6">
           <h3 className="text-2xl sm:text-3xl font-bold text-white">
             Mengapa Harus Kami?
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        {/* Grid lebih padat, tanpa background card, menggunakan garis batas bawah halus */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
           {benefits.map((benefit, index) => (
-            <div 
-              key={index} 
-              className="flex items-start gap-3 bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl hover:border-purple-500/40 transition-colors"
+            <div
+              key={index}
+              className="flex items-center gap-3 py-2.5 border-b border-slate-800/60 hover:border-purple-500/40 transition-colors"
             >
-              <div className="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-purple-950/80 border border-purple-800/50 flex items-center justify-center text-purple-400">
+              <div className="shrink-0 text-purple-400">
                 <ChevronRight className="w-4 h-4 stroke-[2.5]" />
               </div>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-300 leading-snug">
                 {benefit}
               </p>
             </div>
@@ -261,7 +261,7 @@ export default function PortfolioSection() {
                   <img
                     src={partner.logoUrl}
                     alt={partner.name}
-                    className="h-14 w-auto object-contain transition-transform duration-300"
+                    className="h-20 md:h-30 w-auto object-contain transition-transform duration-300"
                   />
                 ) : (
                   <span className="text-white font-semibold text-base tracking-wide">

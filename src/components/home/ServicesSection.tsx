@@ -25,69 +25,69 @@ const SERVICES_DATA: ServiceItem[] = [
   {
     id: "wedding",
     title: "Wedding Photography",
-    subtitle: "Dokumentasi Pernikahan Elegan Berbalut Sentuhan AI",
+    subtitle: "Dokumentasi Pernikahan Elegan",
     icon: Heart,
     imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
     description:
-      "Layanan fotografi pernikahan eksklusif yang memadukan keindahan foto konvensional beresolusi tinggi dengan keajaiban efek AI Generatif. Tamu undangan dan pasangan pengantin dapat mencetak album digital instan bertema keanggunan royal, fantasi romantis, hingga pemandangan kustom secara langsung saat pesta berlangsung.",
+      "Layanan fotografi pernikahan eksklusif yang memadukan keindahan foto konvensional beresolusi tinggi dengan keajaiban efek AI Generatif.",
     features: [
       "Cetak Foto Instan Berbagai Ukuran Premium",
       "Kustomisasi Busana & Tema AI Impian",
       "Galeri Online/QR Fleksibel Pengantin",
       "Pencahayaan & Editing Otomatis Realtime",
     ],
-    ctaText: "Lihat Layanan Wedding Photography",
+    ctaText: "Lihat Layanan",
     ctaHref: "/layanan/wedding",
   },
   {
     id: "graduation",
     title: "Graduation",
-    subtitle: "Momen Wisuda Berkesan dengan Avatar & Bingkai Akademik",
+    subtitle: "Momen Wisuda Berkesan Elegan",
     icon: GraduationCap,
     imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
     description:
-      "Rayakan kelulusan dan pencapaian akademik dengan pengalaman dokumentasi yang modern. Layanan graduation kami memberikan fasilitas foto studio instan di tempat acara wisuda dengan latar belakang kustom almamater kampus, efek toga futuristik, serta pembuatan avatar pencapaian karir masa depan bagi para wisudawan.",
+      "Rayakan kelulusan dan pencapaian akademik dengan pengalaman dokumentasi yang modern. Layanan graduation kami memberikan fasilitas terbaik untuk anda.",
     features: [
       "Background Kampus & Landmark Dunia",
       "Output Foto High-Definition Siap Cetak",
       "Custom Watermark Nama & Gelar Wisudawan",
       "Direct Share ke Media Sosial Instant",
     ],
-    ctaText: "Lihat Layanan Graduation",
+    ctaText: "Lihat Layanan",
     ctaHref: "/layanan/graduation",
   },
   {
     id: "event",
     title: "Event dan Seminar",
-    subtitle: "Solusi Interaktif Branding Perusahaan & Gathering",
+    subtitle: "Solusi Interaktif Branding Perusahaan",
     icon: Presentation,
     imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
     description:
-      "Tingkatkan engagement dan excitement pada seminar bisnis, exhibition, peluncuran produk, maupun corporate gathering. Sistem photobooth AI kami dirancang untuk mengintegrasikan logo sponsor, watermark perusahaan, serta analitik jumlah pengunjung yang terdata secara otomatis dan akurat.",
+      "Tingkatkan engagement dan excitement pada seminar bisnis, exhibition, peluncuran produk, maupun corporate gathering.",
     features: [
       "Branding Frame & Template Perusahaan",
       "Pengumpulan Data Email & Visitor Analytics",
       "Live Screen Pemutaran Slideshow",
       "Sistem Antrean QR Tanpa Antrean",
     ],
-    ctaText: "Lihat Layanan Event dan Seminar",
+    ctaText: "Lihat Layanan",
     ctaHref: "/layanan/event-seminar",
   },
   {
     id: "photobooth",
     title: "Photobooth",
-    subtitle: "Akses Foto Interaktif AI dengan Cetak Instan Cepat",
+    subtitle: "Foto Interaktif AI dan Konvensional",
     icon: Camera,
     imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
     description:
-      "Setup booth fisik interaktif yang dapat ditempatkan di berbagai pesta ulang tahun, festival musik, hiburan malam, dan pameran. Dilengkapi dengan perangkat pencahayaan pro-grade, touch screen intuitif, serta pilihan ratusan filter AI unik yang mengubah gaya visual foto tamu hanya dalam hitungan detik.",
+      "Setup booth fisik interaktif yang dapat ditempatkan di berbagai event wedding, ulang tahun, festival musik, pameran, dan seminar.",
     features: [
       "100+ Pilihan Style Visual AI Unik",
       "Filter Cyberpunk, Retro, Anime & Pelukis",
       "Proses Render Cetak < 10 Detik",
       "Dukungan Multi-Kamera & Tablet Desk",
     ],
-    ctaText: "Lihat Layanan Photobooth",
+    ctaText: "Lihat Layanan",
     ctaHref: "/layanan/photobooth",
   },
 ];
@@ -98,14 +98,14 @@ export default function ServicesSection() {
       {/* ================= HEADER SECTION ================= */}
       <div className="flex flex-col items-center text-center max-w-3xl mb-10 sm:mb-12">
         <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
-          SOLUSI DOKUMENTASI
+          Apa yang Kami Tawarkan
         </span>
         
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
           Layanan Kami
         </h2>
         
-        <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed max-w-xl mt-3">
+        <p className="text-md sm:text-md text-slate-300 font-normal leading-relaxed max-w-xl mt-3">
           Pilih jenis layanan yang dirancang khusus untuk memenuhi segala kebutuhan dokumentasi visual acara Anda.
         </p>
       </div>
@@ -147,32 +147,13 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Deskripsi Lengkap */}
-                <p className="text-xs text-slate-300 leading-relaxed font-normal mb-6 text-justify sm:text-left">
+                <p className="text-md text-slate-300 leading-relaxed font-normal mb-6 text-justify sm:text-left">
                   {service.description}
                 </p>
-
-                {/* Subtitle Fitur / Keunggulan */}
-                <div className="mb-6">
-                  <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-400 block mb-3">
-                    KEUNGGULAN LAYANAN
-                  </span>
-                  
-                  {/* Grid 2 Kolom Poin Keunggulan */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
-                    {service.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 shrink-0 shadow-[0_0_6px_rgba(34,211,238,0.8)]" />
-                        <span className="text-[11px] sm:text-xs text-slate-300 leading-snug">
-                          {feat}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
 
               {/* Tombol CTA Pesan Layanan */}
-              <div className="pt-2">
+              <div className="pt-2 mx-10 sm:mx-30">
                 <Link
                   href={service.ctaHref}
                   className="w-full py-2.5 sm:py-3 rounded-full bg-[#1b0d38]/90 hover:bg-[#25124d] border border-purple-700/50 hover:border-cyan-400/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] group/btn"
