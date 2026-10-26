@@ -85,15 +85,12 @@ export default function PricingSection() {
       {/* ================= HEADER SECTION ================= */}
       <div className="flex flex-col items-center text-center mb-12">
         <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3">
-          PAKET SESUAI KEBUTUHAN ACARA
+          PAKET KEBUTUHAN ACARA
         </span>
-        <h2 className="text-2xl sm:text-4xl md:text-[2.6rem] font-black text-white tracking-tight leading-tight">
-          Pilihan Paket Layanan{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 drop-shadow-[0_0_25px_rgba(34,211,238,0.5)]">
-            CEKREKS.ID
-          </span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Pilihan Paket Layanan
         </h2>
-        <p className="text-xs sm:text-sm text-gray-400 mt-2 max-w-xl">
+        <p className="text-xs sm:text-sm text-gray-400 mt-3 max-w-xl">
           Temukan layanan dokumentasi terbaik untuk setiap momen berharga Anda dengan standar visual profesional.
         </p>
       </div>

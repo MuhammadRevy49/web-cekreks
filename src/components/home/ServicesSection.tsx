@@ -98,17 +98,14 @@ export default function ServicesSection() {
       {/* ================= HEADER SECTION ================= */}
       <div className="flex flex-col items-center text-center max-w-3xl mb-12 sm:mb-16">
         <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
-          SOLUSI DOKUMENTASI TERINTEGRASI
+          SOLUSI DOKUMENTASI
         </span>
         
-        <h2 className="text-2xl sm:text-4xl md:text-[2.6rem] font-black text-white tracking-tight leading-tight mb-4">
-          Layanan Unggulan{" "}
-          <span className="text-[#ec4899] drop-shadow-[0_0_20px_rgba(236,72,153,0.7)]">
-            CEKREKS.ID
-          </span>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Layanan Kami
         </h2>
         
-        <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed max-w-xl">
+        <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed max-w-xl mt-3">
           Pilih jenis layanan yang dirancang khusus untuk memenuhi segala kebutuhan dokumentasi visual acara Anda.
         </p>
       </div>
