@@ -3,7 +3,7 @@ import { Sparkles, Rocket, Download, ChevronRight, Zap, Monitor } from "lucide-r
 
 export default function ExperienceHero() {
   return (
-    <section className="relative w-full py-10 sm:py-20 px-4 sm:px-6 flex flex-col items-center text-center overflow-hidden rounded-xl">
+    <section className="relative w-full py-5 sm:py-15 px-4 sm:px-6 flex flex-col items-center text-center overflow-hidden rounded-xl">
       {/* ================= BACKGROUND GRID & GLOW ================= */}
       {/* Background Grid Pattern Tipis */}
       <div
@@ -34,7 +34,7 @@ export default function ExperienceHero() {
         </h1>
 
         {/* Teks Neon Glow: Cyan Blue (Ditambahkan text-left sm:text-center agar konsisten) */}
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[3.25rem] font-black tracking-tight leading-[1.2] text-[#22d3ee] drop-shadow-[0_0_25px_rgba(34,211,238,0.7)] mb-6 text-left sm:text-center w-full">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] font-black tracking-tight leading-[1.2] text-[#22d3ee] drop-shadow-[0_0_25px_rgba(34,211,238,0.7)] mb-6 text-left sm:text-center w-full">
           Teknologi Foto Acara Terkini
         </h1>
 
