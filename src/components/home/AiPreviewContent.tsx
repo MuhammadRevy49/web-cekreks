@@ -109,10 +109,8 @@ export default function PortfolioSection() {
     { name: "4", logoUrl: "/images/mitra/4.png" },
     { name: "5", logoUrl: "/images/mitra/5.png" },
     { name: "6", logoUrl: "/images/mitra/6.png" },
-    { name: "12", logoUrl: "/images/mitra/12.png" },
     { name: "13", logoUrl: "/images/mitra/13.png" },
     { name: "14", logoUrl: "/images/mitra/14.png" },
-    { name: "15", logoUrl: "/images/mitra/15.png" },
     { name: "16", logoUrl: "/images/mitra/16.png" },
     { name: "17", logoUrl: "/images/mitra/17.png" },
     { name: "23", logoUrl: "/images/mitra/23.png" },
@@ -243,8 +241,8 @@ export default function PortfolioSection() {
       {/* Bagian Mitra Kami (Running Text / Marquee) */}
       <div className="mt-12 pt-8 border-t border-slate-800/80">
         <div className="text-center mb-8">
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-            Dipercaya Oleh Berbagai Mitra
+          <p className="text-md font-semibold uppercase tracking-widest text-slate-400">
+            Mitra Kami
           </p>
         </div>
 
