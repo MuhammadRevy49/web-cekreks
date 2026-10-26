@@ -48,13 +48,12 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
               fill
               priority={idx === 0}
               style={{ objectPosition: slide.imagePosition ?? "center" }}
-              className="object-cover brightness-90"
+              className="object-cover"
             />
           </div>
         ))}
 
-        {/* Dark Gradient Overlay Bawah */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0e071e] via-[#0e071e]/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#0e071e] via-[#0e071e]/70 to-transparent z-10 pointer-events-none" />
 
         {/* Tombol Panah Navigasi Kiri & Kanan */}
         <button

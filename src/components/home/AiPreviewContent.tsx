@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { Award, Briefcase, Handshake, ChevronRight } from "lucide-react";
 
 // Definisi tipe props untuk komponen Counter
 interface CounterProps {
@@ -65,31 +66,39 @@ function Counter({ end, suffix = "" }: CounterProps) {
 
 export default function PortfolioSection() {
   const stats = [
-    { value: "10", suffix: "+", label: "Tahun Pengalaman", desc: "Dalam industri fotografi & dokumentasi" },
-    { value: "200", suffix: "+", label: "Proyek Selesai", desc: "Event, Booth, & Campaign sukses" },
-    { value: "45", suffix: "+", label: "Mitra & Klien", desc: "WO, Korporat, hingga Venue" },
+    { 
+      value: "10", 
+      suffix: "+", 
+      label: "Tahun Pengalaman", 
+      desc: "Dalam industri fotografi & dokumentasi",
+      icon: <Award className="w-6 h-6 text-purple-400 mb-2" />
+    },
+    { 
+      value: "200", 
+      suffix: "+", 
+      label: "Proyek Selesai", 
+      desc: "Event, Booth, & Campaign sukses",
+      icon: <Briefcase className="w-6 h-6 text-purple-400 mb-2" />
+    },
+    { 
+      value: "45", 
+      suffix: "+", 
+      label: "Mitra & Klien", 
+      desc: "WO, Korporat, hingga Venue",
+      icon: <Handshake className="w-6 h-6 text-purple-400 mb-2" />
+    },
   ];
 
-  // Daftar galeri foto portofolio tim
-  const portfolioImages = [
-    {
-      title: "Cyberpunk AI Photobooth",
-      category: "AI PHOTOBOOTH",
-      image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop",
-      photographer: "Tim Cekreks AI Booth",
-    },
-    {
-      title: "The Royal Wedding Moment",
-      category: "WEDDING EVENT",
-      image: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop",
-      photographer: "Tim Fotografer Wedding",
-    },
-    {
-      title: "Annual Tech Summit Gala",
-      category: "CORPORATE GALA",
-      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop",
-      photographer: "Tim Dokumentasi Korporat",
-    },
+  // Daftar 8 poin benefit "Mengapa Harus Kami?"
+  const benefits = [
+    "Teknologi AI Photobooth generasi terbaru dengan hasil instan dan futuristik.",
+    "Didukung oleh tim profesional berpengalaman di bidang fotografi event skala nasional.",
+    "Kustomisasi frame, template, dan overlay digital yang 100% sesuai tema acara.",
+    "Peralatan fotografi berstandar tinggi untuk menjamin kualitas visual terbaik.",
+    "Proses cetak foto super cepat tanpa membuat tamu antrean terlalu lama.",
+    "Integrasi galeri digital interaktif yang langsung bisa diunduh oleh para tamu.",
+    "Layanan konsultasi konsep acara gratis untuk hasil dokumentasi yang maksimal.",
+    "Komitmen penuh terhadap ketepatan waktu, kehandalan teknis, dan kepuasan klien."
   ];
 
   // Daftar logo/nama mitra untuk running text
@@ -120,32 +129,60 @@ export default function PortfolioSection() {
         <span className="text-xs font-semibold uppercase tracking-widest text-purple-400 mb-2">
           Galeri & Pencapaian
         </span>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
           Portofolio Kami
         </h2>
-        <p className="text-sm text-slate-400 mt-3 max-w-md">
-          Momen nyata dan aksi profesional tim kami dalam mengabadikan berbagai skala acara Anda.
+        {/* Kalimat Penjelas Usaha */}
+        <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          Berdiri sejak tahun 2014, Cekreks.id dibangun dengan dedikasi tinggi oleh tim profesional yang berpengalaman di industri fotografi, dokumentasi acara, hingga teknologi AI Photobooth modern untuk memberikan hasil kenangan terbaik di setiap momen spesial Anda.
         </p>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
+      {/* Mengapa Harus Kami? (8 Poin Benefit) */}
+      <div className="mb-14 bg-slate-900/30 border border-slate-800/80 rounded-3xl p-6 sm:p-10">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white">
+            Mengapa Harus Kami?
+          </h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          {benefits.map((benefit, index) => (
+            <div 
+              key={index} 
+              className="flex items-start gap-3 bg-slate-900/60 border border-slate-800/60 p-4 rounded-xl hover:border-purple-500/40 transition-colors"
+            >
+              <div className="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-purple-950/80 border border-purple-800/50 flex items-center justify-center text-purple-400">
+                <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+              </div>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                {benefit}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Stats Grid (3 Kolom di Mobile, Deskripsi Panjang di-hidden khusus Mobile) */}
+      <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-16">
         {stats.map((stat, idx) => (
-          <div key={idx} className="border-l-2 border-purple-500 pl-4 py-4 bg-slate-900/40 rounded-r-lg">
-            <div className="text-4xl font-extrabold text-white font-mono tracking-tight mb-1">
+          <div key={idx} className="border-l-2 border-purple-500 pl-2 sm:pl-4 py-3 sm:py-4 bg-slate-900/40 rounded-r-lg">
+            <div className="flex justify-center sm:justify-start">
+              {stat.icon}
+            </div>
+            <div className="text-2xl sm:text-4xl font-extrabold text-white font-mono tracking-tight mb-0.5 sm:mb-1">
               <Counter end={stat.value} suffix={stat.suffix} />
             </div>
-            <div className="text-sm font-semibold text-purple-300 mb-0.5">
+            <div className="text-xs sm:text-sm font-semibold text-purple-300 mb-0.5">
               {stat.label}
             </div>
-            <div className="text-xs text-slate-400">
+            <div className="text-[11px] sm:text-xs text-slate-400 hidden sm:block">
               {stat.desc}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Pure Image Grid Gallery */}
       {/* Pure Team Member Grid Gallery (2 kolom di mobile, 4 kolom di layar besar) */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-20">
         {[
@@ -224,7 +261,6 @@ export default function PortfolioSection() {
                   <img
                     src={partner.logoUrl}
                     alt={partner.name}
-                    // Ukuran diperbesar (h-14 / sekitar 56px) dan warna ditampilkan normal (tanpa grayscale)
                     className="h-14 w-auto object-contain transition-transform duration-300"
                   />
                 ) : (

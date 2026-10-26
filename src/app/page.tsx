@@ -23,7 +23,7 @@ const HERO_SLIDES: SlideItem[] = [
     title: "Abadikan Momen wisuda Anda",
     description: "Pengambilan foto video peliputan prosesi wisuda, pembuatan buku tahunan, dan photobooth wisuda.",
     imageUrl: "/images/hero/graduation.jpeg",
-    imagePosition: "center top",
+    imagePosition: "center 15%",
   },
   {
     id: "3",
@@ -31,7 +31,7 @@ const HERO_SLIDES: SlideItem[] = [
     title: "Abadikan Acara & Seminar Anda",
     description: "Kami mengemas setiap rangkaian acara dan seminar Anda ke dalam visual yang bercerita, elegan, dan penuh makna.",
     imageUrl: "/images/hero/event.jpeg",
-    imagePosition: "center top",
+    imagePosition: "center 25%",
   },
   {
     id: "4",
@@ -39,7 +39,7 @@ const HERO_SLIDES: SlideItem[] = [
     title: "Abadikan Momen Seru Anda",
     description: "Layanan sewa photobooth profesional dengan kualitas cetak premium, desain kustom, dan hasil instan di tempat.",
     imageUrl: "/images/hero/photobooth.jpeg",
-    imagePosition: "center top",
+    imagePosition: "center 80%",
   },
 ];
 
