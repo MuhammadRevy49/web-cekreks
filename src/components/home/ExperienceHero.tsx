@@ -3,7 +3,7 @@ import { Sparkles, Rocket, Download, ChevronRight, Zap, Monitor } from "lucide-r
 
 export default function ExperienceHero() {
   return (
-    <section className="relative w-full py-10 sm:py-20 px-4 sm:px-6 flex flex-col items-center text-center overflow-hidden">
+    <section className="relative w-full py-10 sm:py-20 px-4 sm:px-6 flex flex-col items-center text-center overflow-hidden rounded-xl">
       {/* ================= BACKGROUND GRID & GLOW ================= */}
       {/* Background Grid Pattern Tipis */}
       <div
@@ -39,7 +39,7 @@ export default function ExperienceHero() {
         </h1>
 
         {/* 3. Deskripsi Paragraf */}
-        <p className="max-w-2xl text-sm sm:text-sm md:text-[16px] text-slate-300 font-normal leading-relaxed mb-8 text-left sm:text-center px-0 sm:px-2">
+        <p className="max-w-2xl text-sm sm:text-sm md:text-[16px] text-slate-300 font-normal leading-relaxed text-left sm:text-center px-0 sm:px-2">
           Hadirkan photobooth kecerdasan buatan (AI) generasi berikutnya yang mengubah setiap jepretan foto tamu menjadi mahakarya visual futuristik secara instan, tanpa ribet, dan sangat interaktif.
         </p>
 
