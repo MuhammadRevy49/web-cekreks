@@ -67,7 +67,7 @@ export default function PortfolioSection() {
   const stats = [
     { value: "10", suffix: "+", label: "Tahun Pengalaman", desc: "Dalam industri fotografi & dokumentasi" },
     { value: "200", suffix: "+", label: "Proyek Selesai", desc: "Event, Booth, & Campaign sukses" },
-    { value: "40", suffix: "+", label: "Mitra & Klien", desc: "WO, Korporat, hingga Venue" },
+    { value: "45", suffix: "+", label: "Mitra & Klien", desc: "WO, Korporat, hingga Venue" },
   ];
 
   // Daftar galeri foto portofolio tim
@@ -113,7 +113,7 @@ export default function PortfolioSection() {
   return (
     <section id="portofolio" className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-10 scroll-mt-18">
       {/* Header Section */}
-      <div className="flex flex-col items-center text-center mb-12 border-b border-slate-800 pb-8">
+      <div className="flex flex-col items-center text-center border-b border-slate-800 pb-8 mb-10 sm:mb-12">
         <span className="text-xs font-semibold uppercase tracking-widest text-purple-400 mb-2">
           Galeri & Pencapaian
         </span>
