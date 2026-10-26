@@ -77,7 +77,7 @@ export default function Navbar() {
                 : "bg-transparent py-4"
                 }`}
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
+            <div className="max-w-[90rem] mx-auto flex items-center justify-between px-4 sm:px-6">
                 <Logo />
 
                 {/* ================= NAV DESKTOP ================= */}

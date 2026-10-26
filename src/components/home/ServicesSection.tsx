@@ -94,7 +94,7 @@ const SERVICES_DATA: ServiceItem[] = [
 
 export default function ServicesSection() {
   return (
-    <section id="layanan" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col items-center scroll-mt-18">
+    <section id="layanan" className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 py-10 flex flex-col items-center scroll-mt-18">
       {/* ================= HEADER SECTION ================= */}
       <div className="flex flex-col items-center text-center max-w-3xl mb-10 sm:mb-12">
         <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">

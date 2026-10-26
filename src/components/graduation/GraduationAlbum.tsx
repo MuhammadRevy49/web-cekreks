@@ -95,7 +95,7 @@ export default function GraduationAlbum() {
 
   return (
     <section className="py-20 border-t border-white/10 overflow-hidden">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-6xl mx-auto px-5 mb-12">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[90rem] mx-auto px-5 mb-12">
         <div className="text-center sm:text-left">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase bg-[#180d38] text-cyan-300 border border-cyan-400/30 mb-2">
             <MessageSquareHeart className="w-3.5 h-3.5 text-cyan-400" /> Kata Mereka
@@ -128,7 +128,7 @@ export default function GraduationAlbum() {
         </div>
       </div>
 
-      <div className="relative w-full max-w-6xl mx-auto h-[480px] sm:h-[540px] flex items-center justify-center">
+      <div className="relative w-full max-w-[90rem] mx-auto h-[480px] sm:h-[540px] flex items-center justify-center">
         {GRADUATION_ALBUM.map((item, index) => {
           const style = getSlideStyle(index);
           const isCenter = index === currentIndex;

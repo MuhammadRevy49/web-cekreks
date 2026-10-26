@@ -29,7 +29,7 @@ export default function ContactSection() {
   return (
     <section
       id="kontak"
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-10 flex flex-col scroll-mt-18"
+      className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 py-10 flex flex-col scroll-mt-18"
     >
       {/* Header Section */}
       <div className="mb-10 sm:mb-12">

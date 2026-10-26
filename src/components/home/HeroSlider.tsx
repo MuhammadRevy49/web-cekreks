@@ -31,7 +31,7 @@ export default function HeroSlider({ slides }: HeroSliderProps) {
   };
 
   return (
-    <section className="w-full max-w-7xl relative rounded-3xl overflow-hidden border border-purple-800/40 bg-gradient-to-b from-[#160b33] to-[#0d061c] shadow-[0_0_40px_rgba(112,26,117,0.18)] group">
+    <section className="w-full max-w-[90rem] relative rounded-3xl overflow-hidden border border-purple-800/40 bg-gradient-to-b from-[#160b33] to-[#0d061c] shadow-[0_0_40px_rgba(112,26,117,0.18)] group">
       {/* Container Gambar */}
       <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] max-h-[520px] min-h-[420px] bg-neutral-900 overflow-hidden">
         {/* Layer Semua Gambar untuk Transisi Cross-Fade Halus */}
