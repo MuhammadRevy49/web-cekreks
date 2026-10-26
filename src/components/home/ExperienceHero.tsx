@@ -40,7 +40,7 @@ export default function ExperienceHero() {
 
         {/* 3. Deskripsi Paragraf */}
         <p className="max-w-2xl text-sm sm:text-sm md:text-[16px] text-slate-300 font-normal leading-relaxed text-left sm:text-center px-0 sm:px-2">
-          Hadirkan photobooth kecerdasan buatan (AI) generasi berikutnya yang mengubah setiap jepretan foto tamu menjadi mahakarya visual futuristik secara instan, tanpa ribet, dan sangat interaktif.
+          Hadirkan photobooth kecerdasan buatan (AI) generasi berikutnya yang mengubah setiap jepretan foto tamu menjadi mahakarya visual futuristik secara instan, tanpa ribet, dan sangat interaktif. Selain pengalaman AI yang canggih, kami juga melayani photobooth reguler/konvensional untuk melengkapi berbagai konsep acara Anda.
         </p>
 
       </div>

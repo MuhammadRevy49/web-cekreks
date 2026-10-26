@@ -94,20 +94,23 @@ export default function PortfolioSection() {
 
   // Daftar logo/nama mitra untuk running text
   const partners = [
-    { name: "Grand Ballroom", logoUrl: "/images/partners/grand-ballroom.png" },
-    { name: "Nexus WO", logoUrl: "/images/partners/nexus.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" },
-    { name: "TechCorp", logoUrl: "/images/partners/techcorp.png" }, 
+    { name: "1", logoUrl: "/images/mitra/1.png" },
+    { name: "2", logoUrl: "/images/mitra/2.png" },
+    { name: "3", logoUrl: "/images/mitra/3.png" },
+    { name: "4", logoUrl: "/images/mitra/4.png" },
+    { name: "5", logoUrl: "/images/mitra/5.png" },
+    { name: "6", logoUrl: "/images/mitra/6.png" },
+    { name: "12", logoUrl: "/images/mitra/12.png" },
+    { name: "13", logoUrl: "/images/mitra/13.png" },
+    { name: "14", logoUrl: "/images/mitra/14.png" },
+    { name: "15", logoUrl: "/images/mitra/15.png" },
+    { name: "16", logoUrl: "/images/mitra/16.png" },
+    { name: "17", logoUrl: "/images/mitra/17.png" },
+    { name: "23", logoUrl: "/images/mitra/23.png" },
+    { name: "24", logoUrl: "/images/mitra/24.png" },
+    { name: "25", logoUrl: "/images/mitra/25.png" },
+    { name: "26", logoUrl: "/images/mitra/26.png" },
+    { name: "27", logoUrl: "/images/mitra/27.png" },
   ];
 
   return (
@@ -143,35 +146,57 @@ export default function PortfolioSection() {
       </div>
 
       {/* Pure Image Grid Gallery */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-20">
-        {portfolioImages.map((item, idx) => (
+      {/* Pure Team Member Grid Gallery (2 kolom di mobile, 4 kolom di layar besar) */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-20">
+        {[
+          {
+            name: "Muhammad Revy",
+            role: "Lead Photographer",
+            image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
+          },
+          {
+            name: "Andi Pratama",
+            role: "AI Booth Specialist",
+            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+          },
+          {
+            name: "Siti Rahma",
+            role: "Creative Director",
+            image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop",
+          },
+          {
+            name: "Rizky Ramadhan",
+            role: "Technical Operator",
+            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
+          },
+        ].map((member, idx) => (
           <div
             key={idx}
-            className="group relative h-72 w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all duration-500 shadow-lg"
+            className="group relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all duration-500 shadow-lg"
           >
-            {/* Foto Background */}
+            {/* Foto Profil */}
             <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
             />
 
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
 
-            {/* Kategori di Pojok Atas */}
-            <span className="absolute top-3 left-3 px-3 py-1 text-[10px] font-bold tracking-wider text-purple-200 bg-slate-950/75 backdrop-blur-md border border-purple-800/50 rounded-full">
-              {item.category}
+            {/* Badge Peran / Posisi di Pojok Atas */}
+            <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2 sm:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] font-bold tracking-wider text-purple-200 bg-slate-950/75 backdrop-blur-md border border-purple-800/50 rounded-full">
+              {member.role}
             </span>
 
-            {/* Informasi Teks saat Hover atau di Bawah Card */}
-            <div className="absolute bottom-0 left-0 right-0 p-5 transform transition-transform duration-300">
-              <span className="text-[11px] text-purple-300 font-medium flex items-center gap-1.5 mb-1">
+            {/* Informasi Nama Anggota Tim di Bawah */}
+            <div className="absolute bottom-0 left-0 right-0 p-3.5 sm:p-5 transform transition-transform duration-300">
+              <span className="text-[10px] sm:text-[11px] text-purple-300 font-medium flex items-center gap-1.5 mb-0.5 sm:mb-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-                {item.photographer}
+                Cekreks.id
               </span>
-              <h3 className="text-lg font-bold text-white tracking-wide group-hover:text-purple-200 transition-colors">
-                {item.title}
+              <h3 className="text-sm sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-200 transition-colors">
+                {member.name}
               </h3>
             </div>
           </div>
@@ -188,15 +213,25 @@ export default function PortfolioSection() {
 
         {/* Container Running Text dengan Efek Fade di Kiri & Kanan */}
         <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <div className="flex animate-marquee whitespace-nowrap gap-4 items-center py-2">
+          <div className="flex animate-marquee whitespace-nowrap gap-12 items-center py-4">
             {/* Render dua kali agar pergerakannya mulus tanpa jeda */}
             {[...partners, ...partners].map((partner, index) => (
               <div
                 key={index}
-                className="flex items-center gap-3 px-6 py-3 rounded-xl bg-slate-900/50 border border-slate-800/80 text-slate-300 font-semibold text-sm tracking-wide shrink-0 hover:border-purple-500/40 transition-colors"
+                className="flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-105"
               >
-                <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                {partner.name}
+                {partner.logoUrl ? (
+                  <img
+                    src={partner.logoUrl}
+                    alt={partner.name}
+                    // Ukuran diperbesar (h-14 / sekitar 56px) dan warna ditampilkan normal (tanpa grayscale)
+                    className="h-14 w-auto object-contain transition-transform duration-300"
+                  />
+                ) : (
+                  <span className="text-white font-semibold text-base tracking-wide">
+                    {partner.name}
+                  </span>
+                )}
               </div>
             ))}
           </div>
