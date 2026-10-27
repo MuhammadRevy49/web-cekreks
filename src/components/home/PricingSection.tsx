@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 interface PricingPlan {
   id: string;
@@ -149,9 +149,10 @@ export default function PricingSection() {
             <div className="pt-2">
               <Link
                 href={plan.buttonHref}
-                className="w-full py-2.5 rounded-xl text-xs font-bold flex items-center justify-center bg-[#1f103d] hover:bg-cyan-400 hover:text-gray-950 text-white border border-cyan-400/30 transition-all duration-300 active:scale-[0.98] shadow-sm hover:shadow-[0_0_15px_rgba(34,211,238,0.3)]"
+                className="w-full py-2.5 sm:py-3 rounded-full bg-[#1b0d38]/90 hover:bg-[#25124d] border border-purple-700/50 hover:border-cyan-400/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] group/btn"
               >
-                {plan.buttonText}
+                <span>{plan.buttonText}</span>
+                <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/btn:text-cyan-300 group-hover/btn:translate-x-1 transition-all" />
               </Link>
             </div>
           </div>
