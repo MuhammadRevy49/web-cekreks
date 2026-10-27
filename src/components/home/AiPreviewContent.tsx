@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import {
-  Award,
-  Briefcase,
-  Handshake,
-  Clock,
-  ShieldCheck,
-  Users,
-  Camera,
-  Sparkles
+import { 
+  Award, 
+  Briefcase, 
+  Handshake, 
+  Clock, 
+  ShieldCheck, 
+  Users, 
+  Camera, 
+  Sparkles 
 } from "lucide-react";
 
 // Definisi tipe props untuk komponen Counter
@@ -81,21 +81,21 @@ export default function PortfolioSection() {
       suffix: "+",
       label: "Tahun Pengalaman",
       desc: "Dalam industri fotografi & dokumentasi",
-      icon: <Award className="w-6 h-6 text-purple-400 mb-2" />
+      icon: <Award className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 mb-1 sm:mb-2" />
     },
     {
       value: "200",
       suffix: "+",
       label: "Proyek Selesai",
       desc: "Event, Booth, & Campaign sukses",
-      icon: <Briefcase className="w-6 h-6 text-purple-400 mb-2" />
+      icon: <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 mb-1 sm:mb-2" />
     },
     {
       value: "45",
       suffix: "+",
       label: "Mitra & Klien",
       desc: "WO, Korporat, hingga Venue",
-      icon: <Handshake className="w-6 h-6 text-purple-400 mb-2" />
+      icon: <Handshake className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 mb-1 sm:mb-2" />
     },
   ];
 
@@ -220,20 +220,23 @@ export default function PortfolioSection() {
         </div>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-16">
+      {/* ================= STATS GRID (RESPONSIF: CARD DI MOBILE, BORDER-L DI DESKTOP) ================= */}
+      <div className="grid grid-cols-3 gap-2.5 sm:gap-6 mb-12">
         {stats.map((stat, idx) => (
-          <div key={idx} className="border-l-2 border-purple-500 pl-2 sm:pl-4 py-3 sm:py-4 bg-slate-900/40 rounded-r-lg">
+          <div 
+            key={idx} 
+            className="p-3 sm:pl-4 sm:py-4 bg-[#140b2b]/50 sm:bg-slate-900/40 border sm:border-0 border-white/10 rounded-xl sm:rounded-r-lg sm:border-l-2 sm:border-purple-500 flex flex-col items-center sm:items-start text-center sm:text-left"
+          >
             <div className="flex justify-center sm:justify-start">
               {stat.icon}
             </div>
-            <div className="text-2xl sm:text-4xl font-extrabold text-white font-mono tracking-tight mb-0.5 sm:mb-1">
+            <div className="text-xl sm:text-4xl font-extrabold text-white font-mono tracking-tight mb-0.5 sm:mb-1">
               <Counter end={stat.value} suffix={stat.suffix} />
             </div>
-            <div className="text-xs sm:text-sm font-semibold text-purple-300 mb-0.5">
+            <div className="text-[11px] sm:text-sm font-semibold text-purple-300 mb-0.5 leading-tight">
               {stat.label}
             </div>
-            <div className="text-[11px] sm:text-xs text-slate-400 hidden sm:block">
+            <div className="text-[10px] sm:text-xs text-slate-400 hidden sm:block">
               {stat.desc}
             </div>
           </div>
@@ -274,7 +277,7 @@ export default function PortfolioSection() {
 
         {/* Container Running Text dengan Durasi Diperlambat */}
         <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <div
+          <div 
             className="flex animate-marquee whitespace-nowrap gap-12 items-center py-4"
             style={{ animationDuration: "45s" }}
           >
