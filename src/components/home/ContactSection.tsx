@@ -53,7 +53,7 @@ export default function ContactSection() {
     >
       {/* Header Section */}
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-        <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
+        <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-purple-400 mb-3 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
           Temukan Solusinya di Sini
         </span>
 

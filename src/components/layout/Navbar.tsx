@@ -180,7 +180,7 @@ export default function Navbar() {
                     >
                         {/* 1. Backdrop Gelap Menutup 100% Layar */}
                         <div
-                            className={`fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-100" : "opacity-0"
+                            className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-100" : "opacity-0"
                                 }`}
                             onClick={() => setIsMobileMenuOpen(false)}
                         />

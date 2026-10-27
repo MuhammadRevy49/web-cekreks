@@ -102,7 +102,7 @@ export default function PricingSection() {
 
       {/* ================= HEADER SECTION ================= */}
       <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
-        <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3">
+        <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-purple-400 mb-3">
           Pilih Paket Anda
         </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">

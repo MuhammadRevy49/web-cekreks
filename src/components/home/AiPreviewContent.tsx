@@ -244,7 +244,7 @@ export default function PortfolioSection() {
       </div>
 
       {/* Pure Team Member Grid Gallery */}
-      <div className="text-center">
+      <div className="text-center mb-4">
         <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
           Tim Kami
         </h3>
@@ -252,7 +252,9 @@ export default function PortfolioSection() {
           Kami bekerja dengan profesional kami untuk anda.
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 mb-20 items-end">
+      
+      {/* Grid foto tim: tinggi card diperkecil di mobile (h-48) dan gap vertikal diperketat (gap-y-1 sm:gap-3) */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-1 sm:gap-3 mb-20 items-end">
         {[
           { name: "Muhammad Revy", image: "/images/team/1.png" },
           { name: "Andi Pratama", image: "/images/team/2.png" },
@@ -261,7 +263,7 @@ export default function PortfolioSection() {
         ].map((member, idx) => (
           <div
             key={idx}
-            className="relative h-64 sm:h-80 w-full flex items-end justify-center group"
+            className="relative h-46 sm:h-50 lg:h-80 w-full flex items-end justify-center group"
           >
             <div className="relative w-full h-full">
               <Image
@@ -285,7 +287,7 @@ export default function PortfolioSection() {
 
         {/* Container Running Text dengan Durasi Diperlambat */}
         <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <div
+          <div 
             className="flex animate-marquee whitespace-nowrap gap-2 md:gap-12 items-center py-4"
             style={{ animationDuration: "45s" }}
           >
