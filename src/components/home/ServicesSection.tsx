@@ -27,7 +27,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: "Wedding Photography",
     subtitle: "Dokumentasi Pernikahan Elegan",
     icon: Heart,
-    imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/layanan/weddingan.jpg",
     description:
       "Layanan fotografi pernikahan eksklusif yang memadukan keindahan foto konvensional beresolusi tinggi dengan keajaiban efek AI Generatif.",
     features: [
@@ -44,7 +44,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: "Graduation",
     subtitle: "Momen Wisuda Berkesan Elegan",
     icon: GraduationCap,
-    imageUrl: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/layanan/graduation.jpg",
     description:
       "Rayakan kelulusan dan pencapaian akademik dengan pengalaman dokumentasi yang modern. Layanan graduation kami memberikan fasilitas terbaik untuk anda.",
     features: [
@@ -61,7 +61,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: "Event dan Seminar",
     subtitle: "Solusi Interaktif Branding Perusahaan",
     icon: Presentation,
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/layanan/eventseminar.jpeg",
     description:
       "Tingkatkan engagement dan excitement pada seminar bisnis, exhibition, peluncuran produk, maupun corporate gathering.",
     features: [
@@ -78,7 +78,7 @@ const SERVICES_DATA: ServiceItem[] = [
     title: "Photobooth",
     subtitle: "Foto Interaktif AI dan Konvensional",
     icon: Camera,
-    imageUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/layanan/photobooth.jpg",
     description:
       "Setup booth fisik interaktif yang dapat ditempatkan di berbagai event wedding, ulang tahun, festival musik, pameran, dan seminar.",
     features: [
@@ -95,7 +95,7 @@ const SERVICES_DATA: ServiceItem[] = [
 export default function ServicesSection() {
   return (
     <section id="layanan" className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 py-10 flex flex-col items-center scroll-mt-18">
-      {/* ================= HEADER SECTION ================= */}
+      {/* HEADER SECTION */}
       <div className="flex flex-col items-center text-center max-w-3xl mb-10 sm:mb-12">
         <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-purple-400 mb-3 drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
           Apa yang Kami Tawarkan
@@ -106,7 +106,7 @@ export default function ServicesSection() {
         </h2>
 
         <p className="text-md sm:text-md text-slate-300 font-normal leading-relaxed max-w-xl mt-3">
-          Pilih jenis layanan yang dirancang khusus untuk memenuhi segala kebutuhan dokumentasi visual acara Anda.
+          Pilihan jenis layanan yang dirancang khusus untuk memenuhi segala kebutuhan dokumentasi visual acara Anda.
         </p>
       </div>
 
@@ -141,7 +141,8 @@ export default function ServicesSection() {
                     src={service.imageUrl}
                     alt={service.title}
                     fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 brightness-90"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
+                    style={{ objectPosition: "center 5%" }} // Angka 30% membuat posisi gambar lebih ke atas (default-nya 50%)
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0e071e]/70 via-transparent to-transparent pointer-events-none" />
                 </div>
