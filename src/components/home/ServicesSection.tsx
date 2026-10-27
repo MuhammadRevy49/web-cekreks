@@ -147,7 +147,7 @@ export default function ServicesSection() {
                 </div>
 
                 {/* Deskripsi Lengkap */}
-                <p className="text-md text-slate-300 leading-relaxed font-normal mb-6 text-justify sm:text-left">
+                <p className="text-md text-slate-300 leading-relaxed font-normal mb-6 text-left">
                   {service.description}
                 </p>
               </div>
