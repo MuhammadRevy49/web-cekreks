@@ -82,6 +82,24 @@ const PRICING_PLANS: PricingPlan[] = [
 export default function PricingSection() {
   return (
     <section id="harga" className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 py-10 flex flex-col items-center scroll-mt-18">
+      {/* CSS untuk Animasi Border Bergantian */}
+      <style>{`
+        @keyframes pulseBorderPricing {
+          0%, 100% {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(11, 5, 24, 0.4);
+          }
+          25% {
+            border-color: rgba(34, 211, 238, 0.8);
+            box-shadow: 0 0 35px rgba(34, 211, 238, 0.3);
+          }
+        }
+        .pricing-anim-1 { animation: pulseBorderPricing 8s infinite 0s; }
+        .pricing-anim-2 { animation: pulseBorderPricing 8s infinite 2s; }
+        .pricing-anim-3 { animation: pulseBorderPricing 8s infinite 4s; }
+        .pricing-anim-4 { animation: pulseBorderPricing 8s infinite 6s; }
+      `}</style>
+
       {/* ================= HEADER SECTION ================= */}
       <div className="flex flex-col items-center text-center mb-10 sm:mb-12">
         <span className="text-[11px] sm:text-xs font-bold tracking-[0.25em] uppercase text-cyan-400 mb-3">
@@ -97,66 +115,69 @@ export default function PricingSection() {
 
       {/* ================= 4 CARDS PRICING GRID ================= */}
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch pt-2">
-        {PRICING_PLANS.map((plan) => (
-          <div
-            key={plan.id}
-            className="rounded-3xl p-6 sm:p-7 flex flex-col justify-between bg-[#140b2b]/90 border border-white/10 hover:border-cyan-400/50 shadow-[0_0_30px_rgba(11,5,24,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300 group"
-          >
-            <div>
-              {/* Badge Kategori Acara */}
-              <div className="mb-4">
-                <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#1e0f40] border border-cyan-400/30 text-cyan-300">
-                  {plan.category}
-                </span>
-              </div>
-
-              {/* Nama Paket */}
-              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight mb-4">
-                {plan.name}
-              </h3>
-
-              {/* Harga dengan Label "Mulai dari" */}
-              <div className="mb-6 pb-5 border-b border-white/10">
-                <span className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">
-                  Mulai dari
-                </span>
-                <div className="flex items-baseline gap-1.5 flex-wrap">
-                  <span className="text-xl sm:text-2xl font-black text-white tracking-tight text-cyan-400">
-                    {plan.price}
-                  </span>
-                  <span className="text-xs text-gray-400 font-medium">
-                    {plan.period}
+        {PRICING_PLANS.map((plan, index) => {
+          const animClass = `pricing-anim-${index + 1}`;
+          return (
+            <div
+              key={plan.id}
+              className={`rounded-3xl p-6 sm:p-7 flex flex-col justify-between bg-[#140b2b]/90 border hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_10px_40px_rgba(34,211,238,0.3)] transition-all duration-500 group ${animClass}`}
+            >
+              <div>
+                {/* Badge Kategori Acara */}
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#1e0f40] border border-cyan-400/30 text-cyan-300">
+                    {plan.category}
                   </span>
                 </div>
+
+                {/* Nama Paket */}
+                <h3 className="text-lg sm:text-xl font-black text-white tracking-tight mb-4">
+                  {plan.name}
+                </h3>
+
+                {/* Harga dengan Label "Mulai dari" */}
+                <div className="mb-6 pb-5 border-b border-white/10">
+                  <span className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">
+                    Mulai dari
+                  </span>
+                  <div className="flex items-baseline gap-1.5 flex-wrap">
+                    <span className="text-xl sm:text-2xl font-black text-white tracking-tight text-cyan-400">
+                      {plan.price}
+                    </span>
+                    <span className="text-xs text-gray-400 font-medium">
+                      {plan.period}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Daftar Fitur */}
+                <ul className="flex flex-col gap-3 mb-8">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-cyan-400 stroke-[3]" />
+                      </div>
+                      <span className="text-xs text-gray-300 font-normal leading-relaxed">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              {/* Daftar Fitur */}
-              <ul className="flex flex-col gap-3 mb-8">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5 text-cyan-400 stroke-[3]" />
-                    </div>
-                    <span className="text-xs text-gray-300 font-normal leading-relaxed">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {/* Tombol Aksi */}
+              <div className="pt-2">
+                <Link
+                  href={plan.buttonHref}
+                  className="w-full py-2.5 sm:py-3 rounded-full bg-[#1b0d38]/90 hover:bg-[#25124d] border border-purple-700/50 hover:border-cyan-400/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] group/btn"
+                >
+                  <span>{plan.buttonText}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/btn:text-cyan-300 group-hover/btn:translate-x-1 transition-all" />
+                </Link>
+              </div>
             </div>
-
-            {/* Tombol Aksi */}
-            <div className="pt-2">
-              <Link
-                href={plan.buttonHref}
-                className="w-full py-2.5 sm:py-3 rounded-full bg-[#1b0d38]/90 hover:bg-[#25124d] border border-purple-700/50 hover:border-cyan-400/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] group/btn"
-              >
-                <span>{plan.buttonText}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/btn:text-cyan-300 group-hover/btn:translate-x-1 transition-all" />
-              </Link>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

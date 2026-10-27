@@ -2,7 +2,16 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Award, Briefcase, Handshake, ChevronRight } from "lucide-react";
+import {
+  Award,
+  Briefcase,
+  Handshake,
+  Clock,
+  ShieldCheck,
+  Users,
+  Camera,
+  Sparkles
+} from "lucide-react";
 
 // Definisi tipe props untuk komponen Counter
 interface CounterProps {
@@ -90,16 +99,33 @@ export default function PortfolioSection() {
     },
   ];
 
-  // Daftar 8 poin benefit "Mengapa Harus Kami?"
+  // Data benefit dengan ikon khusus
   const benefits = [
-    "Teknologi AI Photobooth generasi terbaru dengan hasil instan dan futuristik.",
-    "Didukung oleh tim profesional berpengalaman di bidang fotografi event skala nasional.",
-    "Kustomisasi frame, template, dan overlay digital yang 100% sesuai tema acara.",
-    "Peralatan fotografi berstandar tinggi untuk menjamin kualitas visual terbaik.",
-    "Proses cetak foto super cepat tanpa membuat tamu antrean terlalu lama.",
-    "Integrasi galeri digital interaktif yang langsung bisa diunduh oleh para tamu.",
-    "Layanan konsultasi konsep acara gratis untuk hasil dokumentasi yang maksimal.",
-    "Komitmen penuh terhadap ketepatan waktu, kehandalan teknis, dan kepuasan klien."
+    {
+      title: "Lebih Berpengalaman",
+      desc: "Melayani klien lebih dari 10 tahun sejak 2015, menjadi bekal utama kami untuk memberikan hasil kerja yang optimal.",
+      icon: <Clock className="w-5 h-5 text-cyan-400" />
+    },
+    {
+      title: "Kepercayaan Mitra",
+      desc: "Lebih dari 45 Mitra yang telah berkerjasama dengan Sudio kami yang menggunakan jasa kami juga bermitra dengan vendor-vendor sampai sekarang.",
+      icon: <ShieldCheck className="w-5 h-5 text-purple-400" />
+    },
+    {
+      title: "Profesional Crew Fotografer",
+      desc: "Selain crew fotografer utama, kami dibantu dengan crew official dalam menjalankan tugas.",
+      icon: <Users className="w-5 h-5 text-cyan-400" />
+    },
+    {
+      title: "Perlengkapan Profesional",
+      desc: "Selain di dukung perlengkapan Kamera dan lampu profesional, Hasil sentuhan editing nya yang elegan, renyah gurih, menarik dan hasil cetakan yang tahan lama.",
+      icon: <Camera className="w-5 h-5 text-purple-400" />
+    },
+    {
+      title: "Tim Editor Professional",
+      desc: "Desain dikerjakan oleh tim Editor yg benar-benar berkerja dibidangnya.",
+      icon: <Sparkles className="w-5 h-5 text-cyan-400" />
+    },
   ];
 
   // Daftar logo/nama mitra untuk running text
@@ -110,15 +136,38 @@ export default function PortfolioSection() {
     { name: "4", logoUrl: "/images/mitra/4.png" },
     { name: "5", logoUrl: "/images/mitra/5.png" },
     { name: "6", logoUrl: "/images/mitra/6.png" },
+    { name: "7", logoUrl: "/images/mitra/7.png" },
+    { name: "8", logoUrl: "/images/mitra/8.png" },
+    { name: "9", logoUrl: "/images/mitra/9.png" },
+    { name: "10", logoUrl: "/images/mitra/10.png" },
+    { name: "11", logoUrl: "/images/mitra/11.png" },
+    { name: "12", logoUrl: "/images/mitra/12.png" },
     { name: "13", logoUrl: "/images/mitra/13.png" },
     { name: "14", logoUrl: "/images/mitra/14.png" },
+    { name: "15", logoUrl: "/images/mitra/15.png" },
     { name: "16", logoUrl: "/images/mitra/16.png" },
     { name: "17", logoUrl: "/images/mitra/17.png" },
+    { name: "18", logoUrl: "/images/mitra/18.png" },
+    { name: "19", logoUrl: "/images/mitra/19.png" },
+    { name: "20", logoUrl: "/images/mitra/20.png" },
+    { name: "21", logoUrl: "/images/mitra/21.png" },
+    { name: "22", logoUrl: "/images/mitra/22.png" },
     { name: "23", logoUrl: "/images/mitra/23.png" },
     { name: "24", logoUrl: "/images/mitra/24.png" },
     { name: "25", logoUrl: "/images/mitra/25.png" },
     { name: "26", logoUrl: "/images/mitra/26.png" },
     { name: "27", logoUrl: "/images/mitra/27.png" },
+    { name: "28", logoUrl: "/images/mitra/28.png" },
+    { name: "29", logoUrl: "/images/mitra/29.png" },
+    { name: "30", logoUrl: "/images/mitra/30.png" },
+    { name: "31", logoUrl: "/images/mitra/31.png" },
+    { name: "32", logoUrl: "/images/mitra/32.png" },
+    { name: "33", logoUrl: "/images/mitra/33.png" },
+    { name: "34", logoUrl: "/images/mitra/34.png" },
+    { name: "35", logoUrl: "/images/mitra/35.png" },
+    { name: "36", logoUrl: "/images/mitra/36.png" },
+    { name: "37", logoUrl: "/images/mitra/37.png" },
+    { name: "38", logoUrl: "/images/mitra/38.png" },
   ];
 
   return (
@@ -133,36 +182,45 @@ export default function PortfolioSection() {
         </h2>
         {/* Kalimat Penjelas Usaha */}
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
-          Berdiri sejak tahun 2014, Cekreks.id dibangun dengan dedikasi tinggi oleh tim profesional yang berpengalaman di industri fotografi, dokumentasi acara, hingga teknologi AI Photobooth modern untuk memberikan hasil kenangan terbaik di setiap momen spesial Anda.
+          Berdiri sejak 2015, kami hadir dengan dedikasi tinggi dalam industri fotografi, dokumentasi acara, dan teknologi AI photobooth untuk mengabadikan setiap momen spesial Anda.
         </p>
       </div>
-      {/* Mengapa Harus Kami? (Desain Simpel & Minimalis Tanpa BG) */}
-      <div className="mb-14 px-2 sm:px-4">
-        <div className="text-center mb-6">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white">
+
+      {/* ================= MENGAPA HARUS KAMI? (RATA TENGAH / CENTERED FLEX) ================= */}
+      <div className="mb-16 px-2 sm:px-4">
+        <div className="text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Mengapa Harus Kami?
           </h3>
+          <p className="text-xs sm:text-sm text-slate-400 mt-1">
+            Komitmen kami dalam memberikan kualitas terbaik untuk setiap momen berharga
+          </p>
         </div>
 
-        {/* Grid lebih padat, tanpa background card, menggunakan garis batas bawah halus */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-8">
-          {benefits.map((benefit, index) => (
+        {/* Menggunakan Flexbox wrap + justify-center agar baris terakhir (2 card) persis di tengah */}
+        <div className="flex flex-wrap justify-center gap-5">
+          {benefits.map((item, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 py-2.5 border-b border-slate-800/60 hover:border-purple-500/40 transition-colors"
+              className="p-6 rounded-2xl bg-[#140b2b]/60 border border-white/10 hover:border-cyan-400/40 transition-all duration-300 flex flex-col justify-between group w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
             >
-              <div className="shrink-0 text-purple-400">
-                <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h4 className="text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                  {item.title}
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-              <p className="text-sm text-slate-300 leading-snug">
-                {benefit}
-              </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Stats Grid (3 Kolom di Mobile, Deskripsi Panjang di-hidden khusus Mobile) */}
+      {/* Stats Grid */}
       <div className="grid grid-cols-3 gap-2 sm:gap-6 mb-16">
         {stats.map((stat, idx) => (
           <div key={idx} className="border-l-2 border-purple-500 pl-2 sm:pl-4 py-3 sm:py-4 bg-slate-900/40 rounded-r-lg">
@@ -182,35 +240,18 @@ export default function PortfolioSection() {
         ))}
       </div>
 
-      {/* Pure Team Member Grid Gallery (2 kolom di mobile, 4 kolom di layar besar) */}
+      {/* Pure Team Member Grid Gallery */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 mb-20 items-end">
         {[
-          {
-            name: "Muhammad Revy",
-            role: "Lead Photographer",
-            image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop",
-          },
-          {
-            name: "Andi Pratama",
-            role: "AI Booth Specialist",
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-          },
-          {
-            name: "Siti Rahma",
-            role: "Creative Director",
-            image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop",
-          },
-          {
-            name: "Rizky Ramadhan",
-            role: "Technical Operator",
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop",
-          },
+          { name: "Muhammad Revy", image: "/images/team/1.png" },
+          { name: "Andi Pratama", image: "/images/team/2.png" },
+          { name: "Siti Rahma", image: "/images/team/3.png" },
+          { name: "Rizky Ramadhan", image: "/images/team/4.png" },
         ].map((member, idx) => (
           <div
             key={idx}
             className="relative h-64 sm:h-80 w-full flex items-end justify-center group"
           >
-            {/* Foto PNG Transparan Murni */}
             <div className="relative w-full h-full">
               <Image
                 src={member.image}
@@ -231,9 +272,12 @@ export default function PortfolioSection() {
           </p>
         </div>
 
-        {/* Container Running Text dengan Efek Fade di Kiri & Kanan */}
+        {/* Container Running Text dengan Durasi Diperlambat */}
         <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <div className="flex animate-marquee whitespace-nowrap gap-12 items-center py-4">
+          <div
+            className="flex animate-marquee whitespace-nowrap gap-12 items-center py-4"
+            style={{ animationDuration: "45s" }}
+          >
             {/* Render dua kali agar pergerakannya mulus tanpa jeda */}
             {[...partners, ...partners].map((partner, index) => (
               <div
@@ -244,7 +288,7 @@ export default function PortfolioSection() {
                   <img
                     src={partner.logoUrl}
                     alt={partner.name}
-                    className="h-20 md:h-30 w-auto object-contain transition-transform duration-300"
+                    className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 opacity-80 hover:opacity-100"
                   />
                 ) : (
                   <span className="text-white font-semibold text-base tracking-wide">
