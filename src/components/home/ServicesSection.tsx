@@ -28,7 +28,7 @@ const SERVICES_DATA: ServiceItem[] = [
     subtitle: "Dokumentasi Pernikahan Elegan",
     icon: Heart,
     imageUrl: "/images/layanan/weddingan.jpg",
-    imagePosition: "center 20%",
+    imagePosition: "center 70%",
     description:
       "Layanan fotografi pernikahan eksklusif yang memadukan keindahan foto konvensional beresolusi tinggi dengan keajaiban efek AI Generatif.",
     features: [
@@ -138,7 +138,7 @@ export default function ServicesSection() {
 
               {/* Konten di Atas Gambar */}
               <div className="relative z-10 p-6 sm:p-8 flex flex-col justify-end h-full">
-                
+
                 {/* Header Kartu: Ikon & Judul */}
                 <div className="flex items-center gap-3.5 mb-3">
                   <div className="w-11 h-11 rounded-2xl bg-[#1e0f3d]/90 border border-purple-700/50 backdrop-blur-md flex items-center justify-center shrink-0 text-cyan-400 group-hover:scale-105 group-hover:border-cyan-400/60 transition shadow-inner">
