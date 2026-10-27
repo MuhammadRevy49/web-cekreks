@@ -84,7 +84,7 @@ export default function ContactSection() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             {/* Input Nama Lengkap */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-200 text-left">
+              <label className="text-base font-semibold text-slate-200 text-left">
                 Nama Lengkap
               </label>
               <input
@@ -95,13 +95,13 @@ export default function ContactSection() {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 required
-                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
+                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white placeholder-slate-500 text-base focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
               />
             </div>
 
             {/* Input No WhatsApp */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-200 text-left">
+              <label className="text-base font-semibold text-slate-200 text-left">
                 No. WhatsApp <span className="text-pink-500">*</span>
               </label>
               <input
@@ -112,20 +112,20 @@ export default function ContactSection() {
                   setFormData({ ...formData, whatsapp: e.target.value })
                 }
                 required
-                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
+                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white placeholder-slate-500 text-base focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
               />
             </div>
 
             {/* Custom Dropdown Kategori Layanan */}
             <div className="flex flex-col gap-2 relative" ref={dropdownRef}>
-              <label className="text-xs sm:text-sm font-semibold text-slate-200 text-left">
+              <label className="text-base font-semibold text-slate-200 text-left">
                 Pilih Kategori Layanan <span className="text-pink-500">*</span>
               </label>
               
               <button
                 type="button"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white text-xs sm:text-sm flex items-center justify-between focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition cursor-pointer"
+                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white text-base flex items-center justify-between focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition cursor-pointer"
               >
                 <span>{formData.category}</span>
                 <ChevronDown className={`w-4 h-4 text-purple-400 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -141,7 +141,7 @@ export default function ContactSection() {
                         setFormData({ ...formData, category: item.value });
                         setIsDropdownOpen(false);
                       }}
-                      className={`w-full px-4 py-2.5 text-left text-xs sm:text-sm transition flex items-center justify-between cursor-pointer ${
+                      className={`w-full px-4 py-2.5 text-left text-base transition flex items-center justify-between cursor-pointer ${
                         formData.category === item.value
                           ? 'bg-gradient-to-r from-[#6929d9]/40 to-[#0ea5e9]/20 text-cyan-300 font-medium border-l-4 border-cyan-400'
                           : 'text-slate-300 hover:bg-purple-950/50 hover:text-white'
@@ -159,7 +159,7 @@ export default function ContactSection() {
 
             {/* Textarea Pesan */}
             <div className="flex flex-col gap-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-200 text-left">
+              <label className="text-base font-semibold text-slate-200 text-left">
                 Detail / Catatan Pesanan <span className="text-pink-500">*</span>
               </label>
               <textarea
@@ -170,7 +170,7 @@ export default function ContactSection() {
                   setFormData({ ...formData, message: e.target.value })
                 }
                 required
-                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition resize-none"
+                className="w-full px-4 py-3 rounded-xl bg-[#0c051a]/90 border border-purple-800/60 text-white placeholder-slate-500 text-base focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition resize-none"
               />
             </div>
 
@@ -180,7 +180,7 @@ export default function ContactSection() {
               className="mt-2 w-full py-3.5 rounded-xl bg-gradient-to-r from-[#6929d9] via-[#4f46e5] to-[#0ea5e9] text-white font-bold text-xs sm:text-sm shadow-[0_0_20px_rgba(14,165,233,0.45)] hover:shadow-[0_0_28px_rgba(14,165,233,0.65)] hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <Send className="w-4 h-4" />
-              <span>Pesan Sekarang (Booking)</span>
+              <span>Pesan Sekarang ( Booking )</span>
             </button>
 
             {isSubmitted && (
