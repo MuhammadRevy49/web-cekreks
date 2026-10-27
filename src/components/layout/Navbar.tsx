@@ -206,7 +206,7 @@ export default function Navbar() {
                                 {/* Daftar Menu Mobile */}
                                 <div className="flex flex-col gap-5 mt-6">
                                     <Link
-                                        href="#beranda"
+                                        href="/#beranda"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >
@@ -214,7 +214,7 @@ export default function Navbar() {
                                     </Link>
 
                                     <Link
-                                        href="#portofolio"
+                                        href="/#portofolio"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >
@@ -222,7 +222,7 @@ export default function Navbar() {
                                     </Link>
 
                                     <Link
-                                        href="#layanan"
+                                        href="/#layanan"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >
@@ -230,7 +230,7 @@ export default function Navbar() {
                                     </Link>
 
                                     <Link
-                                        href="#harga"
+                                        href="/#harga"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >
@@ -238,7 +238,7 @@ export default function Navbar() {
                                     </Link>
 
                                     <Link
-                                        href="#kontak"
+                                        href="/#kontak"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className="text-base font-semibold text-slate-200 hover:text-cyan-300 transition"
                                     >
