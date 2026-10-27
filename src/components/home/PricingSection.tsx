@@ -128,7 +128,7 @@ export default function PricingSection() {
 
                 {/* Deskripsi Singkat Kategori */}
                 <div className="mb-4">
-                  <p className="text-xs sm:text-sm text-gray-300 font-normal leading-relaxed">
+                  <p className="text-base text-gray-300 font-normal leading-relaxed">
                     {plan.description}
                   </p>
                 </div>
