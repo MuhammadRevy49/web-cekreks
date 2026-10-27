@@ -38,6 +38,7 @@ function InstagramIcon({ className }: { className?: string }) {
 
 const QUICK_LINKS = [
   { name: "Beranda", href: "/#beranda" },
+  { name: "Portofolio", href: "/#portofolio" },
   { name: "Layanan Utama", href: "/#layanan" },
   { name: "Paket & Harga", href: "/#harga" },
   { name: "Kontak", href: "/#kontak" },
@@ -47,7 +48,7 @@ const SERVICE_LINKS = [
   { name: "Wedding Photography", href: "/layanan/wedding" },
   { name: "Graduation", href: "/layanan/graduation" },
   { name: "Event dan Seminar", href: "/layanan/event-seminar" },
-  { name: "Photobooth AI", href: "/layanan/photobooth" },
+  { name: "Photobooth", href: "/layanan/photobooth" },
 ];
 
 export default function Footer() {
@@ -113,7 +114,7 @@ export default function Footer() {
             {/* Tombol Sosial Media Lingkaran */}
             <div className="flex items-center gap-3 mb-5">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/cekreks.id"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -123,7 +124,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://tiktok.com"
+                href="https://tiktok.com/cekreks.id"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="TikTok"
@@ -133,7 +134,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://wa.me"
+                href="https://wa.me/6285801105140"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
