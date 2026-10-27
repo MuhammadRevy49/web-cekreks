@@ -5,8 +5,7 @@ import {
   GraduationCap,
   Presentation,
   Camera,
-  ArrowRight,
-  CheckCircle2
+  ArrowRight
 } from "lucide-react";
 
 interface ServiceItem {
@@ -110,58 +109,71 @@ export default function ServicesSection() {
         </p>
       </div>
 
-      {/* ================= 4 CARDS GRID (2x2) ================= */}
+      {/* ================= 4 CARDS GRID (FULL IMAGE WITH GRADIENT OVERLAY) ================= */}
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
         {SERVICES_DATA.map((service) => {
           const Icon = service.icon;
           return (
             <div
               key={service.id}
-              className="rounded-3xl border border-purple-800/40 bg-[#12072b]/80 backdrop-blur-md p-5 sm:p-7 flex flex-col justify-between shadow-[0_0_30px_rgba(112,26,117,0.18)] hover:border-fuchsia-500/60 hover:shadow-[0_0_35px_rgba(217,70,239,0.2)] transition-all duration-300 group"
+              className="relative rounded-3xl overflow-hidden border border-purple-800/40 bg-neutral-900 h-[480px] sm:h-[520px] flex flex-col justify-end shadow-[0_0_30px_rgba(112,26,117,0.18)] hover:border-fuchsia-500/60 hover:shadow-[0_0_35px_rgba(217,70,239,0.25)] transition-all duration-500 group"
             >
-              <div>
+              {/* Background Full Image */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={service.imageUrl}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
+                  style={{ objectPosition: "center 20%" }}
+                />
+                {/* Gradasi Overlay Gelap dari Bawah ke Atas agar Teks Terbaca Jelas */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0518] via-[#0b0518]/80 to-transparent pointer-events-none" />
+              </div>
+
+              {/* Konten di Atas Gambar */}
+              <div className="relative z-10 p-6 sm:p-8 flex flex-col justify-end h-full">
+                
                 {/* Header Kartu: Ikon & Judul */}
-                <div className="flex items-center gap-3.5 mb-5">
-                  <div className="w-11 h-11 rounded-2xl bg-[#241247] border border-purple-700/40 flex items-center justify-center shrink-0 text-cyan-400 group-hover:scale-105 group-hover:border-cyan-400/60 transition shadow-inner">
+                <div className="flex items-center gap-3.5 mb-3">
+                  <div className="w-11 h-11 rounded-2xl bg-[#1e0f3d]/90 border border-purple-700/50 backdrop-blur-md flex items-center justify-center shrink-0 text-cyan-400 group-hover:scale-105 group-hover:border-cyan-400/60 transition shadow-inner">
                     <Icon className="w-5 h-5 fill-cyan-400/10" />
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="text-base sm:text-lg font-bold text-white tracking-tight group-hover:text-cyan-300 transition">
+                    <h3 className="text-lg sm:text-xl font-extrabold text-white tracking-tight group-hover:text-cyan-300 transition drop-shadow-md">
                       {service.title}
                     </h3>
-                    <span className="text-[11px] sm:text-xs text-slate-400 line-clamp-1">
+                    <span className="text-xs sm:text-sm text-cyan-400/90 font-medium line-clamp-1">
                       {service.subtitle}
                     </span>
                   </div>
                 </div>
 
-                {/* Gambar Preview */}
-                <div className="relative w-full h-44 sm:h-52 rounded-2xl overflow-hidden mb-5 border border-purple-900/40 bg-neutral-900">
-                  <Image
-                    src={service.imageUrl}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
-                    style={{ objectPosition: "center 5%" }} // Angka 30% membuat posisi gambar lebih ke atas (default-nya 50%)
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0e071e]/70 via-transparent to-transparent pointer-events-none" />
-                </div>
-
                 {/* Deskripsi Lengkap */}
-                <p className="text-md text-slate-300 leading-relaxed font-normal mb-6 text-left">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal mb-6 text-left drop-shadow">
                   {service.description}
                 </p>
-              </div>
 
-              {/* Tombol CTA Pesan Layanan */}
-              <div className="pt-2 mx-10 sm:mx-30">
-                <Link
-                  href={service.ctaHref}
-                  className="w-full py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-rose-600/50 via-purple-600/50 to-indigo-700/50 hover:from-rose-600/90 hover:via-purple-600/90 hover:to-indigo-700/90 backdrop-blur-md shadow-[0_4px_20px_rgba(147,51,234,0.25)] border border-white/20 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] group/btn"
-                >
-                  <span>{service.ctaText}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-white group-hover/btn:text-white group-hover/btn:translate-x-1 transition-all" />
-                </Link>
+                {/* Tombol CTA Pesan Layanan dengan Efek Double-Layer Transisi Mulus */}
+                <div className="pt-2 max-w-xs mx-auto w-full">
+                  <Link
+                    href={service.ctaHref}
+                    className="relative overflow-hidden w-full py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-rose-600 via-purple-600 to-indigo-700 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-300 active:scale-[0.99] group/btn shadow-[0_4px_20px_rgba(147,51,234,0.35)] border border-white/20"
+                  >
+                    {/* Layer Background Dasar (Setengah Transparan) */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-rose-600/50 via-purple-600/50 to-indigo-700/50 transition-opacity duration-300 group-hover/btn:opacity-0" />
+                    
+                    {/* Layer Background saat Hover (Lebih Terang/Penuh) */}
+                    <span className="absolute inset-0 bg-gradient-to-r from-rose-600/90 via-purple-600/90 to-indigo-700/90 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
+
+                    {/* Konten Teks & Icon */}
+                    <span className="relative z-10 flex items-center gap-2">
+                      <span>{service.ctaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-white group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </span>
+                  </Link>
+                </div>
+
               </div>
             </div>
           );
