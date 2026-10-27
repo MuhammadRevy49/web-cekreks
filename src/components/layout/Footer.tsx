@@ -53,7 +53,7 @@ const SERVICE_LINKS = [
 export default function Footer() {
   return (
     <footer className="w-full bg-[#0c051a] border-t border-purple-900/30 pt-16 pb-12 text-slate-300 font-sans">
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-6">
+      <div className="max-w-[100rem] mx-auto px-4 sm:px-6">
         
         {/* ================= 4 KOLOM UTAMA ================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12">

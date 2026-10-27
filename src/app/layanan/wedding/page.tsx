@@ -12,7 +12,7 @@ export default function WeddingDetailPage() {
         <div className="absolute top-[40%] right-[-5%] w-[450px] h-[450px] bg-purple-600/15 rounded-full blur-[150px]" />
       </div>
 
-      <div className="relative z-10 max-w-[90rem] mx-auto px-5 sm:px-6 pt-10 pb-24">
+      <div className="relative z-10 max-w-[100rem] mx-auto px-5 sm:px-6 pt-10 pb-24">
         <WeddingHero />
         <WeddingScope />
         <WeddingGallery />

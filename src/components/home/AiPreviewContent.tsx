@@ -122,7 +122,7 @@ export default function PortfolioSection() {
   ];
 
   return (
-    <section id="portofolio" className="w-full max-w-[90rem] mx-auto px-4 sm:px-6 py-10 scroll-mt-18">
+    <section id="portofolio" className="w-full max-w-[100rem] mx-auto px-4 sm:px-6 py-10 scroll-mt-18">
       {/* Header Section */}
       <div className="flex flex-col items-center text-center border-b border-slate-800 pb-8 mb-10 sm:mb-12">
         <span className="text-xs font-semibold uppercase tracking-widest text-purple-400 mb-2">
