@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Award, Briefcase, Handshake, ChevronRight } from "lucide-react";
 
@@ -182,7 +183,7 @@ export default function PortfolioSection() {
       </div>
 
       {/* Pure Team Member Grid Gallery (2 kolom di mobile, 4 kolom di layar besar) */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-20">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 mb-20 items-end">
         {[
           {
             name: "Muhammad Revy",
@@ -207,32 +208,16 @@ export default function PortfolioSection() {
         ].map((member, idx) => (
           <div
             key={idx}
-            className="group relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 hover:border-purple-500/50 transition-all duration-500 shadow-lg"
+            className="relative h-64 sm:h-80 w-full flex items-end justify-center group"
           >
-            {/* Foto Profil */}
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
-            />
-
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-90 group-hover:opacity-80 transition-opacity" />
-
-            {/* Badge Peran / Posisi di Pojok Atas */}
-            <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2 sm:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] font-bold tracking-wider text-purple-200 bg-slate-950/75 backdrop-blur-md border border-purple-800/50 rounded-full">
-              {member.role}
-            </span>
-
-            {/* Informasi Nama Anggota Tim di Bawah */}
-            <div className="absolute bottom-0 left-0 right-0 p-3.5 sm:p-5 transform transition-transform duration-300">
-              <span className="text-[10px] sm:text-[11px] text-purple-300 font-medium flex items-center gap-1.5 mb-0.5 sm:mb-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></span>
-                Cekreks.id
-              </span>
-              <h3 className="text-sm sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-200 transition-colors">
-                {member.name}
-              </h3>
+            {/* Foto PNG Transparan Murni */}
+            <div className="relative w-full h-full">
+              <Image
+                src={member.image}
+                alt={member.name}
+                fill
+                className="object-contain object-bottom group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
         ))}
