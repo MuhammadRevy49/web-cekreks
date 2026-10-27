@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { 
-  Award, 
-  Briefcase, 
-  Handshake, 
-  Clock, 
-  ShieldCheck, 
-  Users, 
-  Camera, 
-  Sparkles 
+import {
+  Award,
+  Briefcase,
+  Handshake,
+  Clock,
+  ShieldCheck,
+  Users,
+  Camera,
+  Sparkles
 } from "lucide-react";
 
 // Definisi tipe props untuk komponen Counter
@@ -181,7 +181,7 @@ export default function PortfolioSection() {
           Portofolio Kami
         </h2>
         {/* Kalimat Penjelas Usaha */}
-        <p className="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+        <p className="text-base sm:text-base text-slate-300 max-w-2xl leading-relaxed">
           Berdiri sejak 2015, kami hadir dengan dedikasi tinggi dalam industri fotografi, dokumentasi acara, dan teknologi AI photobooth untuk mengabadikan setiap momen spesial Anda.
         </p>
       </div>
@@ -192,7 +192,7 @@ export default function PortfolioSection() {
           <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Mengapa Harus Kami?
           </h3>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
+          <p className="text-base text-slate-400 mt-1">
             Komitmen kami dalam memberikan kualitas terbaik untuk setiap momen berharga
           </p>
         </div>
@@ -202,7 +202,7 @@ export default function PortfolioSection() {
           {benefits.map((item, index) => (
             <div
               key={index}
-              className="p-6 rounded-2xl bg-[#140b2b]/60 border border-white/10 hover:border-cyan-400/40 transition-all duration-300 flex flex-col justify-between group w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
+              className="p-6 rounded-2xl bg-[#140b2b]/90 border border-white/10 hover:border-cyan-400/40 transition-all duration-300 flex flex-col justify-between group w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
             >
               <div>
                 <div className="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -211,7 +211,7 @@ export default function PortfolioSection() {
                 <h4 className="text-base font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
                   {item.title}
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-base sm:text-sm text-slate-300 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -221,10 +221,10 @@ export default function PortfolioSection() {
       </div>
 
       {/* ================= STATS GRID (RESPONSIF: CARD DI MOBILE, BORDER-L DI DESKTOP) ================= */}
-      <div className="grid grid-cols-3 gap-2.5 sm:gap-6 mb-12">
+      <div className="grid grid-cols-3 gap-2.5 sm:gap-6 mb-16">
         {stats.map((stat, idx) => (
-          <div 
-            key={idx} 
+          <div
+            key={idx}
             className="p-3 sm:pl-4 sm:py-4 bg-[#140b2b]/50 sm:bg-slate-900/40 border sm:border-0 border-white/10 rounded-xl sm:rounded-r-lg sm:border-l-2 sm:border-purple-500 flex flex-col items-center sm:items-start text-center sm:text-left"
           >
             <div className="flex justify-center sm:justify-start">
@@ -244,6 +244,14 @@ export default function PortfolioSection() {
       </div>
 
       {/* Pure Team Member Grid Gallery */}
+      <div className="text-center">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          Tim Kami
+        </h3>
+        <p className="text-base text-slate-400 mt-1">
+          Kami bekerja dengan profesional kami untuk anda.
+        </p>
+      </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 mb-20 items-end">
         {[
           { name: "Muhammad Revy", image: "/images/team/1.png" },
@@ -277,8 +285,8 @@ export default function PortfolioSection() {
 
         {/* Container Running Text dengan Durasi Diperlambat */}
         <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <div 
-            className="flex animate-marquee whitespace-nowrap gap-12 items-center py-4"
+          <div
+            className="flex animate-marquee whitespace-nowrap gap-2 md:gap-12 items-center py-4"
             style={{ animationDuration: "45s" }}
           >
             {/* Render dua kali agar pergerakannya mulus tanpa jeda */}
