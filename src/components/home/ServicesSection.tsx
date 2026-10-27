@@ -15,6 +15,7 @@ interface ServiceItem {
   icon: typeof Heart;
   description: string;
   imageUrl: string;
+  imagePosition: string; // Properti untuk mengatur titik fokus gambar (misal: "center 20%")
   features: string[];
   ctaText: string;
   ctaHref: string;
@@ -27,6 +28,7 @@ const SERVICES_DATA: ServiceItem[] = [
     subtitle: "Dokumentasi Pernikahan Elegan",
     icon: Heart,
     imageUrl: "/images/layanan/weddingan.jpg",
+    imagePosition: "center 20%",
     description:
       "Layanan fotografi pernikahan eksklusif yang memadukan keindahan foto konvensional beresolusi tinggi dengan keajaiban efek AI Generatif.",
     features: [
@@ -44,6 +46,7 @@ const SERVICES_DATA: ServiceItem[] = [
     subtitle: "Momen Wisuda Berkesan Elegan",
     icon: GraduationCap,
     imageUrl: "/images/layanan/graduation.jpg",
+    imagePosition: "center 20%",
     description:
       "Rayakan kelulusan dan pencapaian akademik dengan pengalaman dokumentasi yang modern. Layanan graduation kami memberikan fasilitas terbaik untuk anda.",
     features: [
@@ -61,6 +64,7 @@ const SERVICES_DATA: ServiceItem[] = [
     subtitle: "Solusi Interaktif Branding Perusahaan",
     icon: Presentation,
     imageUrl: "/images/layanan/eventseminar.jpeg",
+    imagePosition: "center 50%",
     description:
       "Tingkatkan engagement dan excitement pada seminar bisnis, exhibition, peluncuran produk, maupun corporate gathering.",
     features: [
@@ -78,6 +82,7 @@ const SERVICES_DATA: ServiceItem[] = [
     subtitle: "Foto Interaktif AI dan Konvensional",
     icon: Camera,
     imageUrl: "/images/layanan/photobooth.jpg",
+    imagePosition: "center 20%",
     description:
       "Setup booth fisik interaktif yang dapat ditempatkan di berbagai event wedding, ulang tahun, festival musik, pameran, dan seminar.",
     features: [
@@ -125,7 +130,7 @@ export default function ServicesSection() {
                   alt={service.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700 brightness-90"
-                  style={{ objectPosition: "center 20%" }}
+                  style={{ objectPosition: service.imagePosition }}
                 />
                 {/* Gradasi Overlay Gelap dari Bawah ke Atas agar Teks Terbaca Jelas */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b0518] via-[#0b0518]/80 to-transparent pointer-events-none" />
@@ -154,13 +159,12 @@ export default function ServicesSection() {
                   {service.description}
                 </p>
 
-                {/* Tombol CTA Pesan Layanan dengan Efek Double-Layer Transisi Mulus */}
+                {/* Tombol CTA Pesan Layanan */}
                 <div className="pt-2 max-w-xs mx-auto w-full">
                   <Link
                     href={service.ctaHref}
                     className="relative overflow-hidden w-full py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-rose-600/50 via-purple-600/50 to-indigo-700/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-300 active:scale-[0.99] group/btn shadow-[0_4px_20px_rgba(147,51,234,0.35)] border border-white/20"
                   >
-                    {/* Konten Teks & Icon */}
                     <span className="relative z-10 flex items-center gap-2">
                       <span>{service.ctaText}</span>
                       <ArrowRight className="w-3.5 h-3.5 text-white group-hover/btn:translate-x-1 transition-transform duration-300" />

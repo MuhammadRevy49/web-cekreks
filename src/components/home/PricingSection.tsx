@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface PricingPlan {
   id: string;
@@ -7,7 +7,7 @@ interface PricingPlan {
   category: string;
   price: string;
   period: string;
-  features: string[];
+  description: string;
   buttonText: string;
   buttonHref: string;
 }
@@ -19,9 +19,7 @@ const PRICING_PLANS: PricingPlan[] = [
     category: "WEDDING",
     price: "Rp 500.000",
     period: "/ paket",
-    features: [
-      "Pilih paket ini bagus banget loh sshadasdsjdhd jhdgjshdg ds"
-    ],
+    description: "Abadikan momen sakral pernikahan Anda dengan liputan akad dan resepsi cinematic terbaik. Klik untuk melihat rincian paket selengkapnya!",
     buttonText: "Lihat Selengkapnya",
     buttonHref: "/layanan/wedding",
   },
@@ -29,15 +27,9 @@ const PRICING_PLANS: PricingPlan[] = [
     id: "graduation",
     name: "Graduation Package",
     category: "GRADUATION",
-    price: "Rp 300.000",
+    price: "Rp 500.000",
     period: "/ sesi",
-    features: [
-      "Foto Personal & Bersama Keluarga",
-      "Outdoor / Studio Setup",
-      "All Softcopy File Google Drive",
-      "20+ Edited Color Grading",
-      "Cetak Frame Eksklusif",
-    ],
+    description: "Rayakan kelulusan penuh kebahagiaan bersama keluarga tercinta dengan hasil foto studio atau outdoor yang elegan dan berkesan.",
     buttonText: "Lihat Selengkapnya",
     buttonHref: "/layanan/graduation",
   },
@@ -47,13 +39,7 @@ const PRICING_PLANS: PricingPlan[] = [
     category: "EVENT & SEMINAR",
     price: "Rp 1.500.000",
     period: "/ acara",
-    features: [
-      "Dokumentasi Full Coverage",
-      "Multi-Camera Setup (Photo & Video)",
-      "Highlight Reels Video 1 Menit",
-      "Same-Day Quick Preview Files",
-      "Master File Resolusi Tinggi",
-    ],
+    description: "Solusi dokumentasi profesional full coverage untuk seminar, pameran, atau corporate gathering Anda agar tampil lebih interaktif.",
     buttonText: "Lihat Selengkapnya",
     buttonHref: "/layanan/event",
   },
@@ -63,13 +49,7 @@ const PRICING_PLANS: PricingPlan[] = [
     category: "PHOTOBOOTH",
     price: "Rp 1.250.000",
     period: "/ 2 jam",
-    features: [
-      "Unlimited Instant Print",
-      "Custom Frame Template",
-      "Properti & Fun Backdrop",
-      "Live QR Code Softcopy Download",
-      "Crew & Operator Standby",
-    ],
+    description: "Hadirkan keseruan cetak foto instan tanpa batas dan template kustom interaktif yang membuat tamu acara Anda semakin terkesan.",
     buttonText: "Lihat Selengkapnya",
     buttonHref: "/layanan/photobooth",
   },
@@ -116,24 +96,24 @@ export default function PricingSection() {
           return (
             <div
               key={plan.id}
-              className={`rounded-3xl p-6 sm:p-7 flex flex-col justify-between bg-[#140b2b]/90 border hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_10px_40px_rgba(34,211,238,0.3)] transition-all duration-500 group ${animClass}`}
+              className={`rounded-3xl p-5 sm:p-6 flex flex-col justify-between bg-[#140b2b]/90 border hover:-translate-y-2 hover:border-cyan-400 hover:shadow-[0_10px_40px_rgba(34,211,238,0.3)] transition-all duration-500 group ${animClass}`}
             >
               <div>
                 {/* Badge Kategori Acara */}
-                <div className="mb-4">
+                <div className="mb-3">
                   <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#1e0f40] border border-cyan-400/30 text-cyan-300">
                     {plan.category}
                   </span>
                 </div>
 
                 {/* Nama Paket */}
-                <h3 className="text-lg sm:text-xl font-black text-white tracking-tight mb-4">
+                <h3 className="text-lg sm:text-xl font-black text-white tracking-tight mb-3">
                   {plan.name}
                 </h3>
 
                 {/* Harga dengan Label "Mulai dari" */}
-                <div className="mb-6 pb-5 border-b border-white/10">
-                  <span className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">
+                <div className="mb-4 pb-4 border-b border-white/10">
+                  <span className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-0.5">
                     Mulai dari
                   </span>
                   <div className="flex items-baseline gap-1.5 flex-wrap">
@@ -146,23 +126,19 @@ export default function PricingSection() {
                   </div>
                 </div>
 
-                {/* Daftar Fitur */}
-                <ul className="flex flex-col gap-3 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <span className="text-xs text-gray-300 font-normal leading-relaxed">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Deskripsi Singkat Kategori */}
+                <div className="mb-4">
+                  <p className="text-xs sm:text-sm text-gray-300 font-normal leading-relaxed">
+                    {plan.description}
+                  </p>
+                </div>
               </div>
 
               {/* Tombol Aksi */}
               <div className="pt-2">
                 <Link
                   href={plan.buttonHref}
-                  className="w-full py-2.5 sm:py-3 rounded-full bg-[#1b0d38]/90 hover:bg-[#25124d] border border-purple-700/50 hover:border-cyan-400/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] group/btn"
+                  className="w-full py-2.5 rounded-full bg-[#1b0d38]/90 hover:bg-[#25124d] border border-purple-700/50 hover:border-cyan-400/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.99] group/btn"
                 >
                   <span>{plan.buttonText}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/btn:text-cyan-300 group-hover/btn:translate-x-1 transition-all" />
