@@ -17,14 +17,10 @@ const PRICING_PLANS: PricingPlan[] = [
     id: "wedding",
     name: "Wedding Package",
     category: "WEDDING",
-    price: "Rp 3.500.000",
+    price: "Rp 500.000",
     period: "/ paket",
     features: [
-      "Dokumentasi Akad & Resepsi",
-      "Foto & Video Cinematic",
-      "Unlimited Master Files",
-      "Exclusive Leather Album",
-      "Web Gallery & Cloud Drive",
+      "Pilih paket ini bagus banget loh sshadasdsjdhd jhdgjshdg ds"
     ],
     buttonText: "Lihat Selengkapnya",
     buttonHref: "/layanan/wedding",
@@ -33,7 +29,7 @@ const PRICING_PLANS: PricingPlan[] = [
     id: "graduation",
     name: "Graduation Package",
     category: "GRADUATION",
-    price: "Rp 500.000",
+    price: "Rp 300.000",
     period: "/ sesi",
     features: [
       "Foto Personal & Bersama Keluarga",
@@ -154,9 +150,6 @@ export default function PricingSection() {
                 <ul className="flex flex-col gap-3 mb-8">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2.5">
-                      <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3.5 h-3.5 text-cyan-400 stroke-[3]" />
-                      </div>
                       <span className="text-xs text-gray-300 font-normal leading-relaxed">
                         {feature}
                       </span>

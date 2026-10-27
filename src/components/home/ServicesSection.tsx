@@ -158,14 +158,8 @@ export default function ServicesSection() {
                 <div className="pt-2 max-w-xs mx-auto w-full">
                   <Link
                     href={service.ctaHref}
-                    className="relative overflow-hidden w-full py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-rose-600 via-purple-600 to-indigo-700 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-300 active:scale-[0.99] group/btn shadow-[0_4px_20px_rgba(147,51,234,0.35)] border border-white/20"
+                    className="relative overflow-hidden w-full py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-rose-600/50 via-purple-600/50 to-indigo-700/50 text-xs sm:text-sm font-semibold text-white flex items-center justify-center gap-2 transition-all duration-300 active:scale-[0.99] group/btn shadow-[0_4px_20px_rgba(147,51,234,0.35)] border border-white/20"
                   >
-                    {/* Layer Background Dasar (Setengah Transparan) */}
-                    <span className="absolute inset-0 bg-gradient-to-r from-rose-600/50 via-purple-600/50 to-indigo-700/50 transition-opacity duration-300 group-hover/btn:opacity-0" />
-                    
-                    {/* Layer Background saat Hover (Lebih Terang/Penuh) */}
-                    <span className="absolute inset-0 bg-gradient-to-r from-rose-600/90 via-purple-600/90 to-indigo-700/90 opacity-0 transition-opacity duration-300 group-hover/btn:opacity-100" />
-
                     {/* Konten Teks & Icon */}
                     <span className="relative z-10 flex items-center gap-2">
                       <span>{service.ctaText}</span>
