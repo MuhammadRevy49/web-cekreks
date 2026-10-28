@@ -27,8 +27,8 @@ const SERVICES_DATA: ServiceItem[] = [
     title: "Wedding Photography",
     subtitle: "Dokumentasi Pernikahan Elegan",
     icon: Heart,
-    imageUrl: "/images/layanan/weddingan.jpg",
-    imagePosition: "center 70%",
+    imageUrl: "/images/layanan/weddingan.jpeg",
+    imagePosition: "center 20%",
     description:
       "Layanan fotografi pernikahan eksklusif yang memadukan keindahan foto konvensional beresolusi tinggi dengan keajaiban efek AI Generatif.",
     features: [
@@ -46,7 +46,7 @@ const SERVICES_DATA: ServiceItem[] = [
     subtitle: "Momen Wisuda Berkesan Elegan",
     icon: GraduationCap,
     imageUrl: "/images/layanan/graduation.jpg",
-    imagePosition: "center 20%",
+    imagePosition: "center 70%",
     description:
       "Rayakan kelulusan dan pencapaian akademik dengan pengalaman dokumentasi yang modern. Layanan graduation kami memberikan fasilitas terbaik untuk anda.",
     features: [
