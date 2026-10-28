@@ -35,23 +35,40 @@ export default function FloatingAIAgent() {
 
     const handleSendMessage = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!inputMessage.trim()) return;
+        if (!inputMessage.trim() || isTyping) return;
 
         const userText = inputMessage;
         setMessages((prev) => [...prev, { sender: 'user', text: userText }]);
         setInputMessage('');
         setIsTyping(true);
 
-        setTimeout(() => {
-            setIsTyping(false);
-            setMessages((prev) => [
-                ...prev,
-                {
-                    sender: 'ai',
-                    text: 'Maaf, pengetahuan saya terbatas untuk pertanyaan tersebut. Namun, Customer Service manusia kami siap memberikan informasi detail dan membantu kebutuhan khusus acara Anda!',
-                },
-            ]);
-        }, 1500);
+        // Panggil API backend Next.js yang terhubung ke Gemini
+        fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: userText }),
+        })
+            .then(async (res) => {
+                const data = await res.json();
+                setIsTyping(false);
+                if (res.ok) {
+                    setMessages((prev) => [...prev, { sender: 'ai', text: data.reply }]);
+                } else {
+                    setMessages((prev) => [
+                        ...prev,
+                        { sender: 'ai', text: 'Maaf, terjadi gangguan koneksi ke AI Agent. Silakan coba beberapa saat lagi.' },
+                    ]);
+                }
+            })
+            .catch(() => {
+                setIsTyping(false);
+                setMessages((prev) => [
+                    ...prev,
+                    { sender: 'ai', text: 'Koneksi bermasalah. Anda bisa langsung menghubungi CS WhatsApp kami di bawah.' },
+                ]);
+            });
     };
 
     return (
@@ -68,20 +85,20 @@ export default function FloatingAIAgent() {
                 {/* Tooltip Pesan: Hanya muncul saat di-hover dan chat tertutup */}
                 {!isOpen && isHovered && (
                     <div className="relative mb-3 flex items-center rounded-xl bg-[#121124] px-4 py-2.5 text-sm text-white shadow-xl border border-purple-500/30 animate-fade-in">
-                        <span>Ada pertanyaan? Tanya AI kami!</span>
+                        <span>Ada pertanyaan?</span>
                         <div className="absolute -bottom-1.5 right-6 h-3 w-3 rotate-45 bg-[#121124] border-r border-b border-purple-500/30"></div>
                     </div>
                 )}
 
                 {/* Jendela Chat Box */}
                 {isOpen && (
-                    <div className="mb-4 flex h-[500px] w-[360px] flex-col rounded-2xl bg-[#131126] border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-300">
+                    <div className="mb-4 flex h-[500px] w-[360px] flex-col rounded-2xl bg-[#4A2D61] border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-300">
                         {/* Header Chat */}
-                        <div className="flex items-center justify-between bg-[#1a1738] px-4 py-3.5 border-b border-purple-500/20">
+                        <div className="flex items-center justify-between bg-[#3A224C] px-4 py-3.5 border-b border-purple-500/20">
                             <div className="flex items-center space-x-3">
                                 <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-[#FF512F] to-[#DD2476] text-white shadow-md overflow-hidden">
                                     <Image
-                                        src="/images/cs/csagent.png"
+                                        src="/images/cs/cs-agent.png"
                                         alt="CS Agent"
                                         fill
                                         className="object-cover"
@@ -171,7 +188,7 @@ export default function FloatingAIAgent() {
                         </div>
 
                         {/* Input Chat Footer */}
-                        <form onSubmit={handleSendMessage} className="p-3 bg-[#1a1738] border-t border-purple-500/20 flex items-center space-x-2">
+                        <form onSubmit={handleSendMessage} className="p-3 bg-[#3A224C] border-t border-purple-500/20 flex items-center space-x-2">
                             <input
                                 type="text"
                                 value={inputMessage}
@@ -210,10 +227,10 @@ export default function FloatingAIAgent() {
                             {/* Pembungkus gambar diperbesar (h-12 w-12 / 48px) tapi tetap rapi di dalam tombol */}
                             <div className="relative h-8 w-8 -my-2 -ml-2 flex-shrink-0 overflow-hidden rounded-full border-2 border-white/40 shadow-md">
                                 <Image
-                                    src="/images/cs/csagent.png"
+                                    src="/images/cs/cs-agent.png"
                                     alt="CS Avatar"
                                     fill
-                                    className="object-cover scale-130 object-top"
+                                    className="object-cover scale-120 object-top"
                                 />
                             </div>
                             <span className="tracking-wide">Tanya CS Agent</span>
