@@ -7,6 +7,7 @@ import { X, Send, PhoneCall } from 'lucide-react';
 interface Message {
     sender: 'ai' | 'user';
     text: string;
+    showWhatsApp?: boolean; // Penanda untuk menampilkan tombol WA di pesan tertentu
 }
 
 export default function FloatingAIAgent() {
@@ -18,6 +19,7 @@ export default function FloatingAIAgent() {
         {
             sender: 'ai',
             text: 'Halo! 👋 Saya Cekreks CS Agent. Ada yang bisa saya bantu seputar layanan fotografi, photobooth AI, atau paket harga kami?',
+            showWhatsApp: false,
         },
     ]);
 
@@ -42,7 +44,6 @@ export default function FloatingAIAgent() {
         setInputMessage('');
         setIsTyping(true);
 
-        // Panggil API backend Next.js yang terhubung ke Gemini
         fetch('/api/chat', {
             method: 'POST',
             headers: {
@@ -54,11 +55,19 @@ export default function FloatingAIAgent() {
                 const data = await res.json();
                 setIsTyping(false);
                 if (res.ok) {
-                    setMessages((prev) => [...prev, { sender: 'ai', text: data.reply }]);
+                    // Cek apakah balasan AI mengandung tag [SHOW_WHATSAPP]
+                    const rawReply = data.reply || '';
+                    const hasWhatsAppTrigger = rawReply.includes('[SHOW_WHATSAPP]');
+                    const cleanText = rawReply.replace('[SHOW_WHATSAPP]', '').trim();
+
+                    setMessages((prev) => [
+                        ...prev, 
+                        { sender: 'ai', text: cleanText, showWhatsApp: hasWhatsAppTrigger }
+                    ]);
                 } else {
                     setMessages((prev) => [
                         ...prev,
-                        { sender: 'ai', text: 'Maaf, terjadi gangguan koneksi ke AI Agent. Silakan coba beberapa saat lagi.' },
+                        { sender: 'ai', text: 'Maaf, terjadi gangguan koneksi ke AI Agent. Silakan coba beberapa saat lagi.', showWhatsApp: true },
                     ]);
                 }
             })
@@ -66,14 +75,13 @@ export default function FloatingAIAgent() {
                 setIsTyping(false);
                 setMessages((prev) => [
                     ...prev,
-                    { sender: 'ai', text: 'Koneksi bermasalah. Anda bisa langsung menghubungi CS WhatsApp kami di bawah.' },
+                    { sender: 'ai', text: 'Koneksi bermasalah. Anda bisa langsung menghubungi CS WhatsApp kami.', showWhatsApp: true },
                 ]);
             });
     };
 
     return (
         <>
-            {/* Backdrop untuk klik di luar modal */}
             {isOpen && (
                 <div
                     onClick={() => setIsOpen(false)}
@@ -82,7 +90,6 @@ export default function FloatingAIAgent() {
             )}
 
             <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-                {/* Tooltip Pesan: Hanya muncul saat di-hover dan chat tertutup */}
                 {!isOpen && isHovered && (
                     <div className="relative mb-3 flex items-center rounded-xl bg-[#121124] px-4 py-2.5 text-sm text-white shadow-xl border border-purple-500/30 animate-fade-in">
                         <span>Ada pertanyaan?</span>
@@ -90,7 +97,6 @@ export default function FloatingAIAgent() {
                     </div>
                 )}
 
-                {/* Jendela Chat Box */}
                 {isOpen && (
                     <div className="mb-4 flex h-[500px] w-[360px] flex-col rounded-2xl bg-[#4A2D61] border border-purple-500/30 shadow-2xl overflow-hidden transition-all duration-300">
                         {/* Header Chat */}
@@ -101,6 +107,7 @@ export default function FloatingAIAgent() {
                                         src="/images/cs/cs-agent.png"
                                         alt="CS Agent"
                                         fill
+                                        sizes="40px"
                                         className="object-cover"
                                     />
                                     <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-[#1a1738] z-10"></span>
@@ -123,7 +130,7 @@ export default function FloatingAIAgent() {
                             </button>
                         </div>
 
-                        {/* Area Pesan dengan Custom Scrollbar */}
+                        {/* Area Pesan */}
                         <div
                             className="flex-1 overflow-y-auto p-4 space-y-3.5 text-sm"
                             style={{
@@ -132,35 +139,49 @@ export default function FloatingAIAgent() {
                             }}
                         >
                             <style jsx>{`
-                div::-webkit-scrollbar {
-                  width: 6px;
-                }
-                div::-webkit-scrollbar-track {
-                  background: #131126;
-                }
-                div::-webkit-scrollbar-thumb {
-                  background-color: #a855f7;
-                  border-radius: 20px;
-                }
-              `}</style>
+                                div::-webkit-scrollbar {
+                                  width: 6px;
+                                }
+                                div::-webkit-scrollbar-track {
+                                  background: #131126;
+                                }
+                                div::-webkit-scrollbar-thumb {
+                                  background-color: #a855f7;
+                                  border-radius: 20px;
+                                }
+                            `}</style>
 
                             {messages.map((msg, index) => (
-                                <div
-                                    key={index}
-                                    className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-                                >
-                                    <div
-                                        className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-sm ${msg.sender === 'user'
-                                            ? 'bg-gradient-to-r from-[#FF512F] to-[#DD2476] text-white rounded-br-sm'
-                                            : 'bg-[#211d42] text-gray-200 rounded-bl-sm border border-purple-500/20'
+                                <div key={index} className="space-y-2">
+                                    <div className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div
+                                            className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-sm ${
+                                                msg.sender === 'user'
+                                                    ? 'bg-gradient-to-r from-[#FF512F] to-[#DD2476] text-white rounded-br-sm'
+                                                    : 'bg-[#211d42] text-gray-200 rounded-bl-sm border border-purple-500/20'
                                             }`}
-                                    >
-                                        <p className="leading-relaxed">{msg.text}</p>
+                                        >
+                                            <p className="leading-relaxed">{msg.text}</p>
+                                        </div>
                                     </div>
+
+                                    {/* Tombol WhatsApp HANYA MUNCUL jika AI menandai butuh CS manusia */}
+                                    {msg.sender === 'ai' && msg.showWhatsApp && (
+                                        <div className="pt-1 pb-2">
+                                            <a
+                                                href="https://wa.me/6281234567890"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex items-center justify-center space-x-2 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 py-2.5 px-4 text-white font-medium shadow-lg transition-all text-xs"
+                                            >
+                                                <PhoneCall size={15} />
+                                                <span>Hubungi CS WhatsApp</span>
+                                            </a>
+                                        </div>
+                                    )}
                                 </div>
                             ))}
 
-                            {/* Indikator Loading Titik Tiga (Typing Animation) */}
                             {isTyping && (
                                 <div className="flex justify-start">
                                     <div className="bg-[#211d42] text-gray-200 rounded-2xl rounded-bl-sm px-4 py-3 border border-purple-500/20 shadow-sm flex items-center space-x-1.5">
@@ -170,19 +191,6 @@ export default function FloatingAIAgent() {
                                     </div>
                                 </div>
                             )}
-
-                            {/* Tombol Pintasan WhatsApp */}
-                            <div className="pt-2">
-                                <a
-                                    href="https://wa.me/6281234567890"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center space-x-2 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 py-2.5 px-4 text-white font-medium shadow-lg transition-all"
-                                >
-                                    <PhoneCall size={16} />
-                                    <span>Hubungi CS Manusia (WhatsApp)</span>
-                                </a>
-                            </div>
 
                             <div ref={messagesEndRef} />
                         </div>
@@ -206,7 +214,7 @@ export default function FloatingAIAgent() {
                     </div>
                 )}
 
-                {/* Tombol Utama Floating dengan Gambar Avatar CS yang Lebih Besar */}
+                {/* Tombol Utama Floating */}
                 <button
                     onClick={() => {
                         setIsOpen(!isOpen);
@@ -224,12 +232,12 @@ export default function FloatingAIAgent() {
                         </>
                     ) : (
                         <>
-                            {/* Pembungkus gambar diperbesar (h-12 w-12 / 48px) tapi tetap rapi di dalam tombol */}
                             <div className="relative h-8 w-8 -my-2 -ml-2 flex-shrink-0 overflow-hidden rounded-full border-2 border-white/40 shadow-md">
                                 <Image
                                     src="/images/cs/cs-agent.png"
                                     alt="CS Avatar"
                                     fill
+                                    sizes="48px"
                                     className="object-cover scale-120 object-top"
                                 />
                             </div>
