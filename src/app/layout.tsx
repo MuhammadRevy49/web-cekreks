@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import FloatingAIAgent from "@/components/modal/FloatingAIAgent";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,7 +30,7 @@ export default function RootLayout({
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#070312] text-white">
+      <body className="min-h-full flex flex-col bg-[#070312] text-white relative">
         {/* Navbar akan selalu tampil di semua halaman */}
         <Navbar />
 
@@ -38,6 +39,9 @@ export default function RootLayout({
 
         {/* Footer akan otomatis ikut di paling bawah semua halaman */}
         <Footer />
+
+        {/* 2. Floating AI Agent yang melayang di kanan bawah secara global */}
+        <FloatingAIAgent />
       </body>
     </html>
   );
