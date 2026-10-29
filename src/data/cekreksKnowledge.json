@@ -1,0 +1,134 @@
+{
+  "company": {
+    "name": "Cekreks.id",
+    "brand": "Cekrek'S Studio",
+    "founded": 2010,
+    "tagline": "Abadikan Momen Berharga Anda Bersama Cekreks.id",
+    "description": "Penyedia Layanan Fotografi, Videografi, dan AI Photobooth Interaktif Profesional di Kota Cimahi & Bandung Raya.",
+    "location": "Jl. Kebon Manggu No. 43, Komplek Pemda, RT 05 / RW 21, Kelurahan Padasuka, Kecamatan Cimahi Tengah, Kota Cimahi, Jawa Barat 40526, Indonesia",
+    "operationalHours": "Senin – Minggu: 08.00 – 20.00 WIB (Disarankan reservasi H-1 via WhatsApp)",
+    "phone": "+62 858-0110-5140",
+    "whatsappLink": "https://wa.me/6285801105140",
+    "email": "cekreksid@gmail.com",
+    "website": "www.cekreks.id"
+  },
+  "features": [
+    {
+      "title": "Visual High-Quality",
+      "description": "Didukung peralatan kamera & pencahayaan profesional serta tim kreatif berpengalaman."
+    },
+    {
+      "title": "Teknologi AI Terbaru",
+      "description": "Hadir dengan inovasi AI Photobooth interaktif untuk memeriahkan berbagai jenis event Anda."
+    },
+    {
+      "title": "Harga Transparan & Terjangkau",
+      "description": "Pilihan paket fleksibel yang dapat disesuaikan untuk kebutuhan personal, acara keluarga, hingga korporat."
+    },
+    {
+      "title": "Lokasi Studio Nyaman",
+      "description": "Studio foto representative, bersih, dan berlokasi strategis di pusat Kota Cimahi."
+    }
+  ],
+  "services": {
+    "studioPackages": [
+      {
+        "name": "Paket Personal / Portrait",
+        "price": "Rp 300.000",
+        "details": [
+          "30 Menit Sesi Foto Studio",
+          "1 Kostum / Outfit",
+          "Unlimited Photoshoot",
+          "3 Master Edit High-Resolution",
+          "1 Cetak Foto 12R + Bingkai Eksklusif",
+          "All Softcopy (Via Google Drive / QR Code)"
+        ]
+      },
+      {
+        "name": "Paket Graduation / Wisuda",
+        "price": "Rp 450.000",
+        "details": [
+          "45 Menit Sesi Foto Studio (Maks. 5 Orang)",
+          "1 Kostum / Outfit",
+          "Unlimited Photoshoot",
+          "5 Master Edit High-Resolution",
+          "1 Cetak Foto 16R + Bingkai Eksklusif",
+          "All Softcopy File"
+        ]
+      },
+      {
+        "name": "Paket Family / Group",
+        "price": "Rp 650.000",
+        "details": [
+          "60 Menit Sesi Foto Studio (Maks. 10 Orang)",
+          "1 Kostum / Outfit",
+          "Unlimited Photoshoot",
+          "10 Master Edit High-Resolution",
+          "1 Cetak Foto 20R + Bingkai Minimalis",
+          "All Softcopy File"
+        ]
+      }
+    ],
+    "aiPhotoboothPackages": [
+      {
+        "name": "Paket Photobooth Silver (2 Jam)",
+        "price": "Rp 1.250.000",
+        "details": [
+          "Durasi Layanan 2 Jam Print High-Speed",
+          "Touchscreen Display & Kamera Profesional",
+          "Template Layout Custom (Logo/Nama Event)",
+          "Tersedia 50 Voucher Photobooth",
+          "Properti Foto Unik & Menarik",
+          "1 Crew / Operator Photobooth"
+        ]
+      },
+      {
+        "name": "Paket Photobooth Gold (3 Jam)",
+        "price": "Rp 2.000.000",
+        "details": [
+          "Durasi Layanan 3 Jam Print High-Speed",
+          "Tersedia 100 Voucher Photobooth",
+          "Integrasi Fitur AI (AI Style / Digital Filter)",
+          "Custom Backdrop / Frame Roll-up",
+          "Live QR Code Download Instan",
+          "2 Crew Operator & Technician"
+        ]
+      },
+      {
+        "name": "Paket Photobooth Gold (4 Jam)",
+        "price": "Rp 3.200.000",
+        "details": [
+          "Layanan 4 Jam Print High-Speed",
+          "Tersedia 200 Voucher Photobooth",
+          "Integrasi Fitur AI (AI Style / Digital Filter)",
+          "Custom Backdrop / Frame Roll-up",
+          "Live QR Code Download Instan",
+          "2 Crew Operator & Technician",
+          "Harga belum termasuk sewa"
+        ]
+      }
+    ],
+    "eventAndWeddingPackages": [
+      {
+        "name": "Event & Seminar Coverage",
+        "price": "Rp 750.000 (Half-Day) / Rp 1.000.000 (Full-Day)",
+        "details": [
+          "1 Photographer Profesional",
+          "Unlimited Shots",
+          "All Files Edited Color Grading",
+          "Online Storage / Drive Transfer"
+        ]
+      },
+      {
+        "name": "Wedding & Engagement Package",
+        "price": "Mulai Rp 2.500.000",
+        "details": [
+          "Fotografer & Videografer Profesional",
+          "Album Magnit / Kolase Eksklusif",
+          "Video Cinematic Highlight (45 Detik)",
+          "All Master Softcopy File (Via Google Drive/QR Code)"
+        ]
+      }
+    ]
+  }
+}
