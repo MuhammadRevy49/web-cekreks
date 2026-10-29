@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, MapPin, ExternalLink } from "lucide-react";
 import Logo from "@/components/common/Logo";
 
 // Ikon TikTok kustom SVG
@@ -56,13 +56,13 @@ export default function Footer() {
     <footer className="w-full bg-[#0c051a] border-t border-purple-900/30 pt-16 pb-12 text-slate-300 font-sans">
       <div className="max-w-[100rem] mx-auto px-4 sm:px-6">
         
-        {/* ================= 4 KOLOM UTAMA ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12">
+        {/* ================= 5 KOLOM UTAMA ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12">
           
           {/* Kolom 1: Logo & Deskripsi */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 lg:col-span-1">
             <Logo />
-            <p className="text-xs sm:text-[13px] text-slate-400 leading-relaxed font-normal max-w-sm mt-1">
+            <p className="text-xs sm:text-[13px] text-slate-400 leading-relaxed font-normal mt-1">
               Solusi AI Photobooth terdepan untuk menghidupkan setiap momen pesta, pernikahan, gathering corporate, wisuda, dan pameran.
             </p>
           </div>
@@ -154,6 +154,41 @@ export default function Footer() {
                 support@cekreks.id
               </a>
             </span>
+          </div>
+
+          {/* Kolom 5: Alamat & Google Maps Interaktif */}
+          <div className="flex flex-col lg:col-span-1">
+            <h4 className="text-sm font-bold text-white tracking-wide mb-4 flex items-center gap-1.5">
+              <MapPin className="w-4 h-4 text-cyan-400" />
+              Studio & Kantor
+            </h4>
+            
+            <p className="text-xs sm:text-[13px] text-slate-400 leading-relaxed mb-3">
+              Cekrek&apos;S Studio, Jl. Kebon Manggu No. 43, Komplek Pemda, RT 05/RW 21, Padasuka, Cimahi Tengah, Kota Cimahi, Jawa Barat 40526
+            </p>
+
+            {/* Kotak Embed Google Maps yang estetis & responsif */}
+            <div className="w-full h-32 rounded-xl overflow-hidden border border-purple-800/40 bg-[#1b0d36] relative group">
+              <iframe
+                title="Lokasi Cekrek'S Studio Cimahi"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9189254!2d107.5458!3d-6.8915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTMnMjkuNCJTIDEwN8KwMzInNDQuOSJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(110%)' }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="transition-opacity duration-300 group-hover:opacity-90"
+              />
+              <a
+                href="https://maps.google.com/?q=Jl.+Kebon+Manggu+No.43+Komplek+Pemda+Padasuka+Cimahi+Tengah"
+                target="_blank"
+                rel="noreferrer"
+                className="absolute bottom-2 right-2 bg-[#0c051a]/90 hover:bg-purple-900 text-slate-200 hover:text-white px-2.5 py-1 rounded-md text-[10px] font-medium border border-purple-700/50 flex items-center gap-1 shadow-md transition-all"
+              >
+                Buka Peta <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </div>
 
         </div>
