@@ -44,7 +44,7 @@ export default function GraduationAlbum() {
     // Foto Kanan
     if (diff === 1) {
       return {
-        transform: "translateX(95%) scale(0.85)",
+        transform: "translateX(100%) scale(0.85)",
         zIndex: 20,
         opacity: 0.8,
         filter: "brightness(0.85)",
@@ -55,7 +55,7 @@ export default function GraduationAlbum() {
     // Foto Kiri
     if (diff === -1) {
       return {
-        transform: "translateX(-95%) scale(0.85)",
+        transform: "translateX(-100%) scale(0.85)",
         zIndex: 20,
         opacity: 0.8,
         filter: "brightness(0.85)",
@@ -66,7 +66,7 @@ export default function GraduationAlbum() {
     // Layer Luar Kanan
     if (diff === 2) {
       return {
-        transform: "translateX(160%) scale(0.7)",
+        transform: "translateX(180%) scale(0.7)",
         zIndex: 10,
         opacity: 0.4,
         filter: "brightness(0.6)",
@@ -77,7 +77,7 @@ export default function GraduationAlbum() {
     // Layer Luar Kiri
     if (diff === -2) {
       return {
-        transform: "translateX(-160%) scale(0.7)",
+        transform: "translateX(-180%) scale(0.7)",
         zIndex: 10,
         opacity: 0.4,
         filter: "brightness(0.6)",
@@ -128,7 +128,8 @@ export default function GraduationAlbum() {
         </div>
       </div>
 
-      <div className="relative w-full max-w-[100rem] mx-auto h-[480px] sm:h-[540px] flex items-center justify-center">
+      {/* Tinggi container disesuaikan agar pas untuk card 1:1 */}
+      <div className="relative w-full max-w-[100rem] mx-auto h-[380px] sm:h-[440px] flex items-center justify-center">
         {GRADUATION_ALBUM.map((item, index) => {
           const style = getSlideStyle(index);
           const isCenter = index === currentIndex;
@@ -138,7 +139,7 @@ export default function GraduationAlbum() {
               key={item.id}
               onClick={() => setCurrentIndex(index)}
               style={style}
-              className={`absolute top-1/2 -translate-y-1/2 w-[190px] sm:w-[220px] md:w-[250px] aspect-[9/16] rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out select-none ${
+              className={`absolute top-1/2 -translate-y-1/2 w-[240px] sm:w-[280px] md:w-[320px] aspect-square rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer transition-all duration-700 ease-out select-none ${
                 isCenter
                   ? "border-2 border-cyan-400 shadow-[0_0_35px_rgba(34,211,238,0.35)]"
                   : "border border-white/10 shadow-2xl hover:opacity-85"
@@ -148,7 +149,7 @@ export default function GraduationAlbum() {
                 src={item.image}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 640px) 200px, (max-width: 768px) 230px, 260px"
+                sizes="(max-width: 640px) 240px, (max-width: 768px) 280px, 320px"
                 className="object-cover transition-transform duration-500"
                 priority={index === 0}
               />
