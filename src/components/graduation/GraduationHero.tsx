@@ -61,9 +61,9 @@ export default function GraduationHero() {
 
       {/* Kolom Kanan: Foto Showcase Penuh */}
       <div className="lg:col-span-5">
-        <div className="relative aspect-[3/4] w-full rounded-3xl overflow-hidden border border-cyan-400/30 shadow-[0_0_35px_rgba(34,211,238,0.18)] group">
+        <div className="relative aspect-square w-full rounded-3xl overflow-hidden border border-cyan-400/30 shadow-[0_0_35px_rgba(34,211,238,0.18)] group">
           <Image
-            src="/images/hero/graduation-hero.jpg"
+            src="/images/graduationtestimoni/16.jpg"
             alt="Dokumentasi Wisuda Cekreks.id"
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
