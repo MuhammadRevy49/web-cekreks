@@ -40,13 +40,13 @@ export default function WeddingDetailPage() {
       window.removeEventListener("touchstart", handleFirstInteraction);
     };
 
-    // Daftarkan listener agar begitu user klik/scroll/sentuh layar, musik langsung menyala otomatis
+    // Daftarkan listener interaksi awal
     window.addEventListener("click", handleFirstInteraction);
     window.addEventListener("scroll", handleFirstInteraction);
     window.addEventListener("keydown", handleFirstInteraction);
     window.addEventListener("touchstart", handleFirstInteraction);
 
-    // Sinkronisasi status audio jika berhenti sendiri atau pause dari luar
+    // Sinkronisasi status audio agar state selalu akurat
     const updatePlayState = () => {
       if (audioRef.current) {
         setIsPlaying(!audioRef.current.paused);
@@ -100,8 +100,8 @@ export default function WeddingDetailPage() {
         <WeddingPricing />
       </div>
 
-      {/* Floating Music Player Button - Dipindah ke POJOK KIRI BAWAH */}
-      <div className="fixed bottom-6 left-6 z-50">
+      {/* Floating Music Player Button - Dikembalikan ke Kanan Bawah (bottom-24 sm:bottom-6 right-6) */}
+      <div className="fixed bottom-24 sm:bottom-6 right-6 z-50">
         <button
           type="button"
           onClick={togglePlay}
