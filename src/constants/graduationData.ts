@@ -51,7 +51,7 @@ export const GRADUATION_PACKAGES: GraduationPackage[] = [
       {
         id: "grad-basic-1",
         name: "Basic 1 (Solo)",
-        price: "Rp 500.000",
+        price: "500k",
         features: [
           "Durasi sesi 45 Menit",
           "1 Fotografer Profesional",
@@ -63,7 +63,7 @@ export const GRADUATION_PACKAGES: GraduationPackage[] = [
       {
         id: "grad-basic-2",
         name: "Basic 2 (Duo/Couple)",
-        price: "Rp 750.000",
+        price: "750k",
         features: [
           "Durasi sesi 60 Menit",
           "1 Fotografer Profesional",
@@ -84,7 +84,7 @@ export const GRADUATION_PACKAGES: GraduationPackage[] = [
       {
         id: "grad-prem-1",
         name: "Premium Silver",
-        price: "Rp 1.200.000",
+        price: "1.200k",
         features: [
           "Durasi sesi 90 Menit",
           "1 Fotografer + 1 Assistant Lighting",
@@ -97,7 +97,7 @@ export const GRADUATION_PACKAGES: GraduationPackage[] = [
       {
         id: "grad-prem-2",
         name: "Premium Gold",
-        price: "Rp 1.650.000",
+        price: "1.650k",
         features: [
           "Durasi sesi 120 Menit (2 Jam)",
           "1 Fotografer + 1 Videografer Reels",
@@ -119,7 +119,7 @@ export const GRADUATION_PACKAGES: GraduationPackage[] = [
       {
         id: "grad-exc-1",
         name: "Exclusive Squad",
-        price: "Rp 2.500.000",
+        price: "2.500k",
         features: [
           "Half Day Coverage (4 Jam)",
           "2 Fotografer + 1 Videografer",
@@ -132,7 +132,7 @@ export const GRADUATION_PACKAGES: GraduationPackage[] = [
       {
         id: "grad-exc-2",
         name: "Exclusive VIP",
-        price: "Rp 3.800.000",
+        price: "3.800k",
         features: [
           "Full Day Coverage (Persiapan hingga Acara Usai)",
           "Tim Lengkap: 2 Foto + 1 Video Cinematic",

@@ -37,11 +37,6 @@ export default function GraduationScope() {
                   {service.desc}
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t border-white/5">
-                <a href="#pricing" className="text-xs font-semibold text-cyan-400 hover:text-cyan-300">
-                  Lihat rincian paket &rarr;
-                </a>
-              </div>
             </div>
           </div>
         ))}
