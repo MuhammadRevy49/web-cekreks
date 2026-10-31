@@ -186,7 +186,7 @@ export default function WeddingPricing() {
                       rel="noopener noreferrer"
                       className={`w-full py-3.5 rounded-xl font-bold text-xs text-center transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${theme.buttonStyle}`}
                     >
-                      <span>Pesan {currentPlan.name}</span>
+                      <span>Pesan Paket {currentPlan.name}</span>
                     </a>
                   </div>
                 </div>

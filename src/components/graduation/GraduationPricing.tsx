@@ -68,7 +68,7 @@ export default function GraduationPricing() {
       tiers: [
         {
           id: "outdoor-2jam",
-          name: "Paket 2 Jam",
+          name: "2 Jam",
           price: "750K",
           features: [
             "1 Kostum / Outfit",
@@ -80,7 +80,7 @@ export default function GraduationPricing() {
         },
         {
           id: "outdoor-3jam",
-          name: "Paket 3 Jam",
+          name: "3 Jam",
           price: "1.000K",
           features: [
             "1 Kostum / Outfit",
@@ -92,7 +92,7 @@ export default function GraduationPricing() {
         },
         {
           id: "outdoor-5jam",
-          name: "Paket 5-6 Jam",
+          name: "5-6 Jam",
           price: "1.500K",
           features: [
             "2 Kostum / Outfit",
@@ -237,7 +237,7 @@ export default function GraduationPricing() {
                     {/* Bagian Harga */}
                     <div className="mb-6 pt-2">
                       <span className="text-[11px] text-gray-300 block font-medium">
-                        Investasi Paket ({currentPlan.name}):
+                        Paket ({currentPlan.name}):
                       </span>
                       <span className={`text-2xl sm:text-3xl font-black block mt-1 ${theme.priceColor}`}>
                         {currentPlan.price}
@@ -268,7 +268,7 @@ export default function GraduationPricing() {
                       rel="noopener noreferrer"
                       className={`w-full py-3.5 rounded-xl font-bold text-xs text-center transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${theme.buttonStyle}`}
                     >
-                      <span>Pesan {currentPlan.name}</span>
+                      <span>Pesan Paket {currentPlan.name}</span>
                     </a>
                   </div>
                 </div>
