@@ -105,7 +105,7 @@ export default function WeddingGallery() {
                         Album
                     </div>
                     <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                        Testimoni & Hasil Klien
+                        Hasil Karya Wedding
                     </h2>
                     <p className="text-xs text-gray-400 mt-1">
                         Momen bahagia asli yang diabadikan langsung oleh Cekreks.id

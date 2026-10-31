@@ -101,7 +101,7 @@ export default function GraduationAlbum() {
             Album
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white">
-            Testimoni & Hasil Klien
+            Hasil Karya Graduation
           </h2>
           <p className="text-xs text-gray-400 mt-1">
             Ekspresi kebahagiaan dan kebanggaan momen wisuda bersama Cekreks.id
