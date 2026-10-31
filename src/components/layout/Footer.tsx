@@ -148,10 +148,10 @@ export default function Footer() {
             <span className="text-xs sm:text-[13px] text-slate-400">
               Email:{" "}
               <a
-                href="mailto:support@cekreks.id"
+                href="mailto:cekreks.id@gmail.com"
                 className="hover:text-cyan-300 transition-colors"
               >
-                support@cekreks.id
+                cekreks.id@gmail.com
               </a>
             </span>
           </div>
@@ -171,7 +171,7 @@ export default function Footer() {
             <div className="w-full h-32 rounded-xl overflow-hidden border border-purple-800/40 bg-[#1b0d36] relative group">
               <iframe
                 title="Lokasi Cekrek'S Studio Cimahi"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9189254!2d107.5458!3d-6.8915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTMnMjkuNCJTIDEwN8KwMzInNDQuOSJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
+                src="https://maps.google.com/?q=Jl.+Kebon+Manggu+No.43+Komplek+Pemda+Padasuka+Cimahi+Tengah&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(110%)' }}

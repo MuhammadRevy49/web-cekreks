@@ -128,46 +128,50 @@ export default function PortfolioSection() {
     },
   ];
 
-  // Daftar logo/nama mitra untuk running text
+  // Daftar logo mitra pendidikan
   const partners = [
-    { name: "1", logoUrl: "/images/mitra/1.png" },
-    { name: "2", logoUrl: "/images/mitra/2.png" },
-    { name: "3", logoUrl: "/images/mitra/3.png" },
-    { name: "4", logoUrl: "/images/mitra/4.png" },
-    { name: "5", logoUrl: "/images/mitra/5.png" },
-    { name: "6", logoUrl: "/images/mitra/6.png" },
-    { name: "7", logoUrl: "/images/mitra/7.png" },
-    { name: "8", logoUrl: "/images/mitra/8.png" },
-    { name: "9", logoUrl: "/images/mitra/9.png" },
-    { name: "10", logoUrl: "/images/mitra/10.png" },
-    { name: "11", logoUrl: "/images/mitra/11.png" },
-    { name: "12", logoUrl: "/images/mitra/12.png" },
-    { name: "13", logoUrl: "/images/mitra/13.png" },
-    { name: "14", logoUrl: "/images/mitra/14.png" },
-    { name: "15", logoUrl: "/images/mitra/15.png" },
-    { name: "16", logoUrl: "/images/mitra/16.png" },
-    { name: "17", logoUrl: "/images/mitra/17.png" },
-    { name: "18", logoUrl: "/images/mitra/18.png" },
-    { name: "19", logoUrl: "/images/mitra/19.png" },
-    { name: "20", logoUrl: "/images/mitra/20.png" },
-    { name: "21", logoUrl: "/images/mitra/21.png" },
-    { name: "22", logoUrl: "/images/mitra/22.png" },
-    { name: "23", logoUrl: "/images/mitra/23.png" },
-    { name: "24", logoUrl: "/images/mitra/24.png" },
-    { name: "25", logoUrl: "/images/mitra/25.png" },
-    { name: "26", logoUrl: "/images/mitra/26.png" },
-    { name: "27", logoUrl: "/images/mitra/27.png" },
-    { name: "28", logoUrl: "/images/mitra/28.png" },
-    { name: "29", logoUrl: "/images/mitra/29.png" },
-    { name: "30", logoUrl: "/images/mitra/30.png" },
-    { name: "31", logoUrl: "/images/mitra/31.png" },
-    { name: "32", logoUrl: "/images/mitra/32.png" },
-    { name: "33", logoUrl: "/images/mitra/33.png" },
-    { name: "34", logoUrl: "/images/mitra/34.png" },
-    { name: "35", logoUrl: "/images/mitra/35.png" },
-    { name: "36", logoUrl: "/images/mitra/36.png" },
-    { name: "37", logoUrl: "/images/mitra/37.png" },
-    { name: "38", logoUrl: "/images/mitra/38.png" },
+    { name: "1", logoUrl: "/images/mitra/pendidikan/1.png" },
+    { name: "2", logoUrl: "/images/mitra/pendidikan/2.png" },
+    { name: "3", logoUrl: "/images/mitra/pendidikan/3.png" },
+    { name: "4", logoUrl: "/images/mitra/pendidikan/4.png" },
+    { name: "6", logoUrl: "/images/mitra/pendidikan/6.png" },
+    { name: "7", logoUrl: "/images/mitra/pendidikan/7.png" },
+    { name: "8", logoUrl: "/images/mitra/pendidikan/8.png" },
+    { name: "9", logoUrl: "/images/mitra/pendidikan/9.png" },
+    { name: "10", logoUrl: "/images/mitra/pendidikan/10.png" },
+    { name: "11", logoUrl: "/images/mitra/pendidikan/11.png" },
+    { name: "12", logoUrl: "/images/mitra/pendidikan/12.png" },
+    { name: "13", logoUrl: "/images/mitra/pendidikan/13.png" },
+    { name: "14", logoUrl: "/images/mitra/pendidikan/14.png" },
+    { name: "15", logoUrl: "/images/mitra/pendidikan/15.png" },
+    { name: "16", logoUrl: "/images/mitra/pendidikan/16.png" },
+    { name: "17", logoUrl: "/images/mitra/pendidikan/17.png" },
+    { name: "18", logoUrl: "/images/mitra/pendidikan/18.png" },
+    { name: "20", logoUrl: "/images/mitra/pendidikan/20.png" },
+    { name: "22", logoUrl: "/images/mitra/pendidikan/22.png" },
+    { name: "24", logoUrl: "/images/mitra/pendidikan/24.png" },
+    { name: "25", logoUrl: "/images/mitra/pendidikan/25.png" },
+    { name: "26", logoUrl: "/images/mitra/pendidikan/26.png" },
+    { name: "27", logoUrl: "/images/mitra/pendidikan/27.png" },
+    { name: "28", logoUrl: "/images/mitra/pendidikan/28.png" },
+    { name: "29", logoUrl: "/images/mitra/pendidikan/29.png" },
+    { name: "30", logoUrl: "/images/mitra/pendidikan/30.png" },
+    { name: "31", logoUrl: "/images/mitra/pendidikan/31.png" },
+    { name: "32", logoUrl: "/images/mitra/pendidikan/32.png" },
+    { name: "33", logoUrl: "/images/mitra/pendidikan/33.png" },
+    { name: "34", logoUrl: "/images/mitra/pendidikan/34.png" },
+    { name: "37", logoUrl: "/images/mitra/pendidikan/37.png" },
+    { name: "38", logoUrl: "/images/mitra/pendidikan/38.png" },
+  ];
+
+  // Daftar logo mitra perusahaan (folder khusus perusahaan)
+  const companyPartners = [
+    { name: "Comp 1", logoUrl: "/images/mitra/perusahaan/5.png" },
+    { name: "Comp 2", logoUrl: "/images/mitra/perusahaan/19.png" },
+    { name: "Comp 3", logoUrl: "/images/mitra/perusahaan/21.png" },
+    { name: "Comp 4", logoUrl: "/images/mitra/perusahaan/23.png" },
+    { name: "Comp 5", logoUrl: "/images/mitra/perusahaan/35.png" },
+    { name: "Comp 6", logoUrl: "/images/mitra/perusahaan/36.png" },
   ];
 
   return (
@@ -180,13 +184,12 @@ export default function PortfolioSection() {
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
           Portofolio Kami
         </h2>
-        {/* Kalimat Penjelas Usaha */}
         <p className="text-base sm:text-base text-slate-300 max-w-2xl leading-relaxed">
           Berdiri sejak 2015, kami hadir dengan dedikasi tinggi dalam industri fotografi, dokumentasi acara, dan teknologi AI photobooth untuk mengabadikan setiap momen spesial Anda.
         </p>
       </div>
 
-      {/* ================= MENGAPA HARUS KAMI? (RATA TENGAH / CENTERED FLEX) ================= */}
+      {/* ================= MENGAPA HARUS KAMI? ================= */}
       <div className="mb-16 px-2 sm:px-4">
         <div className="text-center mb-8">
           <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -197,7 +200,6 @@ export default function PortfolioSection() {
           </p>
         </div>
 
-        {/* Menggunakan Flexbox wrap + justify-center agar baris terakhir (2 card) persis di tengah */}
         <div className="flex flex-wrap justify-center gap-5">
           {benefits.map((item, index) => (
             <div
@@ -220,7 +222,7 @@ export default function PortfolioSection() {
         </div>
       </div>
 
-      {/* ================= STATS GRID (RESPONSIF: CARD DI MOBILE, BORDER-L DI DESKTOP) ================= */}
+      {/* ================= STATS GRID ================= */}
       <div className="grid grid-cols-3 gap-2.5 sm:gap-6 mb-16">
         {stats.map((stat, idx) => (
           <div
@@ -243,7 +245,7 @@ export default function PortfolioSection() {
         ))}
       </div>
 
-      {/* Pure Team Member Grid Gallery */}
+      {/* Team Member Grid Gallery */}
       <div className="text-center mb-4">
         <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
           Tim Kami
@@ -252,8 +254,7 @@ export default function PortfolioSection() {
           Kami bekerja dengan profesional kami untuk anda.
         </p>
       </div>
-      
-      {/* Grid foto tim: tinggi card diperkecil di mobile (h-48) dan gap vertikal diperketat (gap-y-1 sm:gap-3) */}
+
       <div className="grid grid-cols-2 md:grid-cols-4 gap-x-2 gap-y-1 sm:gap-3 mb-20 items-end">
         {[
           { name: "Muhammad Revy", image: "/images/team/1.png" },
@@ -277,41 +278,66 @@ export default function PortfolioSection() {
         ))}
       </div>
 
-      {/* Bagian Mitra Kami (Running Text / Marquee) */}
+      {/* ================= BAGIAN MITRA KAMI ================= */}
       <div className="mt-12 pt-8 border-t border-slate-800/80">
-        <div className="text-center mb-8">
-          <p className="text-md font-semibold uppercase tracking-widest text-slate-400">
-            Mitra Kami
-          </p>
-        </div>
 
-        {/* Container Running Text dengan Durasi Diperlambat */}
-        <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <div 
-            className="flex animate-marquee whitespace-nowrap gap-2 md:gap-12 items-center py-4"
-            style={{ animationDuration: "45s" }}
-          >
-            {/* Render dua kali agar pergerakannya mulus tanpa jeda */}
-            {[...partners, ...partners].map((partner, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-105"
-              >
-                {partner.logoUrl ? (
+        {/* Baris 1: Mitra Pendidikan (Bergerak ke Kiri) */}
+        <div className="mb-4">
+          <div className="text-center mb-4">
+            <p className="text-sm font-semibold uppercase tracking-widest text-slate-400">
+              Mitra Kami
+            </p>
+          </div>
+
+          <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <div
+              className="flex animate-marquee whitespace-nowrap gap-2 md:gap-12 items-center py-4"
+              style={{ animationDuration: "45s" }}
+            >
+              {/* Duplikasi array beberapa kali agar panjang dan mulus */}
+              {[...partners, ...partners].map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-105"
+                >
                   <img
                     src={partner.logoUrl}
                     alt={partner.name}
                     className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 opacity-80 hover:opacity-100"
                   />
-                ) : (
-                  <span className="text-white font-semibold text-base tracking-wide">
-                    {partner.name}
-                  </span>
-                )}
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* Baris 2: Mitra Perusahaan (Bergerak ke Kanan / Berlawanan Arah) */}
+        <div>
+          <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+            <div
+              className="flex animate-marquee whitespace-nowrap gap-2 md:gap-12 items-center py-4"
+              style={{
+                animationDuration: "45s",
+                animationDirection: "reverse"
+              }}
+            >
+              {/* Karena item cuma 6, kita duplikasi sebanyak 5-6 kali agar panjang elemennya memadai dan tidak ada jeda kosong */}
+              {[...companyPartners, ...companyPartners, ...companyPartners, ...companyPartners, ...companyPartners, ...companyPartners].map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-105"
+                >
+                  <img
+                    src={partner.logoUrl}
+                    alt={partner.name}
+                    className="h-16 md:h-24 w-auto object-contain transition-transform duration-300 opacity-80 hover:opacity-100"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
