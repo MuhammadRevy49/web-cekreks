@@ -179,14 +179,14 @@ export default function WeddingPricing() {
 
                     {/* Tombol Pemesanan */}
                     <a
-                      href={`https://wa.me/6281234567890?text=${encodeURIComponent(
+                      href={`https://wa.me/6285801105140?text=${encodeURIComponent(
                         `Halo Cekreks.id, saya tertarik booking ${pkg.categoryName} (${currentPlan.name}) dengan harga ${currentPlan.price}`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-full py-3.5 rounded-xl font-bold text-xs text-center transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${theme.buttonStyle}`}
                     >
-                      <span>Pesan {currentPlan.name} Sekarang</span>
+                      <span>Pesan {currentPlan.name}</span>
                     </a>
                   </div>
                 </div>
