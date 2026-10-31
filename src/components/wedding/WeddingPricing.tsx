@@ -15,7 +15,6 @@ export default function WeddingPricing() {
   };
 
   // Helper untuk menentukan tema warna berdasarkan konsep gradasi logo Cekreks.id
-  // Posisi 1 (Kiri - Pink/Coral), Posisi 2 (Tengah - Magenta/Purple), Posisi 3 (Kanan - Blue/Violet)
   const getLogoGradientTheme = (tierIndex: number, totalTiers: number) => {
     if (totalTiers === 3) {
       if (tierIndex === 0) {
@@ -48,7 +47,6 @@ export default function WeddingPricing() {
       }
     }
 
-    // Fallback jika jumlah tier berbeda
     return {
       tabTextActive: "text-pink-400 font-black",
       boxBg: "bg-gradient-to-b from-pink-950/70 via-[#140b2b] to-[#140b2b] border-pink-500/60 shadow-[0_0_35px_rgba(236,72,153,0.25)]",
@@ -79,6 +77,7 @@ export default function WeddingPricing() {
           const currentPlan = pkg.tiers[activeTierIdx];
           const totalTiers = pkg.tiers.length;
           const theme = getLogoGradientTheme(activeTierIdx, totalTiers);
+          const isAkadTab = currentPlan.name.toLowerCase().includes("akad");
 
           return (
             <div
@@ -100,7 +99,6 @@ export default function WeddingPricing() {
 
                   {/* Sub-tier Switcher / Tab dengan Animasi Geser */}
                   <div className="mt-5 p-1 rounded-2xl bg-[#080312] border border-white/10 relative flex">
-                    {/* Background Pill yang bergeser secara halus */}
                     <div
                       className="absolute top-1 bottom-1 rounded-xl bg-[#1e133a] border border-white/15 shadow-md transition-all duration-300 ease-in-out"
                       style={{
@@ -112,7 +110,6 @@ export default function WeddingPricing() {
                     {pkg.tiers.map((tier, tIdx) => {
                       const isActive = activeTierIdx === tIdx;
                       const tabTheme = getLogoGradientTheme(tIdx, totalTiers);
-                      const isAkad = tier.name.toLowerCase().includes("akad");
 
                       return (
                         <button
@@ -125,12 +122,6 @@ export default function WeddingPricing() {
                               : "text-gray-400 hover:text-white font-medium"
                           }`}
                         >
-                          {/* Label khusus untuk tab Akad Nikah */}
-                          {isAkad && (
-                            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-rose-500 text-white font-black text-[9px] px-2 py-0.5 rounded-full shadow-md tracking-wider uppercase whitespace-nowrap z-30 animate-pulse">
-                              500k File Only
-                            </span>
-                          )}
                           {tier.name}
                         </button>
                       );
@@ -138,12 +129,11 @@ export default function WeddingPricing() {
                   </div>
                 </div>
 
-                {/* Kotak Pembungkus (Wrapper Box) Harga & Benefit */}
-                <div className={`relative rounded-2xl p-5 sm:p-6 border transition-all duration-500 mt-3 ${theme.boxBg}`}>
-                  
-                  {/* Panah (Arrow Pointer) di atas kotak pembungkus yang menempel langsung ke tab */}
+                {/* Container utama card pembungkus dengan panah di luarnya */}
+                <div className="relative mt-3">
+                  {/* Panah (Arrow Pointer) diposisikan di luar kotak overflow agar tidak terpotong */}
                   <div 
-                    className="absolute -top-2.5 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[8px] transition-all duration-300 ease-in-out z-10"
+                    className="absolute -top-2.5 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[8px] transition-all duration-300 ease-in-out z-30"
                     style={{
                       left: `calc(${((activeTierIdx + 0.5) * 100) / totalTiers}%)`,
                       transform: 'translateX(-50%)',
@@ -151,42 +141,54 @@ export default function WeddingPricing() {
                     }}
                   ></div>
 
-                  {/* Nominal Harga */}
-                  <div className="mb-6">
-                    <span className="text-[11px] text-gray-300 block font-medium">
-                      Investasi Paket ({currentPlan.name}):
-                    </span>
-                    <span className={`text-2xl sm:text-3xl font-black block mt-1 ${theme.priceColor}`}>
-                      {currentPlan.price}
-                    </span>
-                  </div>
+                  {/* Kotak Pembungkus (Wrapper Box) Harga & Benefit */}
+                  <div className={`relative rounded-2xl p-5 sm:p-6 border transition-all duration-500 overflow-hidden ${theme.boxBg}`}>
+                    
+                    {/* Label Pita Melipat di Pojok Kanan Atas (Khusus Akad) */}
+                    {isAkadTab && (
+                      <div className="absolute top-0 right-0 bg-gradient-to-l from-rose-600 to-pink-600 text-white px-5 py-2 rounded-bl-2xl shadow-lg tracking-wider uppercase border-l border-b border-rose-400/40 z-20 flex flex-col items-center">
+                        <span className="text-2xl sm:text-3xl font-black leading-none">500K</span>
+                        <span className="text-xs text-gray-100 font-normal mt-0.5">Hanya File Saja</span>
+                      </div>
+                    )}
 
-                  {/* List Benefit */}
-                  <div className="mb-6">
-                    <span className="text-[11px] font-semibold text-gray-200 uppercase tracking-wider block mb-3">
-                      Fasilitas & Benefit:
-                    </span>
-                    <ul className="space-y-2.5 min-h-[190px]">
-                      {currentPlan.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-xs text-gray-100">
-                          <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                          <span className="leading-snug">{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    {/* Bagian Harga */}
+                    <div className={`mb-6 pt-2 ${isAkadTab ? 'pr-2' : ''}`}>
+                      <span className="text-[11px] text-gray-300 block font-medium">
+                        Paket Lengkap ({currentPlan.name}):
+                      </span>
+                      <span className={`text-2xl sm:text-3xl font-black block mt-1 ${theme.priceColor}`}>
+                        {currentPlan.price}
+                      </span>
+                    </div>
 
-                  {/* Tombol Pemesanan */}
-                  <a
-                    href={`https://wa.me/6281234567890?text=${encodeURIComponent(
-                      `Halo Cekreks.id, saya tertarik booking ${pkg.categoryName} (${currentPlan.name}) dengan harga ${currentPlan.price}`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`w-full py-3.5 rounded-xl font-bold text-xs text-center transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${theme.buttonStyle}`}
-                  >
-                    <span>Pesan {currentPlan.name} Sekarang</span>
-                  </a>
+                    {/* List Benefit */}
+                    <div className="mb-6">
+                      <span className="text-[11px] font-semibold text-gray-200 uppercase tracking-wider block mb-3">
+                        Fasilitas & Benefit:
+                      </span>
+                      <ul className="space-y-2.5 min-h-[190px]">
+                        {currentPlan.features.map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2.5 text-xs text-gray-100">
+                            <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
+                            <span className="leading-snug">{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Tombol Pemesanan */}
+                    <a
+                      href={`https://wa.me/6281234567890?text=${encodeURIComponent(
+                        `Halo Cekreks.id, saya tertarik booking ${pkg.categoryName} (${currentPlan.name}) dengan harga ${currentPlan.price}`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full py-3.5 rounded-xl font-bold text-xs text-center transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${theme.buttonStyle}`}
+                    >
+                      <span>Pesan {currentPlan.name} Sekarang</span>
+                    </a>
+                  </div>
                 </div>
 
               </div>
