@@ -60,7 +60,7 @@ export default function WeddingPricing() {
     <section id="pricing" className="scroll-mt-18">
       <div className="text-left mb-10">
         <span className="text-xs font-bold tracking-widest uppercase text-cyan-400">
-          Pilihan Investasi
+          Pilihan Paket & Harga
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
           Daftar Paket Pernikahan

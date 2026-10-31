@@ -151,7 +151,7 @@ export default function GraduationPricing() {
     <section id="pricing" className="pt-10 scroll-mt-18">
       <div className="text-left mb-10">
         <span className="text-xs font-bold tracking-widest uppercase text-cyan-400">
-          Investasi Kenangan
+          Pilihan Paket & Harga
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
           Daftar Paket Graduation & Photoshoot

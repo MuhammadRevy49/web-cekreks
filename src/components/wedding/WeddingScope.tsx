@@ -6,7 +6,7 @@ export default function WeddingScope() {
     <section className="py-16">
       <div className="text-left mb-10">
         <span className="text-xs font-bold tracking-widest uppercase text-cyan-400">
-          Layanan Spesifik
+          Cakupan Dokumentasi
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
           Layanan Kami Meliputi

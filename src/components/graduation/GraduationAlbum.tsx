@@ -97,11 +97,11 @@ export default function GraduationAlbum() {
     <section className="py-20 border-t border-white/10 overflow-hidden">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[100rem] mx-auto px-5 mb-12">
         <div className="text-center sm:text-left">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase bg-[#180d38] text-cyan-300 border border-cyan-400/30 mb-2">
-            <MessageSquareHeart className="w-3.5 h-3.5 text-cyan-400" /> Kata Mereka
+          <div className="inline-flex items-center gap-1.5 py-1 rounded-full text-xs font-semibold uppercase text-cyan-300">
+            Album
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white">
-            Portofolio & Testimoni Wisudawan
+            Testimoni & Hasil Klien
           </h2>
           <p className="text-xs text-gray-400 mt-1">
             Ekspresi kebahagiaan dan kebanggaan momen wisuda bersama Cekreks.id
