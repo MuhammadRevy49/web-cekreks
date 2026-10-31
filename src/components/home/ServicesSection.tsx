@@ -74,7 +74,7 @@ const SERVICES_DATA: ServiceItem[] = [
       "Sistem Antrean QR Tanpa Antrean",
     ],
     ctaText: "Lihat Layanan",
-    ctaHref: "/layanan/event-seminar",
+    ctaHref: "/layanan/eventseminar",
   },
   {
     id: "photobooth",
