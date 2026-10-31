@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, MessageSquareHeart } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { GRADUATION_ALBUM } from "@/constants/graduationData";
 
 export default function GraduationAlbum() {
@@ -30,10 +30,10 @@ export default function GraduationAlbum() {
     if (diff < -Math.floor(total / 2)) diff += total;
     if (diff > Math.floor(total / 2)) diff -= total;
 
-    // Foto Tengah Aktif
+    // Foto Tengah Aktif (Diperbesar ukurannya dengan scale lebih tinggi)
     if (diff === 0) {
       return {
-        transform: "translateX(0%) scale(1.15)",
+        transform: "translateX(0%) scale(1.25)", // Diubah dari 1.15 ke 1.35 (sesuaikan jika ingin lebih besar/kecil)
         zIndex: 30,
         opacity: 1,
         filter: "brightness(1)",
@@ -41,10 +41,10 @@ export default function GraduationAlbum() {
       };
     }
 
-    // Foto Kanan
+    // Foto Kanan (Jarak translateX tetap di 100%)
     if (diff === 1) {
       return {
-        transform: "translateX(100%) scale(0.85)",
+        transform: "translateX(80%) scale(0.85)",
         zIndex: 20,
         opacity: 0.8,
         filter: "brightness(0.85)",
@@ -52,10 +52,10 @@ export default function GraduationAlbum() {
       };
     }
 
-    // Foto Kiri
+    // Foto Kiri (Jarak translateX tetap di -100%)
     if (diff === -1) {
       return {
-        transform: "translateX(-100%) scale(0.85)",
+        transform: "translateX(-80%) scale(0.85)",
         zIndex: 20,
         opacity: 0.8,
         filter: "brightness(0.85)",
@@ -66,7 +66,7 @@ export default function GraduationAlbum() {
     // Layer Luar Kanan
     if (diff === 2) {
       return {
-        transform: "translateX(180%) scale(0.7)",
+        transform: "translateX(140%) scale(0.7)",
         zIndex: 10,
         opacity: 0.4,
         filter: "brightness(0.6)",
@@ -77,7 +77,7 @@ export default function GraduationAlbum() {
     // Layer Luar Kiri
     if (diff === -2) {
       return {
-        transform: "translateX(-180%) scale(0.7)",
+        transform: "translateX(-140%) scale(0.7)",
         zIndex: 10,
         opacity: 0.4,
         filter: "brightness(0.6)",
@@ -128,8 +128,8 @@ export default function GraduationAlbum() {
         </div>
       </div>
 
-      {/* Tinggi container disesuaikan agar pas untuk card 1:1 */}
-      <div className="relative w-full max-w-[100rem] mx-auto h-[380px] sm:h-[440px] flex items-center justify-center">
+      {/* Tinggi container disesuaikan agar card tengah yang besar tidak terpotong */}
+      <div className="relative w-full max-w-[100rem] mx-auto h-[420px] sm:h-[480px] flex items-center justify-center">
         {GRADUATION_ALBUM.map((item, index) => {
           const style = getSlideStyle(index);
           const isCenter = index === currentIndex;
