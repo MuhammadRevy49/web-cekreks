@@ -2,23 +2,115 @@
 
 import { useState } from "react";
 import { Check } from "lucide-react";
-import { GRADUATION_PACKAGES } from "@/constants/graduationData";
 
 export default function GraduationPricing() {
   const [selectedTiers, setSelectedTiers] = useState<Record<number, number>>({
     0: 0,
-    1: 0, // default ke tier kedua untuk paket kedua
+    1: 0, // default ke tier pertama untuk setiap kategori
   });
 
   const handleSelectTier = (catIndex: number, tierIndex: number) => {
     setSelectedTiers((prev) => ({ ...prev, [catIndex]: tierIndex }));
   };
 
-  // Helper untuk menentukan tema warna berdasarkan konsep gradasi logo Cekreks.id
+  // Data Paket Graduation sesuai informasi terbaru
+  const GRADUATION_PACKAGES = [
+    {
+      tagline: "Studio",
+      categoryName: "Photoshoot Studio",
+      desc: "Pengambilan Photoshoot di Studio kami: Jl. Kebon Manggu No. 43, Kelurahan Padasuka, Kecamatan Cimahi Tengah, Kota Cimahi.",
+      tiers: [
+        {
+          id: "studio-personal",
+          name: "Personal",
+          price: "300K",
+          features: [
+            "30 Menit Sesi Foto Studio",
+            "1 Kostum / Outfit",
+            "Unlimited Photoshoot",
+            "3 Master Edit High-Resolution",
+            "1 Cetak Foto 12R + Bingkai Eksklusif",
+            "All Softcopy (Via Google Drive / QR Code)"
+          ]
+        },
+        {
+          id: "studio-graduation",
+          name: "Wisuda",
+          price: "450K",
+          features: [
+            "45 Menit Sesi Foto Studio (Maks. 5 Orang)",
+            "1 Kostum / Outfit",
+            "Unlimited Photoshoot",
+            "5 Master Edit High-Resolution",
+            "1 Cetak Foto 16R + Bingkai Eksklusif",
+            "All Softcopy File (Via Google Drive / QR Code)"
+          ]
+        },
+        {
+          id: "studio-family",
+          name: "Keluarga",
+          price: "600K",
+          features: [
+            "60 Menit Sesi Foto Studio (Maks. 10 Orang)",
+            "1 Kostum / Outfit",
+            "Unlimited Photoshoot",
+            "10 Master Edit High-Resolution",
+            "1 Cetak Foto 20R + Bingkai Minimalis",
+            "All Softcopy File (Via Google Drive / QR Code)"
+          ]
+        }
+      ]
+    },
+    {
+      tagline: "Outdoor",
+      categoryName: "Outdoor Photoshoot",
+      desc: "Pengambilan Photoshoot di luar (outdoor) Studio Cekreks.ID. (Biaya belum termasuk Tiket Masuk Lokasi Outdoor dan Akomodasi Crew Studio).",
+      tiers: [
+        {
+          id: "outdoor-2jam",
+          name: "Paket 2 Jam",
+          price: "750K",
+          features: [
+            "1 Kostum / Outfit",
+            "Unlimited Photoshoot",
+            "3 Master Edit High-Resolution",
+            "1 Cetak Foto 12R + Bingkai Eksklusif",
+            "All Softcopy (Via Google Drive / QR Code)"
+          ]
+        },
+        {
+          id: "outdoor-3jam",
+          name: "Paket 3 Jam",
+          price: "1.000K",
+          features: [
+            "1 Kostum / Outfit",
+            "Unlimited Photoshoot",
+            "5 Master Edit High-Resolution",
+            "1 Cetak Foto 16R + Bingkai Eksklusif",
+            "All Softcopy File (Via Google Drive / QR Code)"
+          ]
+        },
+        {
+          id: "outdoor-5jam",
+          name: "Paket 5-6 Jam",
+          price: "1.500K",
+          features: [
+            "2 Kostum / Outfit",
+            "Unlimited Photoshoot",
+            "10 Master Edit High-Resolution",
+            "1 Cetak Foto 20R + Bingkai Minimalis",
+            "Video highlight IG Durasi 1 menit",
+            "All Softcopy File (Via Google Drive / QR Code)"
+          ]
+        }
+      ]
+    }
+  ];
+
+  // Helper untuk menentukan tema warna berdasarkan konsep gradasi logo Cekreks.id (3 Tab)
   const getLogoGradientTheme = (tierIndex: number, totalTiers: number) => {
     if (totalTiers === 3) {
       if (tierIndex === 0) {
-        // Sisi Kiri (Logo: C - Coral/Pink)
         return {
           tabTextActive: "text-rose-400 font-black",
           boxBg: "bg-gradient-to-b from-rose-950/70 via-[#140b2b] to-[#140b2b] border-rose-500/60 shadow-[0_0_35px_rgba(244,63,94,0.25)]",
@@ -27,7 +119,6 @@ export default function GraduationPricing() {
           buttonStyle: "bg-gradient-to-r from-rose-500 to-pink-500 text-white hover:opacity-90 shadow-[0_0_20px_rgba(244,63,94,0.35)]"
         };
       } else if (tierIndex === 1) {
-        // Sisi Tengah (Logo: ek - Magenta/Pink Tua)
         return {
           tabTextActive: "text-fuchsia-400 font-black",
           boxBg: "bg-gradient-to-b from-fuchsia-950/70 via-[#140b2b] to-[#140b2b] border-fuchsia-500/60 shadow-[0_0_35px_rgba(217,70,239,0.25)]",
@@ -36,7 +127,6 @@ export default function GraduationPricing() {
           buttonStyle: "bg-gradient-to-r from-fuchsia-500 to-purple-500 text-white hover:opacity-90 shadow-[0_0_20px_rgba(217,70,239,0.35)]"
         };
       } else {
-        // Sisi Kanan (Logo: reks.id - Ungu/Violet)
         return {
           tabTextActive: "text-purple-400 font-black",
           boxBg: "bg-gradient-to-b from-purple-950/70 via-[#140b2b] to-[#140b2b] border-purple-500/60 shadow-[0_0_35px_rgba(168,85,247,0.25)]",
@@ -47,24 +137,14 @@ export default function GraduationPricing() {
       }
     }
 
-    // Fallback jika jumlah tier berbeda (misal 2 tier)
-    if (tierIndex === 0) {
-      return {
-        tabTextActive: "text-rose-400 font-black",
-        boxBg: "bg-gradient-to-b from-rose-950/70 via-[#140b2b] to-[#140b2b] border-rose-500/60 shadow-[0_0_35px_rgba(244,63,94,0.25)]",
-        arrowHex: "#f43f5e",
-        priceColor: "text-rose-400",
-        buttonStyle: "bg-gradient-to-r from-rose-500 to-pink-500 text-white hover:opacity-90 shadow-[0_0_20px_rgba(244,63,94,0.35)]"
-      };
-    } else {
-      return {
-        tabTextActive: "text-purple-400 font-black",
-        boxBg: "bg-gradient-to-b from-purple-950/70 via-[#140b2b] to-[#140b2b] border-purple-500/60 shadow-[0_0_35px_rgba(168,85,247,0.25)]",
-        arrowHex: "#a855f7",
-        priceColor: "text-purple-400",
-        buttonStyle: "bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 shadow-[0_0_20px_rgba(168,85,247,0.35)]"
-      };
-    }
+    // Fallback default
+    return {
+      tabTextActive: "text-rose-400 font-black",
+      boxBg: "bg-gradient-to-b from-rose-950/70 via-[#140b2b] to-[#140b2b] border-rose-500/60 shadow-[0_0_35px_rgba(244,63,94,0.25)]",
+      arrowHex: "#f43f5e",
+      priceColor: "text-rose-400",
+      buttonStyle: "bg-gradient-to-r from-rose-500 to-pink-500 text-white hover:opacity-90 shadow-[0_0_20px_rgba(244,63,94,0.35)]"
+    };
   };
 
   return (
@@ -74,7 +154,7 @@ export default function GraduationPricing() {
           Investasi Kenangan
         </span>
         <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">
-          Daftar Paket Graduation
+          Daftar Paket Graduation & Photoshoot
         </h2>
         <p className="text-gray-400 text-xs sm:text-sm mt-1">
           Pilih sub-paket di dalam masing-masing kategori untuk melihat detail benefit dan penawaran harga.
@@ -83,7 +163,7 @@ export default function GraduationPricing() {
 
       {/* Grid 2 Card Utama dengan Batas Maksimal Lebar */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
-        {GRADUATION_PACKAGES.slice(0, 2).map((pkg, catIdx) => {
+        {GRADUATION_PACKAGES.map((pkg, catIdx) => {
           const activeTierIdx = selectedTiers[catIdx] ?? 0;
           const currentPlan = pkg.tiers[activeTierIdx];
           const totalTiers = pkg.tiers.length;
@@ -126,7 +206,7 @@ export default function GraduationPricing() {
                           key={tier.id}
                           type="button"
                           onClick={() => handleSelectTier(catIdx, tIdx)}
-                          className={`flex-1 py-2.5 px-2 rounded-xl text-[11px] sm:text-xs transition-colors duration-300 cursor-pointer text-center relative z-10 ${
+                          className={`flex-1 py-2.5 px-2 rounded-xl text-[10px] sm:text-xs transition-colors duration-300 cursor-pointer text-center relative z-10 ${
                             isActive
                               ? tabTheme.tabTextActive
                               : "text-gray-400 hover:text-white font-medium"
@@ -167,7 +247,7 @@ export default function GraduationPricing() {
                     {/* List Benefit */}
                     <div className="mb-6">
                       <span className="text-[11px] font-semibold text-gray-200 uppercase tracking-wider block mb-3">
-                        Benefit yang didapat:
+                        Fasilitas & Detail Layanan:
                       </span>
                       <ul className="space-y-2.5 min-h-[190px]">
                         {currentPlan.features.map((feat, fIdx) => (
