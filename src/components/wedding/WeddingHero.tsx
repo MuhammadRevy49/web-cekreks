@@ -28,14 +28,6 @@ export default function WeddingHero() {
           >
             Lihat Pilihan Paket
           </a>
-          <a
-            href="https://wa.me/6281234567890?text=Halo%20Cekreks.id,%20saya%20mau%20tanya%20layanan%20wedding"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl font-medium text-xs sm:text-sm bg-[#180d36] hover:bg-[#23134d] border border-white/10 text-white transition duration-300"
-          >
-            Hubungi Kami via WA
-          </a>
         </div>
       </div>
 

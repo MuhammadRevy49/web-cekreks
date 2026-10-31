@@ -51,7 +51,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "akad-nikah",
         name: "Akad Nikah",
-        price: "Rp 1.200.000",
+        price: "1200k",
         features: [
           "1 Album 35 x 35 cm. 10 Sheets",
           "1 Pembesaran 10R + Lam + Frame",
@@ -63,7 +63,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "basic-1",
         name: "Basic 1",
-        price: "Rp 2.000.000",
+        price: "2000k",
         features: [
           "1 Album 35 x 35 cm. 15 Sheets",
           "1 Pembesaran 12R + Lam + Frame",
@@ -75,7 +75,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "basic-2",
         name: "Basic 2",
-        price: "Rp 3.500.000",
+        price: "3500k",
         features: [
           "1 Album Magazine Kolase Digital",
           "1 Pembesaran 16R + Lam + Frame",
@@ -95,7 +95,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "prem-1",
         name: "Silver",
-        price: "Rp 4.500.000",
+        price: "4500k",
         features: [
           "1 Album Magnetik + 1 Album Megazine",
           "1 Buah Pembesaran 16R",
@@ -107,7 +107,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "prem-2",
         name: "Gold",
-        price: "Rp 6.500.000",
+        price: "6500k",
         features: [
           "2 Album Magazine Kulit + Eklusive Box",
           "1 Buah Pembesaran 20R",
@@ -119,7 +119,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "prem-3",
         name: "Platinum",
-        price: "Rp 8.000.000",
+        price: "8000k",
         features: [
           "2 Album Magazine Kulit + Eklusive Box",
           "2 Buah Pembesaran 20R",
