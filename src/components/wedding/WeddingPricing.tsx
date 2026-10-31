@@ -16,7 +16,7 @@ export default function WeddingPricing() {
   };
 
   return (
-    <section id="pricing" className="pt-10">
+    <section id="pricing" className="scroll-mt-18">
       <div className="text-left mb-10">
         <span className="text-xs font-bold tracking-widest uppercase text-cyan-400">
           Pilihan Investasi

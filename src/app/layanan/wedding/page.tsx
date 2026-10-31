@@ -100,8 +100,8 @@ export default function WeddingDetailPage() {
         <WeddingPricing />
       </div>
 
-      {/* Floating Music Player Button - Dikembalikan ke Kanan Bawah (bottom-24 sm:bottom-6 right-6) */}
-      <div className="fixed bottom-24 sm:bottom-6 right-6 z-50">
+      {/* Floating Music Player Button - Dipindahkan ke Kiri Bawah pada Desktop (sm:left-6 sm:right-auto) */}
+      <div className="fixed bottom-24 sm:bottom-6 right-6 sm:right-auto sm:left-6 z-50">
         <button
           type="button"
           onClick={togglePlay}

@@ -2,13 +2,6 @@ import { Sparkles, Clock, Film, ShieldCheck, Layers } from "lucide-react";
 import Image from "next/image";
 
 export default function WeddingHero() {
-  const quickHighlights = [
-    { icon: <Clock className="w-3.5 h-3.5 text-cyan-400" />, label: "Full Day Coverage" },
-    { icon: <Film className="w-3.5 h-3.5 text-purple-400" />, label: "Cinematic 4K Video" },
-    { icon: <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />, label: "Master File Selamanya" },
-    { icon: <Layers className="w-3.5 h-3.5 text-purple-400" />, label: "Sentuhan AI Editing" },
-  ];
-
   return (
     <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-16 border-b border-white/10">
       {/* Kolom Kiri */}
@@ -27,19 +20,6 @@ export default function WeddingHero() {
         <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
           Memiliki momen pernikahan yang sempurna adalah impian setiap pasangan. Kami di sini untuk membuat impian itu menjadi kenyataan, mengabadikan setiap detik penuh kehangatan, haru, dan senyuman dalam karya visual yang elegan dan berkelas.
         </p>
-
-        {/* Quick Highlights */}
-        <div className="flex flex-wrap gap-2.5 pt-2">
-          {quickHighlights.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#140b2b]/90 border border-white/5 text-xs text-gray-300"
-            >
-              {item.icon}
-              <span className="whitespace-nowrap">{item.label}</span>
-            </div>
-          ))}
-        </div>
 
         <div className="flex flex-wrap items-center gap-4 pt-3">
           <a
