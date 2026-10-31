@@ -51,7 +51,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "akad-nikah",
         name: "Akad Nikah",
-        price: "1200k",
+        price: "1.200k",
         features: [
           "1 Album 35 x 35 cm. 10 Sheets",
           "1 Pembesaran 10R + Lam + Frame",
@@ -63,7 +63,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "basic-1",
         name: "Basic 1",
-        price: "2000k",
+        price: "2.000k",
         features: [
           "1 Album 35 x 35 cm. 15 Sheets",
           "1 Pembesaran 12R + Lam + Frame",
@@ -75,7 +75,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "basic-2",
         name: "Basic 2",
-        price: "3500k",
+        price: "3.500k",
         features: [
           "1 Album Magazine Kolase Digital",
           "1 Pembesaran 16R + Lam + Frame",
@@ -95,7 +95,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "prem-1",
         name: "Silver",
-        price: "4500k",
+        price: "4.500k",
         features: [
           "1 Album Magnetik + 1 Album Megazine",
           "1 Buah Pembesaran 16R",
@@ -107,7 +107,7 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "prem-2",
         name: "Gold",
-        price: "6500k",
+        price: "6.500k",
         features: [
           "2 Album Magazine Kulit + Eklusive Box",
           "1 Buah Pembesaran 20R",
@@ -119,47 +119,13 @@ export const WEDDING_PACKAGES: WeddingPackage[] = [
       {
         id: "prem-3",
         name: "Platinum",
-        price: "8000k",
+        price: "8.000k",
         features: [
           "2 Album Magazine Kulit + Eklusive Box",
           "2 Buah Pembesaran 20R",
           "4 Fotografer + Kamera Drone",
           "Softcopy dikirim dalam Drive",
           "Highlight + Full Video Editing",
-        ],
-      },
-    ],
-  },
-  {
-    categoryName: "EXCLUSIVE WEDDING",
-    tagline: "Paket all-in komplit dari hulu ke hilir",
-    popular: false,
-    desc: "Mendokumentasikan komplit dari prewed hingga wedding day dengan standar sinematik dan drone aerial.",
-    tiers: [
-      {
-        id: "exc-1",
-        name: "Exclusive 1",
-        price: "Rp 7.500.000",
-        features: [
-          "Pembesaran Frewed Fotografi 1 pcs",
-          "Cinematic Prewed Highlight",
-          "Full Shooting semua Agenda Acara",
-          "Exclusive Box Album",
-          "Didukung perlengkapan Kamera Drone",
-          "Master File dikirim seluruhnya lewat Drive",
-        ],
-      },
-      {
-        id: "exc-2",
-        name: "Exclusive 2",
-        price: "Rp 8.500.000",
-        features: [
-          "Pembesaran Frewed Fotografi 2 pcs",
-          "Cinematic Prewed Highlight",
-          "Full Shooting semua Agenda Acara",
-          "Exclusive Box Album lengkap",
-          "Didukung perlengkapan Kamera Drone",
-          "Master File dikirim seluruhnya lewat Drive",
         ],
       },
     ],

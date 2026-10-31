@@ -7,7 +7,7 @@ import { WEDDING_PACKAGES } from "@/constants/weddingData";
 export default function WeddingPricing() {
   const [selectedTiers, setSelectedTiers] = useState<Record<number, number>>({
     0: 0,
-    1: 1, // default ke Gold/Tier 2 untuk paket kedua
+    1: 0, // default ke Gold/Tier 2 untuk paket kedua
   });
 
   const handleSelectTier = (catIndex: number, tierIndex: number) => {
@@ -131,7 +131,7 @@ export default function WeddingPricing() {
 
                 {/* Container utama card pembungkus dengan panah di luarnya */}
                 <div className="relative mt-3">
-                  {/* Panah (Arrow Pointer) diposisikan di luar kotak overflow agar tidak terpotong */}
+                  {/* Panah (Arrow Pointer) diposisikan di luar kotak card */}
                   <div 
                     className="absolute -top-2.5 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-b-[8px] transition-all duration-300 ease-in-out z-30"
                     style={{
@@ -141,19 +141,19 @@ export default function WeddingPricing() {
                     }}
                   ></div>
 
-                  {/* Kotak Pembungkus (Wrapper Box) Harga & Benefit */}
-                  <div className={`relative rounded-2xl p-5 sm:p-6 border transition-all duration-500 overflow-hidden ${theme.boxBg}`}>
+                  {/* Kotak Pembungkus (Wrapper Box) dengan rounded-tl-2xl & overflow-hidden agar sudut label ikut melengkung */}
+                  <div className={`relative rounded-2xl rounded-tl-2xl p-5 sm:p-6 border transition-all duration-500 overflow-hidden ${theme.boxBg}`}>
                     
-                    {/* Label Pita Melipat di Pojok Kanan Atas (Khusus Akad) */}
+                    {/* Label Pita Melipat di Pojok Kiri Atas (Khusus Akad) */}
                     {isAkadTab && (
-                      <div className="absolute top-0 right-0 bg-gradient-to-l from-rose-600 to-pink-600 text-white px-5 py-2 rounded-bl-2xl shadow-lg tracking-wider uppercase border-l border-b border-rose-400/40 z-20 flex flex-col items-center">
+                      <div className="absolute top-0 left-0 bg-gradient-to-r from-rose-600 to-pink-600 text-white px-5 py-2 rounded-br-2xl shadow-lg tracking-wider uppercase border-r border-b border-rose-400/40 z-20 flex flex-col items-center">
                         <span className="text-2xl sm:text-3xl font-black leading-none">500K</span>
                         <span className="text-xs text-gray-100 font-normal mt-0.5">Hanya File Saja</span>
                       </div>
                     )}
 
-                    {/* Bagian Harga */}
-                    <div className={`mb-6 pt-2 ${isAkadTab ? 'pr-2' : ''}`}>
+                    {/* Bagian Harga dengan padding atas agar tidak tertimpa label */}
+                    <div className={`mb-6 pt-2 ${isAkadTab ? 'mt-16 sm:mt-14 pl-1' : ''}`}>
                       <span className="text-[11px] text-gray-300 block font-medium">
                         Paket Lengkap ({currentPlan.name}):
                       </span>
@@ -190,7 +190,6 @@ export default function WeddingPricing() {
                     </a>
                   </div>
                 </div>
-
               </div>
             </div>
           );
