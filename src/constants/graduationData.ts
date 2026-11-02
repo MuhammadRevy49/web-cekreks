@@ -160,7 +160,7 @@ export const GRADUATION_ALBUM = [
   { id: 11, image: "/images/graduationtestimoni/11.png", alt: "Testimoni Graduation 11" },
   { id: 12, image: "/images/graduationtestimoni/12.png", alt: "Testimoni Graduation 12" },
   { id: 13, image: "/images/graduationtestimoni/13.png", alt: "Testimoni Graduation 13" },
-  { id: 14, image: "/images/graduationtestimoni/14.jfif", alt: "Testimoni Graduation 14" },
+  { id: 14, image: "/images/graduationtestimoni/14.png", alt: "Testimoni Graduation 14" },
   { id: 15, image: "/images/graduationtestimoni/15.png", alt: "Testimoni Graduation 15" },
   { id: 16, image: "/images/graduationtestimoni/16.jpg", alt: "Testimoni Graduation 16" },
 ];
