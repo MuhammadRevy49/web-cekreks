@@ -120,7 +120,7 @@ export default function PhotoboothDetailPage() {
             )}
           </div>
           <span className="text-xs font-medium tracking-wide">
-            {isPlaying ? "Booth BGM Playing" : "Play Booth BGM"}
+            {isPlaying ? "Sound Playing" : "Play Sound"}
           </span>
         </button>
       </div>

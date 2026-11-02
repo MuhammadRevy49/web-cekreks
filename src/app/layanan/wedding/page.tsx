@@ -120,7 +120,7 @@ export default function WeddingDetailPage() {
             )}
           </div>
           <span className="text-xs font-medium tracking-wide">
-            {isPlaying ? "Soundtrack Playing" : "Play Wedding Song"}
+            {isPlaying ? "Soundtrack Playing" : "Play Soundtrack"}
           </span>
         </button>
       </div>

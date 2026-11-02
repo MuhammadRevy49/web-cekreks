@@ -25,19 +25,19 @@ export const WEDDING_SERVICES_SCOPE: WeddingScopeItem[] = [
     title: "Foto Prewedding",
     tag: "Pre-Event",
     desc: "Langkah awal menuju perjalanan kebahagiaan bersama. Paket ini disiapkan untuk keperluan foto galeri di kartu undangan serta pigura dekorasi masuk gedung resepsi pernikahan.",
-    image: "/images/wedding/prewed.jpg",
+    image: "/images/weddingtestimoni/prewed2.jpg",
   },
   {
     title: "Pengajian & Siraman",
     tag: "Tradisi & Doa",
     desc: "Langkah sakral bermakna sebelum menuju hari pelaminan. Memohon ridho & restu kedua orang tua serta membersihkan diri sebelum ikrar suci pernikahan dilangsungkan.",
-    image: "/images/wedding/siraman.jpg",
+    image: "/images/weddingtestimoni/siraman.jpg",
   },
   {
     title: "Akad Nikah & Resepsi",
     tag: "Wedding Day",
     desc: "Janji suci akad nikah, upacara adat, hingga momen resepsi bahagia bersama tamu tercinta. Diabadikan sempurna agar emosi dan senyuman abadi selamanya.",
-    image: "/images/wedding/resepsi.jpg",
+    image: "/images/weddingtestimoni/akadnikah.png",
   },
 ];
 

@@ -35,7 +35,7 @@ export default function WeddingHero() {
       <div className="lg:col-span-5">
         <div className="relative aspect-square sm:aspect-[4/3] lg:aspect-[4/4] w-full rounded-3xl overflow-hidden border border-cyan-400/30 shadow-[0_0_35px_rgba(34,211,238,0.18)] group">
           <Image
-            src="/images/hero/album.jpg"
+            src="/images/weddingtestimoni/prewed1.jpg"
             alt="Dokumentasi Wedding Cekreks.id"
             fill
             sizes="(max-width: 1024px) 100vw, 40vw"
