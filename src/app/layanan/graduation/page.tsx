@@ -120,7 +120,7 @@ export default function GraduationDetailPage() {
             )}
           </div>
           <span className="text-xs font-medium tracking-wide">
-            {isPlaying ? "Soundtrack Playing" : "Play Graduation Song"}
+            {isPlaying ? "Soundtrack Playing" : "Play Soundtrack"}
           </span>
         </button>
       </div>

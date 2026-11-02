@@ -25,19 +25,19 @@ export const GRADUATION_SERVICES_SCOPE: GraduationScopeItem[] = [
     title: "Foto Personal & Toga",
     tag: "Individual",
     desc: "Sesi potret personal wisudawan dengan toga lengkap, pose elegan, dan arahan gaya terarah untuk portofolio kelulusan terbaik.",
-    image: "/images/graduation/personal.jpg",
+    image: "/images/graduationtestimoni/personalfamily.png",
   },
   {
-    title: "Momen Bersama Keluarga",
+    title: "Momen Bersama",
     tag: "Family Portrait",
     desc: "Merekam kebanggaan dan pelukan hangat orang tua serta keluarga tercinta yang telah menemani perjuangan studi hingga wisuda.",
-    image: "/images/graduation/family.jpg",
+    image: "/images/graduationtestimoni/pesertagraduation.jpg",
   },
   {
-    title: "Grup Sahabat & Circle",
+    title: "Pembuatan Buku Tahunan",
     tag: "Besties & Squad",
-    desc: "Abadikan tawa dan kekompakan bersama teman seperjuangan kampus dengan konsep seru, natural, dan penuh energi.",
-    image: "/images/graduation/group.jpg",
+    desc: "Satu buku, ribuan cerita. Abadikan momen epik, kekompakan squad, dan vibes terbaik masa sekolahmu dalam konsep visual yang super keren.",
+    image: "/images/graduationtestimoni/yearbook.jpg",
   },
 ];
 
