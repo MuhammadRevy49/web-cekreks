@@ -41,7 +41,7 @@ const PRICING_PLANS: PricingPlan[] = [
     period: "/ acara",
     description: "Solusi dokumentasi profesional full coverage untuk seminar, pameran, atau corporate gathering Anda agar tampil lebih interaktif.",
     buttonText: "Lihat Selengkapnya",
-    buttonHref: "/layanan/event",
+    buttonHref: "/layanan/eventseminar#pricing",
   },
   {
     id: "photobooth",
@@ -51,7 +51,7 @@ const PRICING_PLANS: PricingPlan[] = [
     period: "/ 2 jam",
     description: "Hadirkan keseruan cetak foto instan tanpa batas dan template kustom interaktif yang membuat tamu acara Anda semakin terkesan.",
     buttonText: "Lihat Selengkapnya",
-    buttonHref: "/layanan/photobooth",
+    buttonHref: "/layanan/photobooth#pricing",
   },
 ];
 
